@@ -149,7 +149,7 @@
   </macrodef>
 
   <target name="publish.maven.snapshot" depends="">
-    <echo message="deploying ${maven-jar} to SNAPSHOT repository !!!"/>
+    <!--<echo message="deploying ${maven-jar} to SNAPSHOT repository !!!"/>
     <artifact:mvn failonerror="true" unless:true="${maven.nopublish}">
       <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.3:sign-and-deploy-file" />
       <arg value="-Durl=${maven-snapshots-repository-url}" />
@@ -159,11 +159,11 @@
       <arg value="-Dsources=${maven-jar}-sources.jar"/>
       <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
       <arg value="-Pgpg" />
-    </artifact:mvn>
+    </artifact:mvn>-->
   </target>
 
   <target name="publish.maven.staging" depends="">
-    <echo message="deploying ${maven-jar} to STAGING repository !!!"/>
+    <!--<echo message="deploying ${maven-jar} to STAGING repository !!!"/>
     <artifact:mvn failonerror="true" unless:true="${maven.nopublish}">
       <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.3:sign-and-deploy-file" />
       <arg value="-Durl=${maven-staging-repository-url}" />
@@ -173,7 +173,7 @@
       <arg value="-Dsources=${maven-jar}-sources.jar"/>
       <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
       <arg value="-Pgpg" />
-    </artifact:mvn>
+    </artifact:mvn>-->
   </target>
 
   <target name="gpg.sign" depends="">
