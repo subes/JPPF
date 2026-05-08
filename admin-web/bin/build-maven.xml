@@ -172,8 +172,7 @@
     <delete dir="${javadoc}" quiet="true"/>
     <mkdir dir="${javadoc}"/>
     <javadoc destdir="${javadoc}" access="protected" Windowtitle="JPPF-JMX-Remote"
-      packagenames="**/*.*" classpathref="project.classpath" stylesheetfile="${basedir}/bin/stylesheet.css" verbose="false" use="true" additionalparam="-quiet"
-      doclet="org.jppf.javadoc.ExcludeDoclet" docletpath="${lib.dir}/jppf-javadoc-${version.number}.jar">
+      packagenames="**/*.*" classpathref="project.classpath" stylesheetfile="${basedir}/bin/stylesheet.css" verbose="false" use="true" additionalparam="-quiet">
       <arg value="-J-Xmx512m"/>
       <packageset dir="${src.dir}/java"/>
       <link href="https://docs.oracle.com/javase/8/docs/api/"/>

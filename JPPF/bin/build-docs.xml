@@ -120,7 +120,7 @@
   <target name="javadoc.anttask">
     <echo message="Generating javadoc in ${javadoc}"/>
     <javadoc destdir="${javadoc}" access="protected" Windowtitle="JPPF" packagenames="**/*.*" classpathref="javadoc.classpath" source="1.8" locale="en_US"
-      stylesheetfile="${bin}/stylesheet.css" verbose="false" use="true" doclet="org.jppf.javadoc.ExcludeDoclet" docletpath="${basedir}/classes">
+      stylesheetfile="${bin}/stylesheet.css" verbose="false" use="true">
       <arg value="-J-Xmx512m"/>
       <arg value="-linksource"/>
       <arg value="-quiet"/>

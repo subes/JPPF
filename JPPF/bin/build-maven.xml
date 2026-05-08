@@ -88,8 +88,7 @@
       <echoprop name="artifact.prefix"/>
       <!-- generate the javadoc -->
       <javadoc destdir="${maven.dist.javadoc}" access="protected" Windowtitle="JPPF"
-        packagenames="**/*.*" classpathref="javadoc.classpath" stylesheetfile="${bin}/stylesheet.css" verbose="false" use="true" additionalparam="-quiet"
-        doclet="org.jppf.javadoc.ExcludeDoclet" docletpath="${basedir}/classes">
+        packagenames="**/*.*" classpathref="javadoc.classpath" stylesheetfile="${bin}/stylesheet.css" verbose="false" use="true" additionalparam="-quiet">
         <arg value="-J-Xmx512m"/>
         <packageset dir="@{module}/src/java"/>
         <link href="https://docs.oracle.com/javase/8/docs/api/"/>
