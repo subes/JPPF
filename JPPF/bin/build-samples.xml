@@ -23,6 +23,9 @@
   <!-- ========================================================================= -->
 
   <scriptdef name="include.code" language="javascript" manager="javax" src="${basedir}/bin/HTMLSourceScript.js">
+  	<classpath>
+ 	    <fileset dir="../antlib/" includes="*.jar"/>
+    </classpath>
     <attribute name="sample"/>
     <attribute name="include"/>
   </scriptdef>

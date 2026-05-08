@@ -20,6 +20,7 @@ package org.jppf.jca.cci;
 
 import javax.resource.ResourceException;
 import javax.resource.cci.*;
+import javax.resource.cci.Record;
 
 /**
  * Implementation of the Interaction interface.

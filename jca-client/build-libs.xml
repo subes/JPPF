@@ -70,6 +70,9 @@
         <local name="group"/>
         <property name="group" value="@{g}"/>
         <script language="javascript">
+          <classpath>
+            <fileset dir="../antlib/" includes="*.jar"/>
+          </classpath>
           project.setProperty("path", project.getProperty("group").replaceAll("\\.", "/"));
         </script>
         <local name="url"/>

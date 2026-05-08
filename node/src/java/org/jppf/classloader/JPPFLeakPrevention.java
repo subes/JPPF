@@ -191,7 +191,8 @@ public final class JPPFLeakPrevention {
               if (debugEnabled) log.debug(e.getMessage(), e);
               else log.warn(ExceptionUtils.getMessage(e));
             }
-            thread.stop();
+            //Thread.stop has been removed from newer JVMs, so just try to send an interrupt to signal a stop
+            thread.interrupt();
           }
         }
       }

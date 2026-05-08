@@ -286,6 +286,9 @@
     <attribute name="replace"/>
     <sequential>
       <script language="javascript">
+        <classpath>
+	        <fileset dir="../antlib/" includes="*.jar"/>
+	    </classpath>
         var before = project.getProperty("@{src}");
         project.setProperty("@{dest}", before.replaceAll("@{search}", "@{replace}"));
       </script>
