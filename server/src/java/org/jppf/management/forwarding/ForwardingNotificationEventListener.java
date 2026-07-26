@@ -23,7 +23,6 @@ import java.util.EventListener;
 /**
  * Registered instances of this class will be notified of JMX notifications received from the nodes.
  * @author Laurent Cohen
- * @exclude
  */
 public interface ForwardingNotificationEventListener extends EventListener
 {

@@ -18,6 +18,5 @@
 
 /**
  * Support for provisioning action.
- * @exclude
  */
 package org.jppf.admin.web.topology.provisioning;

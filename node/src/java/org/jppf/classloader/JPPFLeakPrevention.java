@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  * Implementation for class loader leak prevention.
  * @author Martin JANDA
- * @exclude
  */
 public final class JPPFLeakPrevention {
   /**

@@ -26,7 +26,6 @@ import org.jppf.management.NodeSelector;
  * This class provides helper methods that help implementing the selection of JMX notifications
  * within a notification filter that wraps the user defined one (including null filters).
  * @author Laurent Cohen
- * @exclude
  */
 final class NodeForwardingHelper {
   /**

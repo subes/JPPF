@@ -26,7 +26,6 @@ import org.jppf.node.protocol.TaskState;
 /**
  * This map counts the number of each enum value that is put as a map value.
  * @author Laurent Cohen
- * @exclude
  */
 public class TaskStateMap extends TreeMap<Integer, TaskState> {
   /**

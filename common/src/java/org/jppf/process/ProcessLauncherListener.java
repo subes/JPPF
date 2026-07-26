@@ -25,7 +25,6 @@ import java.util.EventListener;
  * to receive notifications of when a node is started or stopped.
  * @author Laurent Cohen
  * @since 4.1
- * @exclude
  */
 public interface ProcessLauncherListener extends EventListener {
   /**

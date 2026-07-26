@@ -41,18 +41,15 @@ public class JPPFAdminConsole {
   static final Logger log = LoggerFactory.getLogger(JPPFAdminConsole.class);
   /**
    * Whether the charts library is present in the classpath.
-   * @exclude
    */
   public static final boolean HAS_CHARTS = true;
   //public static final boolean HAS_CHARTS = checkChartsPresent();
   /**
    * Path to the UI descriptor file when running with charts.
-   * @exclude
    */
   public static final String CONSOLE_WITH_CHARTS = "org/jppf/ui/options/xml/JPPFAdminTool.xml";
   /**
    * Path to the UI descriptor file when running with charts.
-   * @exclude
    */
   public static final String CONSOLE_WITHOUT_CHARTS = "org/jppf/ui/options/xml/JPPFAdminToolNoCharts.xml";
 

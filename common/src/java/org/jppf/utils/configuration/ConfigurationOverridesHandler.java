@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * This class handles the loading and saving of temporary configuration overrides files.
  * @author Laurent Cohen
- * @exclude
  */
 public class ConfigurationOverridesHandler {
   /**

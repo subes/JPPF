@@ -25,7 +25,6 @@ import org.slf4j.*;
 /**
  * The default uncaught exception handler for JPPF drivers and nodes.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFDefaultUncaughtExceptionHandler implements UncaughtExceptionHandler {
   /**

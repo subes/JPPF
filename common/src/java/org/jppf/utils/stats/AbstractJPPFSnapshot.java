@@ -72,7 +72,6 @@ public abstract class AbstractJPPFSnapshot extends AbstractBaseJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void reset() {
@@ -87,7 +86,6 @@ public abstract class AbstractJPPFSnapshot extends AbstractBaseJPPFSnapshot {
 
   /**
    * Assign the value of {@code getLatest()} to {@code max}.
-   * @exclude
    */
   public abstract void assignLatestToMax();
 

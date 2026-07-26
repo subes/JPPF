@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  *
  * @author Laurent Cohen
- * @exclude
  */
 public class DatasourceInitializerImpl implements DatasourceInitializer {
   /**

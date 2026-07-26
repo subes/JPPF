@@ -18,6 +18,5 @@
 
 /**
  * Support for the server monitoring UI.
- * @exclude
  */
 package org.jppf.ui.monitoring;

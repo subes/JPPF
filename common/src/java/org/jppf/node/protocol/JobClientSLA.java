@@ -35,7 +35,6 @@ public class JobClientSLA extends JobCommonSLA<JobClientSLA> {
 
   /**
    * Default constructor.
-   * @exclude
    */
   public JobClientSLA() {
     maxChannels = 1;
@@ -62,7 +61,6 @@ public class JobClientSLA extends JobCommonSLA<JobClientSLA> {
   /**
    * Create a copy of this job SLA.
    * @return a {@link JobClientSLA} instance.
-   * @exclude
    */
   public JobClientSLA copy() {
     final JobClientSLA sla = new JobClientSLA();

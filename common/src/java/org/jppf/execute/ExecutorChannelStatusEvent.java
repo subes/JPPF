@@ -23,7 +23,6 @@ import java.util.EventObject;
 /**
  * Event sent to notify of a status change for a client connection.
  * @author Martin JANDA
- * @exclude
  */
 public class ExecutorChannelStatusEvent extends EventObject
 {

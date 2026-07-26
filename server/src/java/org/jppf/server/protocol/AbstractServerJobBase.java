@@ -31,7 +31,6 @@ import org.slf4j.*;
  *
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class AbstractServerJobBase extends AbstractServerJob {
   /**

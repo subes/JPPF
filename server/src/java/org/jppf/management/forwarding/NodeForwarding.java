@@ -35,7 +35,6 @@ import org.slf4j.*;
 /**
  * Implementation of the <code>JPPFNodeForwardingMBean</code> interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class NodeForwarding extends AbstractNodeForwarding implements NodeForwardingMBean {
   /**

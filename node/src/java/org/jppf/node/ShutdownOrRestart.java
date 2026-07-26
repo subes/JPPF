@@ -25,7 +25,6 @@ import org.slf4j.*;
 
 /**
  * Task used to terminate the JVM.
- * @exclude
  */
 public class ShutdownOrRestart implements Runnable {
   /**

@@ -29,7 +29,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public interface Bundler<T extends LoadBalancingProfile> {
   /**
    * Count of the bundlers used to generate a readable unique id.
-   * @exclude
    */
   AtomicInteger BUNDLER_COUNT = new AtomicInteger(0);
 

@@ -30,7 +30,6 @@ package org.jppf.load.balancer;
 public abstract class AbstractBundler<T extends LoadBalancingProfile> implements Bundler<T>, ContextAwareness {
   /**
    * The bundler number for this bundler.
-   * @exclude
    */
   protected final int bundlerNumber = BUNDLER_COUNT.incrementAndGet();
   /**
@@ -84,7 +83,6 @@ public abstract class AbstractBundler<T extends LoadBalancingProfile> implements
   /**
    * Get this bundler's number (a unique Bundle instance count). Used for logging and debugging.
    * @return the bundler number as an int.
-   * @exclude
    */
   public int getBundlerNumber() {
     return bundlerNumber;
@@ -116,7 +114,6 @@ public abstract class AbstractBundler<T extends LoadBalancingProfile> implements
 
   /**
    * @return the JPPF context for this bundler.
-   * @exclude
    */
   @Override
   public JPPFContext getJPPFContext() {
@@ -125,7 +122,6 @@ public abstract class AbstractBundler<T extends LoadBalancingProfile> implements
 
   /**
    * @param context the JPPF context for this bundler.
-   * @exclude
    */
   @Override
   public void setJPPFContext(final JPPFContext context) {

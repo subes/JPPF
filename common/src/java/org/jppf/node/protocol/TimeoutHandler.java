@@ -24,7 +24,6 @@ package org.jppf.node.protocol;
  * callback in that {@code onTimeout()} is called after the task has ended.
  * @author Laurent Cohen
  * @since 5.0
- * @exclude
  */
 public interface TimeoutHandler {
   /**

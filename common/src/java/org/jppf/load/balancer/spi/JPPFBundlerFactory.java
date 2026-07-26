@@ -31,7 +31,6 @@ import org.slf4j.*;
  * Factory class for JPPF load-balancing algorithms defined through the {@link org.jppf.load.balancer.spi.JPPFBundlerProvider JPPFBundlerProvider}
  * service provider interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFBundlerFactory {
   /**
@@ -44,7 +43,6 @@ public class JPPFBundlerFactory {
   private static boolean debugEnabled = log.isDebugEnabled();
   /**
    * This enum defines the available default load balancing configurations.
-   * @exclude
    */
   public enum Defaults {
     /**

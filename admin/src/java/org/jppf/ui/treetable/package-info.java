@@ -19,6 +19,5 @@
 /**
  * Implementation of the JTreeTable such as published in this <a href="">Sun's article</a>.
  * We have only reused the parts of the code that are licensed under the terms of the BSD license.
- * @exclude
  */
 package org.jppf.ui.treetable;

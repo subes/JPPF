@@ -22,7 +22,6 @@ package org.jppf.discovery;
  * Listener interface to receive notifications of new discovered driver connection pools.
  * @param <E> the type of notifications received by this listener.
  * @author Laurent Cohen
- * @exclude
  */
 public interface DriverDiscoveryListener<E extends DriverConnectionInfo> {
   /**

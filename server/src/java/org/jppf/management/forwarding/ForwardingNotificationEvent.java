@@ -25,7 +25,6 @@ import javax.management.Notification;
 /**
  * Instances of this class represent events emitted each time a JMX notification is received from a node.
  * @author Laurent Cohen
- * @exclude
  */
 public class ForwardingNotificationEvent extends EventObject {
   /**

@@ -26,7 +26,6 @@ import org.jppf.io.IO;
 /**
  * A ByteBuffer pool backed by a {@link java.util.LinkedList LinkedList}.
  * @author Laurent Cohen
- * @exclude
  */
 public class SynchronizedDirectBufferPool extends AbstractObjectPoolQueue<ByteBuffer> {
   @Override

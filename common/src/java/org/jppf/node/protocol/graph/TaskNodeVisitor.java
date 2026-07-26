@@ -21,7 +21,6 @@ package org.jppf.node.protocol.graph;
 /**
  * Visitor interface for a graph of tasks with dependencies.
  * @author Laurent Cohen
- * @exclude
  */
 @FunctionalInterface
 public interface TaskNodeVisitor {

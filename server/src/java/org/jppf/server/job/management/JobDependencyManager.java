@@ -28,7 +28,6 @@ import org.jppf.server.JPPFDriver;
 /**
  * Concrete implementation of the job dependency graph management interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class JobDependencyManager implements JobDependencyManagerMBean {
   /**

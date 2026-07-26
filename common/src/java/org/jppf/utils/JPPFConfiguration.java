@@ -260,7 +260,6 @@ public final class JPPFConfiguration {
    * or {@link JPPFConfiguration.ConfigurationSourceReader}.
    * @return an input stream that can be used to load the properties.
    * @throws Exception if any error occurs while trying to obtain the stream.
-   * @exclude
    */
   public static Reader getConfigurationSourceReader(final String configurationSourceName) throws Exception {
     Reader reader = null;

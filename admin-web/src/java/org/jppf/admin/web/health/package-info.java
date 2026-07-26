@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting nodes and drivers health management and monitoring.
- * @exclude
  */
 package org.jppf.admin.web.health;

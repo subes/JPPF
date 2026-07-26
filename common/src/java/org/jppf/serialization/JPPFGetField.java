@@ -25,7 +25,6 @@ import java.util.*;
 /**
  * JPPF implementation of the GetField API.
  * @author Laurent Cohen
- * @exclude
  */
 class JPPFGetField extends GetField {
   /**

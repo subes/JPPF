@@ -26,7 +26,6 @@ import java.util.concurrent.atomic.*;
  * their attached nodes, for management and monitoring purposes.
  * @author Laurent Cohen
  * @since 5.0
- * @exclude
  */
 public abstract class AbstractRefreshHandler {
   /**
@@ -75,7 +74,6 @@ public abstract class AbstractRefreshHandler {
 
   /**
    * Refresh the refresh.
-   * @exclude
    */
   protected abstract void performRefresh();
 

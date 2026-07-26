@@ -49,7 +49,6 @@ import org.slf4j.*;
 /**
  * Handles various initializations for the driver.
  * @author Laurent Cohen
- * @exclude
  */
 public class DriverInitializer {
   /**
@@ -434,7 +433,6 @@ public class DriverInitializer {
   /**
    * Get the discovered peers connection information.
    * @return a set of {@link DriverConnectionInfo} instances.
-   * @exclude
    */
   public Set<DriverConnectionInfo> getDiscoveredPeers() {
     return discoveryListener.getDiscoveredPools();

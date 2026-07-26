@@ -36,7 +36,6 @@ import org.slf4j.*;
 /**
  * Instances of this class represent connections to remote JPPF drivers.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFClientConnectionImpl extends BaseJPPFClientConnection {
   /**
@@ -251,7 +250,6 @@ public class JPPFClientConnectionImpl extends BaseJPPFClientConnection {
 
   /**
    * Submit the initialization of this connetion, some time in the future.
-   * @exclude
    */
   public void submitInitialization() {
     if (initializing.compareAndSet(false, true)) {

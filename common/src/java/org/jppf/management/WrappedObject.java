@@ -25,7 +25,6 @@ import org.jppf.comm.socket.BootstrapObjectSerializer;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class WrappedObject implements Serializable {
   /**

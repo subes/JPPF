@@ -225,7 +225,6 @@ public final class JPPFStatisticsHelper {
   /**
    * Create a statistics object initialized with all the required server snapshots.
    * @return a {@link JPPFStatistics} instance.
-   * @exclude
    */
   public static JPPFStatistics createServerStatistics() {
     final JPPFStatistics statistics = new JPPFStatistics();

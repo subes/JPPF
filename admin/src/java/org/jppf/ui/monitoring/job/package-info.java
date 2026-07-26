@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the UI for job monitoring via JMX.
- * @exclude
  */
 package org.jppf.ui.monitoring.job;

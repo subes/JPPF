@@ -26,7 +26,6 @@ import org.jppf.utils.configuration.*;
 /**
  * Converts the JPPF predefined properties into the "Configuration properties reference" section of the doc as wiki text.
  * @author Laurent Cohen
- * @exclude
  */
 public class HtmlConfigurationPrinter extends AbstractConfigurationPrinter {
   /**

@@ -31,7 +31,6 @@ import org.slf4j.*;
  * <p>Core threads are always live and are always prefered when available for new tasks.
  * Non-core threads are created up to the maximum number of threads, after which tasks are simpy put into the queue.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFThreadPool extends AbstractExecutorService {
   /**
@@ -473,7 +472,6 @@ public class JPPFThreadPool extends AbstractExecutorService {
 
   /**
    * Statistic for the executor.
-   * @exclude
    */
   private static class Stats {
     /**

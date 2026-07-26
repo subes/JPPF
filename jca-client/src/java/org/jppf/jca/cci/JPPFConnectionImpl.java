@@ -34,7 +34,6 @@ import org.slf4j.*;
 /**
  * Implementation of a JCA connection. This class provides an API to send tasks to a JPPF driver.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFConnectionImpl implements JPPFConnection {
   /**
@@ -165,7 +164,6 @@ public class JPPFConnectionImpl implements JPPFConnection {
   /**
    * Set the associated managed connection.
    * @param conn a <code>JPPFManagedConnection</code> instance.
-   * @exclude
    */
   public void setManagedConnection(final JPPFManagedConnection conn) {
     this.managedConnection = conn;

@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * Generate a heap dump for an IBM JVM.
  * @author Laurent Cohen
- * @exclude
  */
 public class HeapDumpCollectorIBM implements HeapDumpCollector {
   /**

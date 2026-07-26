@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting local nodes, in the same JVM as the driver.
- * @exclude
  */
 package org.jppf.server.node.local;

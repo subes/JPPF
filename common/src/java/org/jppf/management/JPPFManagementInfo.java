@@ -33,17 +33,14 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
   private static final long serialVersionUID = 1L;
   /**
    * DRIVER information type.
-   * @exclude
    */
   public static final int DRIVER = 0;
   /**
    * Node information type.
-   * @exclude
    */
   public static final int NODE = 1;
   /**
    * Peer driver information type.
-   * @exclude
    */
   public static final int PEER = 2;
   /*
@@ -65,14 +62,12 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
    * Information that the node is initialized with a .Net bridge and can execute .Net tasks. Value of this constant can be changed in future!
    * @since 5.0
    * @deprecated the .Net bridge feature is no longer part of JPPF
-   * @exclude
    */
   public static final int DOTNET = 0x0008_0000;
   /**
    * Information that the node is an Android node.
    * @since 5.1
    * @deprecated the Android node feature is no longer part of JPPF
-   * @exclude
    */
   @Deprecated
   public static final int ANDROID = 0x0010_0000;
@@ -136,7 +131,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
    * @param type the type of component this info is for, must be one of {@link #NODE NODE} or {@link #DRIVER DRIVER}.
    * @param secure specifies whether communication with the node or driver should be secure, i.e. via SSL/TLS.
    * @since 5.0
-   * @exclude
    */
   public JPPFManagementInfo(final String host, final String ip, final int port, final String uuid, final int type, final boolean secure) {
     this(host, ip, port, uuid, type, secure, null);
@@ -152,7 +146,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
    * @param secure specifies whether communication with the node or driver should be secure, i.e. via SSL/TLS.
    * @param masterUuid uuid of the node of which this node is a slave, if any.
    * @since 5.0
-   * @exclude
    */
   public JPPFManagementInfo(final String host, final String ip, final int port, final String uuid, final int type, final boolean secure, final String masterUuid) {
     this.host = host;
@@ -221,7 +214,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
   /**
    * Get a string displayed in the console.
    * @return .
-   * @exclude
    */
   public String toDisplayString() {
     return host + ':' + port;
@@ -239,7 +231,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
   /**
    * Set the system information associated with the node at the time of the initial connection.
    * @param systemInfo a {@link JPPFSystemInformation} instance.
-   * @exclude
    */
   public synchronized void setSystemInfo(final JPPFSystemInformation systemInfo) {
     this.systemInfo = systemInfo;
@@ -315,7 +306,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
    * @return {@code true} if the node is .Net-capable, {@code false} otherwise.
    * @since 5.0
    * @deprecated the .Net bridge feature is no longer part of JPPF
-   * @exclude
    */
   public boolean isDotnetCapable() {
     return false;
@@ -326,7 +316,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
    * @return {@code true} if the node an Android node, {@code false} otherwise.
    * @since 5.1
    * @deprecated the Android node feature is no longer part of JPPF
-   * @exclude
    */
   public boolean isAndroidNode() {
     return false;
@@ -343,7 +332,6 @@ public class JPPFManagementInfo implements Serializable, Comparable<JPPFManageme
   /**
    * Specify whether the node is active or inactive.
    * @param active {@code true} if the node is active, {@code false} if it is inactve.
-   * @exclude
    */
   public void setIsActive(final boolean active) {
     this.active = active;

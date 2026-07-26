@@ -33,7 +33,6 @@ import org.slf4j.*;
 /**
  * Instances of this class encapsulate the administration functionalities for a JPPF driver.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFDriverAdmin implements JPPFDriverAdminMBean {
   /**
@@ -252,7 +251,6 @@ public class JPPFDriverAdmin implements JPPFDriverAdminMBean {
   /**
    * Get the JPPF load-balancer factory.
    * @return a {@link JPPFBundlerFactory} instance.
-   * @exclude
    */
   private JPPFBundlerFactory getBundlerFactory() {
     return driver.getAsyncNodeNioServer().getBundlerFactory();

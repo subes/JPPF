@@ -72,7 +72,6 @@ public class TaskInformation implements Serializable {
    * @param elapsedTime the wall clock time taken by the task.
    * @param error determines whether the task had an exception.
    * @param jobPosition the position of the task in the job to which it belongs..
-   * @exclude
    */
   public TaskInformation(final String id, final String jobId, final String jobName, final long cpuTime, final long elapsedTime, final boolean error, final int jobPosition) {
     this.id = id;

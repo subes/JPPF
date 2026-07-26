@@ -27,7 +27,6 @@ import org.slf4j.*;
 /**
  * Collection of utility methods to facilitate the use of reflection.
  * @author Laurent Cohen
- * @exclude
  */
 public final class ReflectionHelper {
   /**

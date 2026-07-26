@@ -29,7 +29,6 @@ import org.slf4j.*;
  * This class provides methods to find, load and access {@link MonitoringDataProvider}s.
  * It is implemented as a singleton.
  * @author Laurent Cohen
- * @exclude
  */
 public final class MonitoringDataProviderHandler {
   /**

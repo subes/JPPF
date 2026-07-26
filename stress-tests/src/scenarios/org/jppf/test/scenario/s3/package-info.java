@@ -18,6 +18,5 @@
 
 /**
  * Test of the load balancer with a small number long-running tasks in each job.
- * @exclude
  */
 package org.jppf.test.scenario.s3;

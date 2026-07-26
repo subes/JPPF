@@ -32,7 +32,6 @@ import org.slf4j.*;
 /**
  * Concrete implementation of {@link ClassLoaderConnection} for connecting to a remote driver.
  * @author Laurent Cohen
- * @exclude
  */
 public class RemoteClassLoaderConnection extends AbstractClassLoaderConnection<SocketWrapper> {
   /**
@@ -183,7 +182,6 @@ public class RemoteClassLoaderConnection extends AbstractClassLoaderConnection<S
    * Get the object used to serialize and deserialize resources.
    * @return an {@link ObjectSerializer} instance.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   private ObjectSerializer getSerializer() throws Exception {
     if (serializer == null) serializer = new BootstrapObjectSerializer();

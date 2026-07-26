@@ -18,6 +18,5 @@
 
 /**
  * Support for job management in the server.
- * @exclude
  */
 package org.jppf.server.job;

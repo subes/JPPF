@@ -18,6 +18,5 @@
 
 /**
  * Support for service provider interface, to provide pluggable functionality for JPPF drivers.
- * @exclude
  */
 package org.jppf.server.spi;

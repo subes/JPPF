@@ -24,7 +24,6 @@ import org.jppf.queue.JPPFQueue;
 /**
  * Context associated with a driver.
  * @author Martin JANDA
- * @exclude
  */
 public class JPPFContextDriver extends JPPFContext {
   /**

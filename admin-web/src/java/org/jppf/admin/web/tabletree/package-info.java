@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting table trees.
- * @exclude
  */
 package org.jppf.admin.web.tabletree;

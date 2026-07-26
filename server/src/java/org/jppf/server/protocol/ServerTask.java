@@ -27,7 +27,6 @@ import org.slf4j.*;
 /**
  * Representation of an individual task on the server side.
  * @author Martin JANDA
- * @exclude
  */
 public class ServerTask implements Serializable, PositionalElement<ServerTask> {
   /**

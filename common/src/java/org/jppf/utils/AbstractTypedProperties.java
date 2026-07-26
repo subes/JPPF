@@ -131,7 +131,6 @@ public abstract class AbstractTypedProperties extends Properties {
   /**
    * 
    * @return the default (initial) properties, if any.
-   * @exclude
    */
   public AbstractTypedProperties getDefaults() {
     return initialProps;
@@ -139,15 +138,11 @@ public abstract class AbstractTypedProperties extends Properties {
 
   /**
    * @param defaults the default (initial) properties, if any.
-   * @exclude
    */
   public void setDefaults(final AbstractTypedProperties defaults) {
     this.initialProps = defaults;
   }
 
-  /**
-   * @exclude
-   */
   public void reset() {
     if (initialProps != null) {
       clear();

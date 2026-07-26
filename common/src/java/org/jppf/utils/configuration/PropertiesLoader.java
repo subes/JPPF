@@ -31,7 +31,6 @@ import org.slf4j.*;
 /**
  * This class loads and resolves the includes in a configuration file or source.
  * @author Laurent Cohen
- * @exclude
  */
 public class PropertiesLoader {
   /**

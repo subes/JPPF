@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting asynchronous communication through the NIO APIs.
-  * @exclude
 */
 package org.jppf.server.nio;

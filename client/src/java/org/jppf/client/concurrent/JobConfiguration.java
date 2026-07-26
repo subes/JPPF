@@ -45,7 +45,6 @@ public interface JobConfiguration {
    * Get the service level agreement between the job and the server.
    * @param jobSLA an instance of <code>JPPFJobSLA</code>.
    * @return this job configuration, for method chaining.
-   * @exclude
    */
   JobConfiguration setSLA(final JobSLA jobSLA);
 
@@ -59,7 +58,6 @@ public interface JobConfiguration {
    * Get the service level agreement between the job and the server.
    * @param jobClientSLA an instance of <code>JPPFJobSLA</code>.
    * @return this job configuration, for method chaining.
-   * @exclude
    */
   JobConfiguration setClientSLA(final JobClientSLA jobClientSLA);
 

@@ -139,7 +139,6 @@ public abstract class AbstractClientJob {
   /**
    * Get the universal unique id for this job.
    * @return the uuid as a string.
-   * @exclude
    */
   public String getUuid() {
     return uuid;

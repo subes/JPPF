@@ -37,7 +37,6 @@ import org.slf4j.*;
  * - a {@code JOB_DISPATCHED} followed by a {@code JOB_RETURNED} will be discarded and will trigger no event 
  * @author Laurent Cohen
  * @since 5.1
- * @exclude
  */
 class DeferredJobNotificationsHandler extends AbstractJobNotificationsHandler {
   /**

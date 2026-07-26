@@ -66,7 +66,6 @@ public class JobCommonSLA<T extends JobCommonSLA<T>> implements Serializable {
 
   /**
    * Default constructor.
-   * @exclude
    */
   public JobCommonSLA() {
   }
@@ -129,7 +128,6 @@ public class JobCommonSLA<T extends JobCommonSLA<T>> implements Serializable {
    * Create a copy of this job SLA.
    * @param sla a {@link JobCommonSLA} into which to copy the attributes of this instance.
    * @return a {@link JobCommonSLA} instance.
-   * @exclude
    */
   protected T copyTo(final T sla) {
     sla.setExecutionPolicy(executionPolicy);

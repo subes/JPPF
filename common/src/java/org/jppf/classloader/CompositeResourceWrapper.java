@@ -25,7 +25,6 @@ import java.util.concurrent.Future;
  * Instances of this class are intended for grouping multiple class loading requests together.
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class CompositeResourceWrapper extends JPPFResourceWrapper {
   /**

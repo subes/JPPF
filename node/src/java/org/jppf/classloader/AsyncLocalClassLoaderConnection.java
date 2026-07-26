@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class AsyncLocalClassLoaderConnection extends AbstractClassLoaderConnection<AsyncLocalNodeClassloaderContext> {
   /**

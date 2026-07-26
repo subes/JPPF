@@ -38,6 +38,5 @@
  *   --> channel is closed<br>
  * <p>Note that offline nodes never transition to WAITING_RESULTS.
  * Getting the results of a previously dispatched job is done in WAIT_INITIAL_BUNDLE. 
- * @exclude
  */
 package org.jppf.server.nio.nodeserver.async;

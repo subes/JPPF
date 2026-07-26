@@ -21,7 +21,6 @@ package org.jppf.node.protocol;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public final class TaskThreadLocals {
   /**
@@ -46,7 +45,6 @@ public final class TaskThreadLocals {
   /**
    * Set the uuid for the original task bundle that triggered this resource request.
    * @param requestUuid the uuid as a string.
-   * @exclude
    */
   public static void setRequestUuid(final String requestUuid) {
     TaskThreadLocals.requestUuid.set(requestUuid);

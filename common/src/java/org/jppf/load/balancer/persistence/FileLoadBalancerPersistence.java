@@ -228,7 +228,6 @@ public class FileLoadBalancerPersistence extends AbstractFilePersistence<LoadBal
     return Paths.get(pathname(channelDir), algorithm + (temp ? TEMP_EXTENSION : DEFAULT_EXTENSION));
   }
 
-  /** @exclude */
   @Override
   protected LoadBalancerPersistenceException convertException(final Exception e) {
     return (e instanceof LoadBalancerPersistenceException) ? (LoadBalancerPersistenceException) e : new LoadBalancerPersistenceException(e);

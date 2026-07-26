@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * Factory class which instantites persistence implementations based on the JPPF configuration.
  * @author Laurent Cohen
- * @exclude
  */
 public final class JobPersistenceFactory {
   /**

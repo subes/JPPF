@@ -31,7 +31,6 @@ import org.slf4j.*;
 /**
  * Wrapper around the JMXMP remote connector server implementation.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFJMXServer extends AbstractJMXServer {
   /**

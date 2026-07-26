@@ -27,7 +27,6 @@ import org.jppf.node.protocol.*;
 /**
  *
  * @author Laurent Cohen
- * @exclude
  */
 class JobConfigurationImpl implements JobConfiguration {
   /**

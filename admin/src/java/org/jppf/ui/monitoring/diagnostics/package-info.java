@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the UI for nodes monitoring via JMX.
- * @exclude
  */
 package org.jppf.ui.monitoring.diagnostics;

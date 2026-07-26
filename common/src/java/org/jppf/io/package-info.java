@@ -18,6 +18,5 @@
 
 /**
  * Support for transport-agnostic communication with remote services and disk overflow.
- * @exclude
  */
 package org.jppf.io;

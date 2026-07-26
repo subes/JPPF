@@ -46,7 +46,6 @@ public interface ClassPathElement extends Serializable {
    * Get the location of this element, pointing to or embedding the underlying jar or zip file in the client environment.
    * @return a {@link Location} object.
    * @deprecated use {@link #getSourceLocation()} instead.
-   * @exclude
    */
   Location<?> getLocalLocation();
 
@@ -60,7 +59,6 @@ public interface ClassPathElement extends Serializable {
    * Get the location of this element, pointing to or embedding the underlying jar or zip file in the client environment.
    * @return a {@link Location} object.
    * @deprecated use {@link #getTargetLocation()} instead.
-   * @exclude
    */
   Location<?> getRemoteLocation();
 

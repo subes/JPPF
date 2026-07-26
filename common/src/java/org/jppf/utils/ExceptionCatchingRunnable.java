@@ -23,7 +23,6 @@ import java.io.Serializable;
 /**
  * A serializable extension of the {@link Runnable} interface.
  * @author Laurent Cohen
- * @exclude
  */
 @FunctionalInterface
 public interface ExceptionCatchingRunnable extends Runnable, Serializable {

@@ -28,7 +28,6 @@ import org.jppf.node.protocol.*;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class JobProcessingEntry extends JobPendingEntry {
   /**

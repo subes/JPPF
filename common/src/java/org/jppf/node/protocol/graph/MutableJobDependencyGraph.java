@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * A representation of the jobs dependencies graph. This is a directed acyclic graph.
  * @author Laurent Cohen
- * @exclude
  */
 public class MutableJobDependencyGraph extends JobDependencyGraphImpl {
   /**

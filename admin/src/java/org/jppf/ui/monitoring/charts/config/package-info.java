@@ -18,6 +18,5 @@
 
 /**
  * Classes for configuring charts and their container tabs in a tabbed pane.
- * @exclude
  */
 package org.jppf.ui.monitoring.charts.config;

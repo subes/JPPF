@@ -33,7 +33,6 @@ import org.slf4j.*;
 /**
  * Management bean for a JPPF node.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFNodeAdmin implements JPPFNodeAdminMBean {
   /**

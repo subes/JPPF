@@ -32,7 +32,6 @@ public interface ConnectionPool<E extends AutoCloseable> extends Iterable<E>, Au
    * Add a connection to this pool.
    * @param connection the connection too add.
    * @return true if the underlying list of connections changed as a result of calling this method.
-   * @exclude
    */
   boolean add(E connection);
 
@@ -40,14 +39,12 @@ public interface ConnectionPool<E extends AutoCloseable> extends Iterable<E>, Au
    * Remove a connection from this pool.
    * @param connection the connection too remove.
    * @return true if the underlying list of connections changed as a result of calling this method.
-   * @exclude
    */
   boolean remove(E connection);
 
   /**
    * Get the next connection.
    * @return a connection.
-   * @exclude
    */
   E nextConnection();
 

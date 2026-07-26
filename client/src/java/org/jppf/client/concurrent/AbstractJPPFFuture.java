@@ -25,7 +25,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Abstract superclass for all futures handled by a {@link JPPFExecutorService}.
  * @param <V> the type of result returned by this future.
  * @author Laurent Cohen
- * @exclude
  */
 abstract class AbstractJPPFFuture<V> implements Future<V> {
   /**

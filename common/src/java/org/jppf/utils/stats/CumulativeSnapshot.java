@@ -43,7 +43,6 @@ public class CumulativeSnapshot extends AbstractJPPFSnapshot {
   /**
    * Initialize this snapshot with a specified title.
    * @param label the title for this snapshot.
-   * @exclude
    */
   public CumulativeSnapshot(final String label) {
     super(label);
@@ -51,7 +50,6 @@ public class CumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void addValues(final double accumulatedValues, final long count) {
@@ -73,7 +71,6 @@ public class CumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void assignLatestToMax() {
@@ -87,7 +84,6 @@ public class CumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public JPPFSnapshot copy() {

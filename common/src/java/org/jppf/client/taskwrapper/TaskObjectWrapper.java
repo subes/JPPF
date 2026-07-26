@@ -23,13 +23,11 @@ import java.io.Serializable;
 /**
  * Wrapper interface for tasks that are not implementations of {@link org.jppf.node.protocol.Task Task<T>}.
  * @author Laurent Cohen
- * @exclude
  */
 public interface TaskObjectWrapper extends Serializable
 {
   /**
    * Type-safe enumeration for the type of method to execute.
-   * @exclude
    */
   public enum MethodType
   {

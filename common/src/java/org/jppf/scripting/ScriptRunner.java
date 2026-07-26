@@ -23,7 +23,6 @@ import java.util.Map;
 /**
  * Common interface for all script runners, allowing access to a scripting engine.
  * @author Laurent Cohen
- * @exclude
  */
 public interface ScriptRunner {
   /**

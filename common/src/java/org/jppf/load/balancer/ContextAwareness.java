@@ -21,7 +21,6 @@ package org.jppf.load.balancer;
 /**
  * Bundler implementations should implement this interface if they wish to have access to a node's context.
  * @author Martin JANDA
- * @exclude
  */
 public interface ContextAwareness {
   /**

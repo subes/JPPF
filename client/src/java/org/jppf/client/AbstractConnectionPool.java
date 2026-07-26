@@ -67,7 +67,6 @@ public abstract class AbstractConnectionPool<E extends AutoCloseable> implements
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized boolean add(final E connection) {
@@ -77,7 +76,6 @@ public abstract class AbstractConnectionPool<E extends AutoCloseable> implements
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized boolean remove(final E connection) {
@@ -91,7 +89,6 @@ public abstract class AbstractConnectionPool<E extends AutoCloseable> implements
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized E nextConnection() {

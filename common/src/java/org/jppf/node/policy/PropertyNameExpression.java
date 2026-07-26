@@ -23,7 +23,6 @@ import org.jppf.utils.PropertiesCollection;
 /**
  * A special type or expression that represents either the name of a property or an expression that resolves to a specified target type.
  * @author Laurent Cohen
- * @exclude
  */
 public class PropertyNameExpression implements Expression<String> {
   /**

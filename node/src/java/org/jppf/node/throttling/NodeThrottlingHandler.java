@@ -37,7 +37,6 @@ import org.slf4j.*;
  * The duration of the interval between periodic checks is configurable with the following property expressing a time in milliseconds (default 2000 ms):<br>
  * {@code jppf.node.throttling.check.period = 2000}
  * @author Laurent Cohen
- * @exclude
  */
 public class NodeThrottlingHandler extends ServiceProviderHandler<JPPFNodeThrottling> {
   /**

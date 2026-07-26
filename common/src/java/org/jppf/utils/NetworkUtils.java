@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * Utility class that provides method to discover the network configuration of the current machine.
  * @author Laurent Cohen
- * @exclude
  */
 public final class NetworkUtils {
   /**

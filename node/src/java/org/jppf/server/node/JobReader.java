@@ -25,7 +25,6 @@ import org.jppf.utils.concurrent.ThreadSynchronization;
 
 /**
  * Read the jobs from the network connection and make them available in a queue.
- * @exclude
  */
 class JobReader extends ThreadSynchronization implements Runnable {
   /**

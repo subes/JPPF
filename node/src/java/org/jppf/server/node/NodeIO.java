@@ -25,7 +25,6 @@ import org.jppf.node.protocol.*;
 /**
  * This interface defines how a node receives a job and sends its execution results.
  * @author Laurent Cohen
- * @exclude
  */
 public interface NodeIO {
   /**

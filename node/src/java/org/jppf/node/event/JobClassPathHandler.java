@@ -33,7 +33,6 @@ import org.slf4j.*;
  * This NodeLifeCycleListener implementations parses the classpath associated with a job
  * and adds its elemenents to the task class loader.
  * @author Laurent Cohen
- * @exclude
  */
 public class JobClassPathHandler extends NodeLifeCycleListenerAdapter {
   /**

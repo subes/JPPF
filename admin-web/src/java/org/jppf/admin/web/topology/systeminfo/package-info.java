@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting topology management and monitoring.
- * @exclude
  */
 package org.jppf.admin.web.topology.systeminfo;

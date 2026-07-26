@@ -36,7 +36,6 @@ import org.slf4j.*;
  * @author Laurent Cohen
  * @author Martin JANDA
  * @author Paul Woodward
- * @exclude
  */
 public abstract class AbstractAsyncExecutionManager implements AsyncExecutionManager {
   /**

@@ -123,7 +123,6 @@ public class ClassPathElementImpl implements ClassPathElement {
   /**
    * {@inheritDoc}
    * @deprecated use {@link #getSourceLocation()} instead.
-   * @exclude
    */
   @Override
   public Location<?> getLocalLocation() {
@@ -138,7 +137,6 @@ public class ClassPathElementImpl implements ClassPathElement {
   /**
    * {@inheritDoc}
    * @deprecated use {@link #getTargetLocation()} instead.
-   * @exclude
    */
   @Override
   public Location<?> getRemoteLocation() {

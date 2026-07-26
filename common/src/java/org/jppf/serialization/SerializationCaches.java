@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * Instances of this class handle the caching and lookup of class descriptors and objects during serialization.
  * @author Laurent Cohen
- * @exclude
  */
 class SerializationCaches {
   /**

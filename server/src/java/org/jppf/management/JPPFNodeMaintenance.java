@@ -23,7 +23,6 @@ import org.jppf.server.node.JPPFNode;
 /**
  * Implementation of the {@link JPPFNodeMaintenanceMBean} MBean interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFNodeMaintenance implements JPPFNodeMaintenanceMBean {
   /**

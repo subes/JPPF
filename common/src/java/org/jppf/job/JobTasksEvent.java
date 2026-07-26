@@ -66,7 +66,6 @@ public class JobTasksEvent extends EventObject {
    * @param serverTasks the list of tasks that were disptached.
    * @param returnReason the reason why the set of tasks wass returned by a node.
    * @param nodeInfo info on the node to which the job was dispatched.
-   * @exclude
    */
   public JobTasksEvent(final String jobUuid, final String jobName, final List<ServerTaskInformation> serverTasks, final JobReturnReason returnReason, final JPPFManagementInfo nodeInfo) {
     this(jobUuid, jobName, null, null, serverTasks, returnReason, nodeInfo);
@@ -81,7 +80,6 @@ public class JobTasksEvent extends EventObject {
    * @param serverTasks the list of tasks that were disptached.
    * @param returnReason the reason why the set of tasks wass returned by a node.
    * @param nodeInfo info on the node to which the job was dispatched.
-   * @exclude
    */
   public JobTasksEvent(final String jobUuid, final String jobName, final JobSLA jobSLA, final JobMetadata jobMetadata,
     final List<ServerTaskInformation> serverTasks, final JobReturnReason returnReason, final JPPFManagementInfo nodeInfo) {

@@ -18,7 +18,6 @@
 
 /**
  * Support for caching in JPPF.
- * @exclude
  */
 package org.jppf.caching;
 

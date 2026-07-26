@@ -18,6 +18,5 @@
 
 /**
  *  Utility classes to make building UI components easier.
- * @exclude
  */
 package org.jppf.ui.utils;

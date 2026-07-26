@@ -22,7 +22,6 @@ import java.util.*;
 
 /**
  * This comparator defines a descending value order for integers.
- * @exclude
  */
 public class DescendingIntegerComparator implements Comparator<Integer> {
   /**

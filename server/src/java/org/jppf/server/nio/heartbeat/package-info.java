@@ -18,6 +18,5 @@
 
 /**
  * Support for heartbeat messages betwen server and nodes.
- * @exclude
  */
 package org.jppf.server.nio.heartbeat;

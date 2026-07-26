@@ -20,7 +20,6 @@ package org.jppf.node.protocol;
 
 /**
  * State for task indicating whether result or exception was received.
- * @exclude
  */
 public enum TaskState {
   /**

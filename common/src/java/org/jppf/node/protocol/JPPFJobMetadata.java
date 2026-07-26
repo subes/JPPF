@@ -25,7 +25,6 @@ import org.jppf.utils.collections.MetadataImpl;
  * to adapt the load balancing to the computational weight of the job and/or the contained tasks.
  * It may be used in other places in future versions.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFJobMetadata extends MetadataImpl implements JobMetadata {
   /**

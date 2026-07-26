@@ -24,7 +24,6 @@ import org.jppf.management.*;
  * 
  * @author Laurent Cohen
  * @since 5.1
- * @exclude
  */
 public class JPPFNodeConnectionNotifierMBeanProvider implements JPPFDriverMBeanProvider {
   @Override

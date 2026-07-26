@@ -50,7 +50,6 @@ public class TopologyNode extends AbstractTopologyComponent {
   /**
    * Initialize this topology data as holding information about a node.
    * @param nodeInformation information on the JPPF node.
-   * @exclude
    */
   public TopologyNode(final JPPFManagementInfo nodeInformation) {
     this(nodeInformation, EMPTY_STATE);
@@ -97,7 +96,6 @@ public class TopologyNode extends AbstractTopologyComponent {
   /**
    * Refresh the state of the node represented by this topology data.
    * @param newState the new node state fetched from the grid.
-   * @exclude
    */
   public void refreshNodeState(final JPPFNodeState newState) {
     this.nodeState = newState;
@@ -107,7 +105,6 @@ public class TopologyNode extends AbstractTopologyComponent {
   /**
    * Get the status of the node.
    * @return the node status.
-   * @exclude
    */
   public TopologyNodeStatus getStatus() {
     return status;
@@ -116,7 +113,6 @@ public class TopologyNode extends AbstractTopologyComponent {
   /**
    * Set the status of the node.
    * @param status the node status.
-   * @exclude
    */
   public void setStatus(final TopologyNodeStatus status) {
     if (status == TopologyNodeStatus.DOWN) this.status = status;
@@ -133,7 +129,6 @@ public class TopologyNode extends AbstractTopologyComponent {
   /**
    * Set the number of slaves for a master node.
    * @param nbSlaveNodes the number of slaves as an int.
-   * @exclude
    */
   public void setNbSlaveNodes(final int nbSlaveNodes) {
     this.nbSlaveNodes = nbSlaveNodes;

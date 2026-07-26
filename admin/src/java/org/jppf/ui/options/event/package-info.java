@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the event handling mechanisms for the options.
- * @exclude
  */
 package org.jppf.ui.options.event;

@@ -28,7 +28,6 @@ import org.jppf.utils.TypedProperties;
  * Implementation of the {@link JPPFNodeProvisioningMBean} interface.
  * @author Laurent Cohen
  * @since 4.1
- * @exclude
  */
 public class JPPFNodeProvisioning extends NotificationBroadcasterSupport implements JPPFNodeProvisioningMBean {
   /**

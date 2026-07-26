@@ -316,7 +316,6 @@ public class DefaultFilePersistence extends AbstractFilePersistence<PersistenceI
     return null;
   }
 
-  /** @exclude */
   @Override
   protected JobPersistenceException convertException(final Exception e) {
     return (e instanceof JobPersistenceException) ? (JobPersistenceException) e : new JobPersistenceException(e);

@@ -18,6 +18,5 @@
 
 /**
  *  Classes used for automatic generation of options pages.
- * @exclude
  */
 package org.jppf.ui.options;

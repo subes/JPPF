@@ -18,6 +18,5 @@
 
 /**
  * Support for HTML doc generation, using place holders for templates inserted in the HTML code.
- * @exclude
  */
 package org.jppf.doc;

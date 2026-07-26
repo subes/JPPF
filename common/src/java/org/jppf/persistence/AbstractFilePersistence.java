@@ -42,17 +42,14 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
   private static final boolean debugEnabled = log.isDebugEnabled();
   /**
    * Default extension for the persisted objects files.
-   * @exclude
    */
   protected static final String DEFAULT_EXTENSION = ".data";
   /**
    * Default extension for temporary files.
-   * @exclude
    */
   protected static final String TEMP_EXTENSION = ".tmp";
   /**
    * The root directory for this persistence.
-   * @exclude
    */
   protected final Path rootPath;
 
@@ -74,7 +71,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
    * Get the full path name for the file or directory denoted by the specified path.
    * @param path the path for which to get the full name.
    * @return the full path name.
-   * @exclude
    */
   protected String pathname(final Path path) {
     return path.toFile().getPath();
@@ -84,7 +80,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
    * Check the specified directory and create it if it doesn't exist.
    * @param dir the directory to check.
    * @throws E if any error occurs.
-   * @exclude
    */
   protected synchronized void checkDirectory(final Path dir) throws E {
     if (!Files.exists(dir)) {
@@ -101,7 +96,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
    * @param channelPath directory path to delete.
    * @return true if the directory was deleted, false otherwise.
    * @throws E if any error occurs.
-   * @exclude
    */
   protected boolean deleteIfEmpty(final Path channelPath) throws E {
     if (!Files.exists(channelPath)) return false;
@@ -122,7 +116,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
    * Get the directory of witht he psecified name directly under the root.
    * @param name the name of the directory to lookup.
    * @return a {@link Path} instance.
-   * @exclude
    */
   protected Path getSubDir(final String name) {
     return Paths.get(pathname(rootPath), name);
@@ -130,7 +123,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
 
   /**
    * A filter that only matches directories.
-   * @exclude
    */
   protected static class DirectoryFilter implements DirectoryStream.Filter<Path> {
     /** */
@@ -152,7 +144,6 @@ public abstract class AbstractFilePersistence<I, E extends Exception> {
    * Create the appropriate type of exception.
    * @param e the actual exception from which to create the new one.
    * @return an exception of type E.
-   * @exclude
    */
   protected abstract E convertException(final Exception e);
 

@@ -37,7 +37,6 @@ import org.slf4j.*;
  * This class manages the slave nodes.
  * @author Laurent Cohen
  * @since 4.1
- * @exclude
  */
 public final class SlaveNodeManager implements ProcessLauncherListener {
   /**

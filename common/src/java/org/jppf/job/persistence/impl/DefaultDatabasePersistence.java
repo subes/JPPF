@@ -275,7 +275,6 @@ public class DefaultDatabasePersistence extends AbstractDatabasePersistence<Pers
     return false;
   }
 
-  /** @exclude */
   @Override
   protected boolean lockForUpdate(final Connection connection, final PersistenceInfo info) throws Exception {
     try (final PreparedStatement ps = connection.prepareStatement(getSQL("store.select.for.update"))) {
@@ -288,7 +287,6 @@ public class DefaultDatabasePersistence extends AbstractDatabasePersistence<Pers
     }
   }
 
-  /** @exclude */
   @Override
   protected void insertElement(final Connection connection, final PersistenceInfo info, final byte[] bytes) throws Exception {
     try (final PreparedStatement ps = connection.prepareStatement(getSQL("store.insert.sql"))) {
@@ -301,7 +299,6 @@ public class DefaultDatabasePersistence extends AbstractDatabasePersistence<Pers
     }
   }
 
-  /** @exclude */
   @Override
   protected void updateElement(final Connection connection, final PersistenceInfo info, final byte[] bytes) throws Exception {
     try (PreparedStatement ps2 = connection.prepareStatement(getSQL("store.update.sql"))) {

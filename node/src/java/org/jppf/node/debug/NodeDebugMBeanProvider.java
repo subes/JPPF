@@ -25,7 +25,6 @@ import org.jppf.utils.configuration.JPPFProperties;
 /**
  * NodeDebugMBean provider implementation, discovered by JPPF via the service provider API.
  * @author Laurent Cohen
- * @exclude
  */
 public class NodeDebugMBeanProvider implements JPPFNodeMBeanProvider {
   /**

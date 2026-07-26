@@ -18,6 +18,5 @@
 
 /**
  * Unit tests setup classes.
- * @exclude
  */
 package org.jppf.test.scenario.resubmit;

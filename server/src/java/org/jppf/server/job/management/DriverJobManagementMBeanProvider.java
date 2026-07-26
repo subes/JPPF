@@ -24,7 +24,6 @@ import org.jppf.server.JPPFDriver;
 /**
  * Provider for the default JPPF driver management and monitoring features.
  * @author Laurent Cohen
- * @exclude
  */
 public class DriverJobManagementMBeanProvider implements JPPFDriverMBeanProvider {
   @Override

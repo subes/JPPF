@@ -134,7 +134,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public Task<T> setDataProvider(final DataProvider dataProvider) {
@@ -179,7 +178,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public int getPosition() {
@@ -188,7 +186,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public Task<T> setPosition(final int position) {
@@ -203,7 +200,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public Task<T> setInNode(final boolean inNode) {
@@ -244,7 +240,6 @@ public class AbstractTask<T> implements Task<T> {
   /**
    * Set the task notification dispatcher onto this task.
    * @param executionDisptacher a {@link TaskExecutionDispatcher} instance.
-   * @exclude
    */
   public void setExecutionDispatcher(final TaskExecutionDispatcher executionDisptacher) {
     this.executionDisptacher = executionDisptacher;
@@ -283,7 +278,6 @@ public class AbstractTask<T> implements Task<T> {
   /**
    * {@inheritDoc}
    * @since 5.0
-   * @exclude
    */
   @Override
   public ClassLoader getTaskClassLoader() {
@@ -308,7 +302,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public Task<T> setNode(final Node node) {
@@ -323,7 +316,6 @@ public class AbstractTask<T> implements Task<T> {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public Task<T> setJob(final JPPFDistributedJob job) {

@@ -18,7 +18,6 @@
 
 /**
  * Support for abstracting resources loaded by the class loader, no matter their storage medium.
- * @exclude
  */
 package org.jppf.classloader.resource;
 

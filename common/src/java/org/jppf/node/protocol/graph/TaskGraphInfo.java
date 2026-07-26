@@ -29,7 +29,6 @@ import org.jppf.utils.collections.*;
  * Information about the task graph, if any, for a job.
  * Instances of this class are intentded to be transported as part of the communication protocol between clients, servers and nodes. 
  * @author Laurent Cohen
- * @exclude
  */
 public class TaskGraphInfo implements Serializable {
   /**

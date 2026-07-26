@@ -56,7 +56,6 @@ public class PolicyContext {
    * @param metadata the job metadata, set at runtime by the server.
    * @param jobDispatches the number of nodes the job is already dispatched to.
    * @param stats the server statistics.
-   * @exclude
    */
   public PolicyContext(final JobSLA sla, final JobClientSLA clientSLA, final JobMetadata metadata, final int jobDispatches, final JPPFStatistics stats) {
     this.sla = sla;

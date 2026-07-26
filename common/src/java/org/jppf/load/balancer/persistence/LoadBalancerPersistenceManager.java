@@ -31,7 +31,6 @@ import org.slf4j.*;
  * It is also a common implementation of the load-balancer persistence's {@link LoadBalancerPersistenceManagement management interface}.
  * @author Laurent Cohen
  * @since 6.0
- * @exclude
  */
 public class LoadBalancerPersistenceManager implements LoadBalancerPersistenceManagerMBean {
   /**

@@ -23,7 +23,6 @@ import javax.resource.cci.ConnectionMetaData;
 /**
  * Metadata for a JPPFConnection.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFConnectionMetaData implements ConnectionMetaData
 {

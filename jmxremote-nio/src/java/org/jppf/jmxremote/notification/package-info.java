@@ -19,7 +19,6 @@
 /**
  * Support for JMX remote notifications handling.
  * <p>Found in: <b>jppf-jmxremote-nio.jar</b> 
- * @exclude
  */
 package org.jppf.jmxremote.notification;
 

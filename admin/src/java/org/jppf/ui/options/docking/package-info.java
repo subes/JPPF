@@ -18,6 +18,5 @@
 
 /**
  * Management of components that can be detached from their current view.
- * @exclude
  */
 package org.jppf.ui.options.docking;

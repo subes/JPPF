@@ -28,7 +28,6 @@ import javax.imageio.ImageIO;
 /**
  * Instances of this class generate thumbnails from a set of images stored in a file system folder.
  * @author Laurent Cohen
- * @exclude
  */
 public class ThumbnailGenerator {
   /**
@@ -228,7 +227,6 @@ public class ThumbnailGenerator {
 
   /**
    * File filter that only accepts files with specified extensions.
-   * @exclude
    */
   public static class ImageFileFilter implements FileFilter {
     /**

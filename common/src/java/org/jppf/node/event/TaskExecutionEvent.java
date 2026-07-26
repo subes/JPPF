@@ -123,7 +123,6 @@ public class TaskExecutionEvent extends EventObject {
    * Determine whether this is a task completion or user-sent event.
    * @return <code>true</code> if this is a task completion event, <code>false</code> otherwise.
    * @since 4.0
-   * @exclude
    */
   public boolean isTaskCompletion() {
     return taskCompletion;

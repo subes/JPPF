@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the thread dump dialog.
- * @exclude
  */
 package org.jppf.admin.web.health.threaddump;

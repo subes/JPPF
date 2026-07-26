@@ -18,6 +18,5 @@
 
 /**
  * Utility classes used throughout the application.
- * @exclude
  */
 package org.jppf.admin.web.utils;

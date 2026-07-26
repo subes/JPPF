@@ -18,6 +18,5 @@
 
 /**
  * Internal classes to obtain debug information on a node via JMX.
- * @exclude
  */
 package org.jppf.node.debug;

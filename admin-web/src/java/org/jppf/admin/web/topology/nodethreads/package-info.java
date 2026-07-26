@@ -18,6 +18,5 @@
 
 /**
  * Support for the node thread pool configuration action.
- * @exclude
  */
 package org.jppf.admin.web.topology.nodethreads;

@@ -335,7 +335,6 @@ public final class AsyncNodeNioServer extends StatelessNioServer<AsyncNodeContex
   /**
    * Get the task that dispatches queued jobs to available nodes.
    * @return a {@link AsyncJobScheduler} object.
-   * @exclude
    */
   public AsyncJobScheduler getJobScheduler() {
     return jobScheduler;
@@ -343,7 +342,6 @@ public final class AsyncNodeNioServer extends StatelessNioServer<AsyncNodeContex
 
   /**
    * @return the handler for the persistence fo the state of the load-balancers.
-   * @exclude
    */
   public LoadBalancerPersistenceManager getBundlerHandler() {
     return bundlerHandler;

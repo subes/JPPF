@@ -25,7 +25,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * A utility class that handles a SPI mechanism. It loads all implementations of a service provider interface found in the classpath and provides access to them.
  * @param <T> the type of the SPI interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class ServiceProviderHandler<T> {
   /**

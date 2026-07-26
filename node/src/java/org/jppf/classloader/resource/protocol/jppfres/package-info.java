@@ -18,7 +18,6 @@
 
 /**
  * Implementation of a custom URL protocol handler for resources loaded by the class loader and stored in memory.
- * @exclude
  */
 package org.jppf.classloader.resource.protocol.jppfres;
 

@@ -26,7 +26,6 @@ import org.jppf.utils.concurrent.ThreadSynchronization;
 
 /**
  * Get job results from a queue and send them back to the driver.
- * @exclude
  */
 public class JobWriter extends ThreadSynchronization implements Runnable {
   /**

@@ -48,7 +48,6 @@ public abstract class ExecutionPolicy implements Serializable {
   private static final ExecutionPolicy[] NO_CHILDREN = new ExecutionPolicy[0];
   /**
    * The children of this rule.
-   * @exclude
    */
   protected final ExecutionPolicy[] children;
   /**
@@ -83,7 +82,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * Determines whether this policy accepts the specified node.
    * @param info system information for the node on which the tasks will run if accepted.
    * @return true if the node is accepted, false otherwise.*
-   * @exclude
    */
   public boolean evaluate(final PropertiesCollection<String> info) {
     try {
@@ -215,7 +213,6 @@ public abstract class ExecutionPolicy implements Serializable {
   /**
    * Get the children of this rule.
    * @return an array of {@link ExecutionPolicy} instances, or {@code null} for leaf rules.
-   * @exclude
    */
   public ExecutionPolicy[] getChildren() {
     return children;
@@ -268,7 +265,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * Get an indented string.
    * @param indentSize the size of the indent to produce.
    * @return an indented string depending on the value of <code>toStringIndent</code>.
-   * @exclude
    */
   protected String indent(final int indentSize) {
     final StringBuilder sb = new StringBuilder();
@@ -280,7 +276,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * Get an xml string representation of this policy with the specified starting indentation level.
    * @param indent the size of the indent to startwith.
    * @return an indented string depending on the value of <code>toStringIndent</code>.
-   * @exclude
    */
   public abstract String toString(final int indent);
 
@@ -460,7 +455,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * Format the specified name as <i>&lt;name&gt;</i>.
    * @param name the name of the tag.
    * @return an XML start tag built from the name.
-   * @exclude
    */
   protected String tagStart(final String name) {
     return new StringBuilder().append('<').append(name).append('>').toString();
@@ -470,7 +464,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * Format the specified name as <i>&lt;/name&gt;</i>.
    * @param name the name of the tag.
    * @return an XML end tag built from the name.
-   * @exclude
    */
   protected String tagEnd(final String name) {
     return new StringBuilder().append("</").append(name).append('>').toString();
@@ -481,7 +474,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * @param tag the name of the XML tag.
    * @param value the string value of the XML element.
    * @return an XML element built from the tag name and value.
-   * @exclude
    */
   protected String xmlElement(final String tag, final String value) {
     return new StringBuilder().append('<').append(tag).append('>').append(value).append("</").append(tag).append('>').toString();
@@ -492,7 +484,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * @param tag the name of the XML tag.
    * @param value the value of the XML element as a double.
    * @return an XML element built from the tag name and value.
-   * @exclude
    */
   protected String xmlElement(final String tag, final double value) {
     return xmlElement(tag, Double.toString(value));
@@ -526,7 +517,6 @@ public abstract class ExecutionPolicy implements Serializable {
    * @param metadata the job metadata.
    * @param jobDispatches the number of nodes the job is already dispatched to.
    * @param stats the server statistics.
-   * @exclude
    */
   public void setContext(final JobSLA sla, final JobClientSLA clientSla, final JobMetadata metadata, final int jobDispatches, final JPPFStatistics stats) {
     setContext(new PolicyContext(sla, clientSla, metadata, jobDispatches, stats));
@@ -535,7 +525,6 @@ public abstract class ExecutionPolicy implements Serializable {
   /**
    * Set this policy's context.
    * @param context the context to set.
-   * @exclude
    */
   protected void setContext(final PolicyContext context) {
     this.context = context;

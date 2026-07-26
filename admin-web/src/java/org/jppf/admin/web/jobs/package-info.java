@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the jobs view.
- * @exclude
  */
 package org.jppf.admin.web.jobs;

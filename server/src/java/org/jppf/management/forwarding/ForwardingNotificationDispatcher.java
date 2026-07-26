@@ -34,7 +34,6 @@ import org.slf4j.*;
  * <p>The dispatch is performed via an event listener mechanism: for each notification rreceived from the node,
  * an event will be emitted and the listener(s) are in charge of forwarding the notifications.
  * @author Laurent Cohen
- * @exclude
  */
 class ForwardingNotificationDispatcher {
   /**

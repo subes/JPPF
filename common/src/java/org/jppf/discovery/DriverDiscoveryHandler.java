@@ -30,7 +30,6 @@ import org.slf4j.*;
  *
  * @param <E> the type of notifications managed by this handler.
  * @author Laurent Cohen
- * @exclude
  */
 public class DriverDiscoveryHandler<E extends DriverConnectionInfo> {
   /**

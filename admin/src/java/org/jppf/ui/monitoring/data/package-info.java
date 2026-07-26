@@ -18,6 +18,5 @@
 
 /**
  * Set of classes to handle the incoming statistics from the server.
- * @exclude
  */
 package org.jppf.ui.monitoring.data;

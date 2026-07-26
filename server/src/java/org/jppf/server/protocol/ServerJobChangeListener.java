@@ -24,7 +24,6 @@ import org.jppf.server.submission.SubmissionStatus;
 /**
  * Listener interface for job events.
  * @author Martin JANDA
- * @exclude
  */
 public interface ServerJobChangeListener {
   /**

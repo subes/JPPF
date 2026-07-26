@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting remote nodes.
- * @exclude
  */
 package org.jppf.server.node.remote;

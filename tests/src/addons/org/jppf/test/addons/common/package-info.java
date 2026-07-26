@@ -18,6 +18,5 @@
 
 /**
  * Unit tests setup classes for driver discovery.
- * @exclude
  */
 package org.jppf.test.addons.common;

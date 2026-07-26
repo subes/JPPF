@@ -26,7 +26,6 @@ import org.jppf.utils.configuration.*;
 /**
  *
  * @author Laurent Cohen
- * @exclude
  */
 public class JMXEnvHelper {
   /**
@@ -146,7 +145,6 @@ public class JMXEnvHelper {
 
   /**
    * @return whether asynchronous logging is enabled.
-   * @exclude
    */
   public static boolean isAsyncLoggingEnabled() {
     return false;

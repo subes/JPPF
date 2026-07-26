@@ -27,7 +27,6 @@ import org.slf4j.*;
 /**
  * A helper class to handle close operations throughout a JVM.
  * @author Laurent Cohen
- * @exclude
  */
 public class CloseableHandler {
   /**

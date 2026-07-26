@@ -28,7 +28,6 @@ import org.jppf.utils.ExceptionUtils;
 /**
  * Custom thread factory used mostly to specify the names of created threads.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFThreadFactory implements ThreadFactory {
   /**

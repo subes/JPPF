@@ -21,7 +21,6 @@ package org.jppf.classloader;
  * Instances of this class are dedicated to reading resource files form the JVM's classpath and converting them into arrays of bytes.
  * @author Laurent Cohen
  * @author Domingos Creado
- * @exclude
  */
 public class ResourceProviderImpl extends  AbstractResourceProvider {
   /**

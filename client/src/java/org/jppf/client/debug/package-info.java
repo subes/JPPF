@@ -19,6 +19,5 @@
 /**
  * Support for debugging of the JPPFClient instances via JMX.
  * @since 5.0
- * @exclude
  */
 package org.jppf.client.debug;

@@ -18,6 +18,5 @@
 
 /**
  * Classes for management of actions associated to toolbar buttons and right-click menu items.
- * @exclude
  */
 package org.jppf.ui.actions;

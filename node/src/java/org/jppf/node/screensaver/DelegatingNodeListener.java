@@ -27,7 +27,6 @@ import org.jppf.utils.configuration.JPPFProperties;
  * if any is defined in the configuration. It also registers this implementation as a {@link TaskExecutionListener}
  * with the node, so it can receive a notification for each individual task reaches completion. 
  * @author Laurent Cohen
- * @exclude
  */
 public class DelegatingNodeListener extends NodeLifeCycleListenerAdapter {
   /**

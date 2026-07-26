@@ -65,7 +65,6 @@ public final class JPPFDatasourceFactory {
   private final DatasourceInitializer initializer;
   /**
    * Possible scopes.
-   * @exclude
    */
   public enum Scope {
     /**
@@ -171,7 +170,6 @@ public final class JPPFDatasourceFactory {
    * Create and configure the datasources defined in the specified configuration.
    * @param config the configuration properties that define the datasources.
    * @param scope determines which scope to create data sources for.
-   * @exclude
    */
   public void configure(final TypedProperties config, final Scope scope) {
     configure(extractDefinitions(config, scope), null);
@@ -182,7 +180,6 @@ public final class JPPFDatasourceFactory {
    * @param config the configuration properties that define the datasources.
    * @param scope determines which scope to create datasources for.
    * @param info the system information match an eventual execution policy.
-   * @exclude
    */
   public void configure(final TypedProperties config, final Scope scope, final JPPFSystemInformation info) {
     configure(extractDefinitions(config, scope), info);
@@ -191,7 +188,6 @@ public final class JPPFDatasourceFactory {
   /**
    * Create and configure the datasources defined in the specified configurations.
    * @param definitionsMap a mapping of config ids and corresponding map of properties.
-   * @exclude
    */
   public void configure(final Map<String, TypedProperties> definitionsMap) {
     configure(definitionsMap, null);
@@ -204,7 +200,6 @@ public final class JPPFDatasourceFactory {
    * @param definitionsMap a mapping of config ids and corresponding map of properties.
    * @param info the system information match an eventual execution policy.
    * @return a {@link Map} whose keys are the names of the created datasources and whose values are the corresponding {@link DataSource} objects.
-   * @exclude
    */
   public Map<String, DataSource> configure(final Map<String, TypedProperties> definitionsMap, final JPPFSystemInformation info) {
     final Map<String, DataSource> result = new HashMap<>();
@@ -220,7 +215,6 @@ public final class JPPFDatasourceFactory {
    * @param config the configuration properties that define the datasources.
    * @param requestedScope in a driver, determines whether the definitions are intended for the nodes ({@code true}) or for the local JVM ({@code false}).
    * @return a mapping of config ids to the corresponding properties.
-   * @exclude
    */
   public static Map<String, TypedProperties> extractDefinitions(final TypedProperties config, final Scope requestedScope) {
     final Scope reqScope = (requestedScope == null) ? Scope.LOCAL : requestedScope;

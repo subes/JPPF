@@ -18,6 +18,5 @@
 
 /**
  * Support for driver stop/restart action.
- * @exclude
  */
 package org.jppf.admin.web.topology.serverstop;

@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  * ScriptRunner wrapper around a JSR-223 compliant script engine.
  * @author Laurent Cohen
- * @exclude
  */
 class ScriptRunnerImpl implements ScriptRunner {
   /**

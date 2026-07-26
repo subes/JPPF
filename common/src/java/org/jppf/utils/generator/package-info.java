@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting automatic code generation for various areas in JPPF.
- * @exclude
  */
 package org.jppf.utils.generator;

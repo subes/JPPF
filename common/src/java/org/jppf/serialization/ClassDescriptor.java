@@ -25,7 +25,6 @@ import java.lang.reflect.Method;
  * Instances of this class describe a Java class with all its non-transient fields
  * and characteristics relating to serialization.
  * @author Laurent Cohen
- * @exclude
  */
 class ClassDescriptor {
   /**

@@ -18,6 +18,5 @@
 
 /**
  * Factory classes used for definiting the options pages in the admin tool.
- * @exclude
  */
 package org.jppf.ui.options.factory;

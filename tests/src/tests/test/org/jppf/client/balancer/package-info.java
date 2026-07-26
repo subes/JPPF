@@ -18,6 +18,5 @@
 
 /**
  * Tests for package <code>org.jppf.client.balancer</code>.
- * @exclude
  */
 package test.org.jppf.client.balancer;

@@ -69,7 +69,6 @@ public interface Task<T> extends Runnable, Serializable, Interruptibility, Posit
    * Set the provider of shared data for this task.
    * @param dataProvider a <code>DataProvider</code> instance.
    * @return this task, for method chaining.
-   * @exclude
    */
   Task<T> setDataProvider(DataProvider dataProvider);
 
@@ -129,7 +128,6 @@ public interface Task<T> extends Runnable, Serializable, Interruptibility, Posit
    * Determine whether this task is executing within a node, or locally on the client side.
    * @param inNode <code>true</code> if this task is executing in a node, <code>false</code> if it is on the client side.
    * @return this task, for method chaining.
-   * @exclude
    */
   Task<T> setInNode(boolean inNode);
 
@@ -194,7 +192,6 @@ public interface Task<T> extends Runnable, Serializable, Interruptibility, Posit
    * Get the class loader used to load this task, or the object it wraps if any.
    * @return a {@link ClassLoader} instance.
    * @since 5.0
-   * @exclude
    */
   ClassLoader getTaskClassLoader();
 
@@ -209,7 +206,6 @@ public interface Task<T> extends Runnable, Serializable, Interruptibility, Posit
    * Set the node in which this task is executing, if any.
    * @param node the JPPF node instance.
    * @return this task, for method chaining.
-   * @exclude
    */
   Task<T> setNode(final Node node);
 
@@ -223,7 +219,6 @@ public interface Task<T> extends Runnable, Serializable, Interruptibility, Posit
    * set the job this task is a part of.
    * @param job the job as an instance of {@link JPPFDistributedJob}.
    * @return this task, for method call chaining.
-   * @exclude
    */
   Task<T> setJob(JPPFDistributedJob  job);
 }

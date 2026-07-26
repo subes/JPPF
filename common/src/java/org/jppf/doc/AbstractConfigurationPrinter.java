@@ -26,7 +26,6 @@ import org.jppf.utils.configuration.JPPFProperty;
 /**
  * Converts the JPPF predefined properties into the "Configuration properties reference" section of the doc as wiki text. 
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractConfigurationPrinter {
   /**

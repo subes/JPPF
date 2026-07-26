@@ -23,7 +23,6 @@ import org.jppf.classloader.ResourceProviderImpl;
 /**
  * A resource provider on the client side which uses an underlying resource cache.
  * @author Laurent Cohen
- * @exclude
  */
 public class ClientResourceProvider extends ResourceProviderImpl {
   @Override

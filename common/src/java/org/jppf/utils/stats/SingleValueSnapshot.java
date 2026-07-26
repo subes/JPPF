@@ -34,7 +34,6 @@ public class SingleValueSnapshot extends AbstractBaseJPPFSnapshot {
   /**
    * Initialize this time snapshot with a specified title.
    * @param label the title for this snapshot.
-   * @exclude
    */
   public SingleValueSnapshot(final String label) {
     super(label);
@@ -42,7 +41,6 @@ public class SingleValueSnapshot extends AbstractBaseJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void addValues(final double accumulatedValues, final long count) {
@@ -52,7 +50,6 @@ public class SingleValueSnapshot extends AbstractBaseJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized JPPFSnapshot copy() {
@@ -63,7 +60,6 @@ public class SingleValueSnapshot extends AbstractBaseJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void reset() {

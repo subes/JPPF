@@ -24,7 +24,6 @@ import org.jppf.server.JPPFDriver;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class LoadBalancerPersistenceManagerMBeanProvider implements JPPFDriverMBeanProvider {
   @Override

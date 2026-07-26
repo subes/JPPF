@@ -18,6 +18,5 @@
 
 /**
  * Unit tests for package <code>org.jppf.client</code>.
- * @exclude
  */
 package test;

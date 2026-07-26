@@ -132,7 +132,6 @@ public interface JPPFProperty<T> extends Serializable {
    * @param params the values of the parameters.
    * @return the new resolve name.
    * @since 6.0
-   * @exclude
    */
   public String resolveName(String...params);
 
@@ -142,7 +141,6 @@ public interface JPPFProperty<T> extends Serializable {
    * @param params the values of the parameters.
    * @return the new resolve name.
    * @since 6.0
-   * @exclude
    */
   public String resolveName(String alias, String...params);
 
@@ -156,7 +154,6 @@ public interface JPPFProperty<T> extends Serializable {
    * Specify whether this property is deprecated.
    * @param deprecated {@code true} if the property is deprecated, {@code false} otherwise.
    * @return this property, for method call chaining.
-   * @exclude
    */
   JPPFProperty<T> setDeprecated(boolean deprecated);
 }

@@ -61,6 +61,5 @@
  * --> IDLE_PROVIDER<br/>
  * <br/></li>
  * </ul>
- * @exclude
  */
 package org.jppf.server.nio.classloader.client;

@@ -25,7 +25,6 @@ import org.jppf.io.IO;
 /**
  * Static factory for pool of direct byte buffers.
  * @author Laurent Cohen
- * @exclude
  */
 public class DirectBufferPool {
   /**

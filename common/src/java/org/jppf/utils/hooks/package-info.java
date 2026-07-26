@@ -20,6 +20,5 @@
  * Utility and helper classes used to define, register and invoke execution hooks.<br>
  * This is originally inspired by this issue tracker task:
  * <a href="http://www.jppf.org/tracker/tbg/jppf/issues/JPPF-159">JPPF-159 Provide an API for easily implementing simple hooks in any area</a>
- * @exclude
  */
 package org.jppf.utils.hooks;

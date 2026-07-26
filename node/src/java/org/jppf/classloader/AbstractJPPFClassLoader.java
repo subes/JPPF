@@ -77,7 +77,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
    * @param name the binary name of the class
    * @return the resulting <tt>Class</tt> object
    * @throws ClassNotFoundException if the class could not be found
-   * @exclude
    */
   public synchronized Class<?> loadJPPFClass(final String name) throws ClassNotFoundException {
     if (debugEnabled) log.debug(build("looking up resource [", name, "]"));
@@ -110,7 +109,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
    * @return a defined <code>Class</code> instance.
    * @throws ClassNotFoundException if the class could not be loaded.
    * @see java.lang.ClassLoader#findClass(java.lang.String)
-   * @exclude
    */
   protected synchronized Class<?> findClass(final String name, final boolean lookupClasspath) throws ClassNotFoundException {
     Class<?> c = null;
@@ -182,7 +180,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
    * @param callable the serialized callable to execute remotely.
    * @return an array of bytes containing the result of the callable's execution.
    * @throws Exception if the connection was lost and could not be reestablished.
-   * @exclude
    */
   public byte[] computeRemoteData(final byte[] callable) throws Exception {
     if (debugEnabled) log.debug(build(this, " requesting remote computation, requestUuid = ", TaskThreadLocals.getRequestUuid()));
@@ -313,7 +310,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   protected synchronized Class<?> loadClass(final String name, final boolean resolve) throws ClassNotFoundException {
@@ -369,7 +365,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
   /**
    * Initializes system classloader for URL_FIRST delegation model.
    * @return instance of system ClassLoader or null if not available.
-   * @exclude
    */
   private ClassLoader initSystemClassLoader() {
     if(!systemClassLoaderInitialized) {
@@ -388,7 +383,6 @@ public abstract class AbstractJPPFClassLoader extends AbstractJPPFClassLoaderLif
    * @param name binary name of the resource to find.
    * @param recursive if true then look recursively into the hierarchy of parents that are instances of <code>AbstractJPPFClassLoader</code>.
    * @return a <code>Class</code> instance, or null if the class could not be found in the URL classpath.
-   * @exclude
    */
   private synchronized Class<?> findClassInURLClasspath(final String name, final boolean recursive){
     if (debugEnabled) log.debug("looking up resource [{}] in the URL classpath for {}", name, this);

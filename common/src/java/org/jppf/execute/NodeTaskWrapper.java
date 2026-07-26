@@ -32,7 +32,6 @@ import org.slf4j.*;
  * @author Laurent Cohen
  * @author Martin JANDA
  * @author Paul Woodward
- * @exclude
  */
 public class NodeTaskWrapper implements Runnable {
   /**

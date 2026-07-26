@@ -34,7 +34,6 @@ import org.slf4j.*;
 /**
  * Implementation of the job management bean.
  * @author Laurent Cohen
- * @exclude
  */
 public class DriverJobManagement extends NotificationBroadcasterSupport implements DriverJobManagementMBean {
   /**

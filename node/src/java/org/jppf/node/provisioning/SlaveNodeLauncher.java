@@ -29,7 +29,6 @@ import org.slf4j.*;
  * This class wraps a single slave node process and provides an API to start, stop and monitor it.
  * @author Laurent Cohen
  * @since 4.1
- * @exclude
  */
 public class SlaveNodeLauncher extends AbstractProcessLauncher {
   /**

@@ -23,7 +23,6 @@ import org.jppf.management.spi.JPPFMBeanProvider;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractDiagnosticsMBeanProvider implements JPPFMBeanProvider {
   @Override

@@ -49,17 +49,14 @@ public abstract class AbstractDatabasePersistence<I> {
   private static boolean traceEnabled = log.isTraceEnabled();
   /**
    * Constant for an empty array of strings.
-   * @exclude
    */
   protected static final String[] EMPTY_STRINGS = new String[0];
   /**
    * The default persistence table name.
-   * @exclude
    */
   protected final String defaultTable;
   /**
    * The default persistence table name.
-   * @exclude
    */
   protected final String defaultDatasource;
   /**
@@ -68,27 +65,22 @@ public abstract class AbstractDatabasePersistence<I> {
   protected static final String TABLE_PROP = "table";
   /**
    * The JDBC datasource.
-   * @exclude
    */
   protected final DataSource dataSource;
   /**
    * The SQL statements used by this persistence implementation, loaded from a properties file in the classpath.
-   * @exclude
    */
   protected TypedProperties sqlStatements;
   /**
    * The name of the DB table to use.
-   * @exclude
    */
   protected String tableName;
   /**
    * The name of the datasource to use.
-   * @exclude
    */
   protected String dataSourceName;
   /**
    * The property from which to get the location of the DDL file.
-   * @exclude
    */
   protected final JPPFProperty<String> ddlProp;
 
@@ -103,7 +95,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * <li>params[1] is the name of a datasource defined in the configuration, and defaults to 'job_persistence'</li>
    * </ul>
    * @throws Exception if any error occurs.
-   * @exclude
    */
   public AbstractDatabasePersistence(final String defaultTable, final String defaultDatasource, final JPPFProperty<String> ddlProp, final String...params) throws Exception {
     this.defaultTable = defaultTable;
@@ -136,7 +127,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * @param info the job element corresponding to the SQL row to lock.
    * @return {@code true} if the row already exists (and therefore a lock is acquired), {@code false} otherwise.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   protected abstract boolean lockForUpdate(final Connection connection, final I info) throws Exception;
 
@@ -146,7 +136,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * @param info the information on the object to persist.
    * @param bytes the serialized data, may be null.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   protected void storeElement(final Connection connection, final I info, final byte[] bytes) throws Exception {
     if (lockForUpdate(connection, info)) {
@@ -169,7 +158,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * @param info the information on the object to persist.
    * @param bytes the serialized object to persist.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   protected abstract void insertElement(final Connection connection, final I info, final byte[] bytes) throws Exception;
     
@@ -179,7 +167,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * @param info the information on the object to persist.
    * @param bytes the serialized object to persist.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   protected abstract void updateElement(final Connection connection, final I info, final byte[] bytes) throws Exception;
 
@@ -187,7 +174,6 @@ public abstract class AbstractDatabasePersistence<I> {
    * Get the SQL statement or query for the specified key.
    * @param key the key for the sqkl to retrieve.
    * @return a string containing an SQL statement or query, opr {@code null} if the key could not be found.
-   * @exclude
    */
   protected String getSQL(final String key) {
     return sqlStatements.getString(key, null);

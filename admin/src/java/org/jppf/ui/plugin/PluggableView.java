@@ -56,7 +56,6 @@ public abstract class PluggableView {
   /**
    * Set the {@link TopologyManager} associated with the administration console.
    * @param topologyManager a {@link TopologyManager} object.
-   * @exclude
    */
   final void setTopologyManager(final TopologyManager topologyManager) {
     this.topologyManager = topologyManager;

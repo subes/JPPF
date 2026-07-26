@@ -22,7 +22,6 @@ package org.jppf.serialization;
 /**
  * Collection of utility methods for serializing and deserializing to and from bytes buffers.
  * @author Laurent Cohen
- * @exclude
  */
 public interface SerializationHelper {
   /**

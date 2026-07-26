@@ -31,7 +31,6 @@ import org.slf4j.*;
 /**
  * This class encapsulates the network connection of a node to a server job channel.
  * @author Laurent Cohen
- * @exclude
  */
 public class RemoteNodeConnection extends AbstractNodeConnection<SocketWrapper> {
   /**

@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * Instances of this class are used to deserialize objects from an
  * incoming message in parallel.
- * @exclude
  */
 public class ObjectDeserializationTask implements Callable<ObjectDeserializationTask> {
   /**

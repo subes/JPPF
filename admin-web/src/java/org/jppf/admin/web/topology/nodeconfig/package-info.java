@@ -18,6 +18,5 @@
 
 /**
  * Support for the node configuration update action.
- * @exclude
  */
 package org.jppf.admin.web.topology.nodeconfig;

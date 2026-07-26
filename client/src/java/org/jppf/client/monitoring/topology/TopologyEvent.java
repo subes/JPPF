@@ -46,7 +46,6 @@ public class TopologyEvent extends EventObject {
 
   /**
    * The possible types of events.
-   * @exclude
    */
   enum Type {
     /**
@@ -77,7 +76,6 @@ public class TopologyEvent extends EventObject {
 
   /**
    * The types of updates for an event.
-   * @exclude
    */
   public enum UpdateType {
     /**
@@ -100,7 +98,6 @@ public class TopologyEvent extends EventObject {
    * @param driverData the driver data.
    * @param nodeData the node data.
    * @param updateType the type of update.
-   * @exclude
    */
   public TopologyEvent(final TopologyManager source, final TopologyDriver driverData, final TopologyNode nodeData, final UpdateType updateType) {
     super(source);
@@ -146,7 +143,6 @@ public class TopologyEvent extends EventObject {
   /**
    * Get the type of update.
    * @return an {@link UpdateType} enum value.
-   * @exclude
    */
   public UpdateType getUpdateType() {
     return updateType;

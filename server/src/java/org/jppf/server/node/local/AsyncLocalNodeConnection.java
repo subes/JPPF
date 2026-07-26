@@ -24,7 +24,6 @@ import org.jppf.server.nio.nodeserver.async.AsyncNodeContext;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class AsyncLocalNodeConnection extends AbstractNodeConnection<AsyncNodeContext> {
   /**

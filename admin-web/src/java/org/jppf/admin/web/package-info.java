@@ -18,6 +18,5 @@
 
 /**
  * Support for the web administration console.
- * @exclude
  */
 package org.jppf.admin.web;

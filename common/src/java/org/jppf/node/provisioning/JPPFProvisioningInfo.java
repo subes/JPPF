@@ -50,7 +50,6 @@ public class JPPFProvisioningInfo implements Serializable {
    * @param slaveId the id of the slave, relative to the master.
    * @param exitCode the slave node process exit code.
    * @param launchCommand the command line used to start the slave node process.
-   * @exclude
    */
   public JPPFProvisioningInfo(final String masterUuid, final int slaveId, final int exitCode, final List<String> launchCommand) {
     this.masterUuid = masterUuid;

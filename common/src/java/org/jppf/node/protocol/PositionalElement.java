@@ -27,7 +27,6 @@ public interface PositionalElement<T extends PositionalElement<T>> {
   /**
    * Returns the position of this element in its container.
    * @return the position of this element  as an {@code int}.
-   * @exclude
    */
   int getPosition();
 
@@ -35,7 +34,6 @@ public interface PositionalElement<T extends PositionalElement<T>> {
    * Set the position of this element in its container.
    * @param position the position of this task as an {@code int}.
    * @return this element, for method call chaining.
-   * @exclude
    */
   default T setPosition(int position) {
     return null;

@@ -27,7 +27,6 @@ import org.slf4j.*;
 /**
  * This class prints a thread dump nicely formatted as plain text to a character stream.
  * @author Laurent Cohen
- * @exclude
  */
 public class TextThreadDumpWriter extends AbstractThreadDumpWriter {
   /**

@@ -44,9 +44,6 @@ public class JPPFLocalClassLoader extends AbstractJPPFClassLoader {
     init();
   }
 
-  /**
-   * @exclude
-   */
   @Override
   protected void reset() {
     init();
@@ -55,7 +52,6 @@ public class JPPFLocalClassLoader extends AbstractJPPFClassLoader {
   /**
    * Terminate this classloader and clean the resources it uses.
    * @see org.jppf.classloader.AbstractJPPFClassLoader#close()
-   * @exclude
    */
   @Override
   public void close() {

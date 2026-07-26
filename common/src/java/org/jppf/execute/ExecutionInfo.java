@@ -23,7 +23,6 @@ import java.io.Serializable;
 /**
  * Instances of this class hold statistics about the execution of a tasks bundle.
  * @author Laurent Cohen
- * @exclude
  */
 public class ExecutionInfo implements Serializable
 {

@@ -27,7 +27,6 @@ import org.slf4j.*;
  * This class publishes each JMX notification as a job monitor event.
  * @author Laurent Cohen
  * @since 5.1
- * @exclude
  */
 class ImmediateJobNotificationsHandler extends AbstractJobNotificationsHandler {
   /**

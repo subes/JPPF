@@ -32,7 +32,6 @@ import org.slf4j.*;
  * Common superclass for classes that update the jobs hierarchy by subscribing toJMX notifications from the drivers.
  * @author Laurent Cohen
  * @since 5.1
- * @exclude
  */
 abstract class AbstractJobNotificationsHandler implements NotificationListener, JobMonitoringHandler {
   /**

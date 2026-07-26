@@ -31,7 +31,6 @@ public interface InitializationHook {
    * The provided configuration can be modified.
    * @param initialConfiguration the un-modified configuration properties of the node at startup time.
    * @deprecated the class {@link UnmodifiableTypedProperties} is deprecated, use {@link #initializing(TypedProperties)} instead.
-   * @exclude
    */
   @Deprecated
   default void initializing(UnmodifiableTypedProperties initialConfiguration) {

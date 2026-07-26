@@ -18,6 +18,5 @@
 
 /**
  * Utility classes to build UI components from XML descriptors.
- * @exclude
  */
 package org.jppf.ui.options.xml;

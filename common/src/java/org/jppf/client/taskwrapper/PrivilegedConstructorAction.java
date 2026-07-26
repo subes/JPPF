@@ -21,7 +21,6 @@ import java.lang.reflect.Constructor;
 
 /**
  * Class used to invoke a constructor through reflection when a security manager is present.
- * @exclude
  */
 class PrivilegedConstructorAction extends AbstractPrivilegedAction<Object> {
   /**

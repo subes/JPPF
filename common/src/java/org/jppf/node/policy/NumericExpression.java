@@ -21,7 +21,6 @@ package org.jppf.node.policy;
 /**
  * An expression that represents a numeric value as either a literal or an expression that returns a numeric value.
  * @author Laurent Cohen
- * @exclude
  */
 public class NumericExpression extends AbstractExpression<Double> {
   /**

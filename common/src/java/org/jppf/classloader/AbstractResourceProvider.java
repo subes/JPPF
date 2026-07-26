@@ -33,7 +33,6 @@ import org.slf4j.*;
  * @author Laurent Cohen
  * @author Domingos Creado
  * @since 5.0
- * @exclude
  */
 public abstract class AbstractResourceProvider implements ResourceProvider {
   /**

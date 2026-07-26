@@ -18,6 +18,5 @@
 
 /**
  * Unit tests setup classes for a {@code TaskExecutionListener} add-on.
- * @exclude
  */
 package org.jppf.test.addons.tasklistener;

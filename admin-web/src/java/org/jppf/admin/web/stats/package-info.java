@@ -18,6 +18,5 @@
 
 /**
  * Support update and handling of the server statiscs.
- * @exclude
  */
 package org.jppf.admin.web.stats;

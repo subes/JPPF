@@ -32,7 +32,6 @@ import org.slf4j.*;
 
 /**
  * Wrapper for an {@link SSLEngine} and an associated channel.
- * @exclude
  */
 public abstract class AbstractSSLHandler implements SSLHandler {
   /**

@@ -51,7 +51,6 @@ public class JPPFJMXConnectorServer extends JMXConnectorServer implements JMXCon
   public static final String AUTHORIZATION_CHECKER = "jmx.remote.x.authorization.checker";
   /**
    * The environment key for the MBean server.
-   * @exclude
    */
   public static final String CONNECTOR_SERVER_KEY = "jppf.jmxremote.internal.connectorserver";
   /**

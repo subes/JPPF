@@ -27,7 +27,6 @@ import org.slf4j.*;
  * This class prints a thread dump nicely formatted as HTML to a character stream.
  * <br/>This is used by the adminsitration console to display a thread dump for a selected driver or node.
  * @author Laurent Cohen
- * @exclude
  */
 public class HTMLThreadDumpWriter extends AbstractThreadDumpWriter {
   /**

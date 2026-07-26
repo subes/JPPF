@@ -24,7 +24,6 @@ import org.jppf.node.event.*;
  * This NodeLifeCycleListener implementations is used to update the node state
  * maintained by the node management MBean.
  * @author Laurent Cohen
- * @exclude
  */
 public class NodeStatusNotifier extends DefaultLifeCycleErrorHandler implements NodeLifeCycleListener {
   /**

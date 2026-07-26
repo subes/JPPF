@@ -24,7 +24,6 @@ import java.util.*;
 /**
  * A representation of the jobs dependencies graph. This is a directed acyclic graph.
  * @author Laurent Cohen
- * @exclude
  */
 public class JobDependencyGraphImpl implements JobDependencyGraph {
   /**

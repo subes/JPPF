@@ -28,7 +28,6 @@ import org.slf4j.*;
  *
  * @author Laurent Cohen
  * @since 5.1
- * @exclude
  */
 public final class JPPFNodeConnectionNotifier extends NotificationBroadcasterSupport implements JPPFNodeConnectionNotifierMBean {
   /**

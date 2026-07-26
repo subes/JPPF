@@ -18,6 +18,5 @@
 
 /**
  * Support for job queuing in the JPPF driver.
- * @exclude
  */
 package org.jppf.server.queue;

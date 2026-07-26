@@ -18,6 +18,5 @@
 
 /**
  * Stress tests for offline nodes.
- * @exclude
  */
 package org.jppf.test.scenario.nodesmix;

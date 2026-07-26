@@ -19,6 +19,5 @@
 /**
  * This scenario is used to reproduce the class loader issue in the driver
  * for bug <a href="http://www.jppf.org/tracker/tbg/jppf/issues/JPPF-130">JPPF-130</a>.
- * @exclude
  */
 package org.jppf.test.scenario.jppf_130;

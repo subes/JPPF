@@ -33,7 +33,6 @@ import org.slf4j.*;
 /**
  * Implementation of the <code>JPPFNodeForwardingMBean</code> interface.
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractNodeForwarding extends NotificationBroadcasterSupport implements ForwardingNotficationEmitter {
   /**

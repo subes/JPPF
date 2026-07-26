@@ -30,7 +30,6 @@ import org.slf4j.*;
  * Implementation of a pool of {@link JMXDriverConnectionWrapper} instances.
  * @author Laurent Cohen
  * @since 4.2
- * @exclude
  */
 class JMXConnectionPool extends AbstractConnectionPool<JMXDriverConnectionWrapper> {
   /**

@@ -34,7 +34,6 @@ import org.slf4j.*;
  * <p>Thus, errors may occur, since many threads may have been created then died between two computations.
  * However, in most cases this is a reasonable approximation, whose computation does not tax the CPU too heavily.
  * @author Laurent Cohen
- * @exclude
  */
 public final class CPUTimeCollector extends ThreadSynchronization implements Runnable {
   /**

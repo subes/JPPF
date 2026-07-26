@@ -31,7 +31,6 @@ import org.jppf.utils.collections.*;
  * <p>Dependency cycles are not allowed, making this graph effectively a Directed Acyclic Graph (DAG).
  * This allows, among other things to compute one or more topological orders for the tasks.
  * @author Laurent Cohen
- * @exclude
  */
 public class TaskGraph implements Serializable {
   /**
@@ -336,7 +335,6 @@ public class TaskGraph implements Serializable {
 
   /**
    * A node in the graph of the tasks in a job which represents a task and its dependants.
-   * @exclude
    */
   public static class Node implements Serializable, PositionalElement<Node> {
     /**

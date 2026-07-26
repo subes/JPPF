@@ -113,7 +113,6 @@ public class NodeRunner {
   /**
    * Run a node as a standalone application.
    * @param args not used.
-   * @exclude
    */
   public static void main(final String...args) {
     try {
@@ -252,7 +251,6 @@ public class NodeRunner {
    * Get the main classloader for the node. This method performs a lazy initialization of the classloader.
    * @param hookFactory the factory used to invoke already registered hooks.
    * @return a {@code AbstractJPPFClassLoader} used for loading the classes of the framework.
-   * @exclude
    */
   private AbstractJPPFClassLoader getJPPFClassLoader(final HookFactory hookFactory) {
     synchronized(JPPFClassLoader.class) {

@@ -22,7 +22,6 @@ import org.jppf.ui.plugin.PluggableView;
 /**
  * An option that embeds a user-ddefined pluggable view.
  * @author Laurent Cohen
- * @exclude
  */
 public class PluggableViewOption extends AbstractOption {
   /**

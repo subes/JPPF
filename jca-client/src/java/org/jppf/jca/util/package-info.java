@@ -18,6 +18,5 @@
 
 /**
  * Utility classes for the JPPF resource adapter.
- * @exclude
  */
 package org.jppf.jca.util;

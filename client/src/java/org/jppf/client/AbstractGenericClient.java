@@ -354,9 +354,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
     return (jobManager != null) && jobManager.hasAvailableConnection();
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public void statusChanged(final ClientConnectionStatusEvent event) {
     super.statusChanged(event);
@@ -370,7 +367,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
   /**
    * Get the pool of threads used for submitting execution requests.
    * @return a {@link ThreadPoolExecutor} instance.
-   * @exclude
    */
   public ThreadPoolExecutor getExecutor() {
     return executor;
@@ -379,7 +375,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
   /**
    * Get the job manager for this JPPF client.
    * @return a <code>JobManager</code> instance.
-   * @exclude
    */
   public JobManager getJobManager() {
     return jobManager;
@@ -408,7 +403,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
    * Get a class loader associated with a job.
    * @param uuid unique id assigned to classLoader. Added as temporary fix for problems hanging jobs.
    * @return a {@code Collection} of {@code RegisteredClassLoader} instances.
-   * @exclude
    */
   public Collection<ClassLoader> getRegisteredClassLoaders(final String uuid) {
     return classLoaderRegistrationHandler.getRegisteredClassLoaders(uuid);
@@ -427,7 +421,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
   /**
    * Unregisters the class loader associated with the specified job uuid.
    * @param uuid the uuid of the job the class loaders are associated with.
-   * @exclude
    */
   public void unregisterClassLoaders(final String uuid) {
     classLoaderRegistrationHandler.unregister(uuid);
@@ -455,7 +448,6 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
    * Notify all client queue listeners that a queue event has occurred.
    * @param qEvent the actual event which occurred in the queue.
    * @param jobAdded {@code true} for a job added event, {@code false} for a job removed event.
-   * @exclude
    */
   protected void fireQueueEvent(final QueueEvent<ClientJob, ClientJob, ClientTaskBundle> qEvent, final boolean jobAdded) {
     final ClientQueueEvent event = new ClientQueueEvent((JPPFClient) this, qEvent.getJob().getJob(), (JPPFPriorityQueue) qEvent.getQueue());
@@ -466,17 +458,11 @@ public abstract class AbstractGenericClient extends AbstractJPPFClient implement
     }
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public void bundleAdded(final QueueEvent<ClientJob, ClientJob, ClientTaskBundle> event) {
     fireQueueEvent(event, true);
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public void bundleRemoved(final QueueEvent<ClientJob, ClientJob, ClientTaskBundle> event) {
     fireQueueEvent(event, false);

@@ -25,7 +25,6 @@ import javax.resource.cci.*;
  * Implementation of the {@link javax.resource.cci.RecordFactory RecordFactory} interface for
  * the JPPF resource adapter.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFRecordFactory implements RecordFactory
 {

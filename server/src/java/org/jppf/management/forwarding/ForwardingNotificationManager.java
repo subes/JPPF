@@ -40,7 +40,6 @@ import org.slf4j.*;
  * JMX listeners are then automatically registered or unregistered and their notifications forwarded to client-side
  * listeners whose <code>NodeSelector</code> matches the nodes.
  * @author Laurent Cohen
- * @exclude
  */
 public class ForwardingNotificationManager implements NodeConnectionListener, ForwardingNotificationEventListener {
   /**

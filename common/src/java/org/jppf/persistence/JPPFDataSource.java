@@ -42,7 +42,6 @@ import org.slf4j.*;
  * <font color="green"># Database connection url</font>
  * jppf.datasource.&lt;configId&gt;.url = jdbc:mysql://localhost:3306/testjppf</pre>
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFDataSource implements DataSource {
   /**

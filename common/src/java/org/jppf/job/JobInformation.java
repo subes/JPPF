@@ -109,7 +109,6 @@ public class JobInformation implements Serializable {
    * Set the user-defined name for the job.
    * @param name the name as a string.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setJobName(final String name) {
@@ -128,7 +127,6 @@ public class JobInformation implements Serializable {
    * Set the current number of tasks in the job.
    * @param taskCount the number of tasks as an int.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setTaskCount(final int taskCount) {
@@ -147,7 +145,6 @@ public class JobInformation implements Serializable {
    * Set the priority of the job.
    * @param priority the priority as an int.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setPriority(final int priority) {
@@ -166,7 +163,6 @@ public class JobInformation implements Serializable {
    * Set the initial task count of the job.
    * @param initialTaskCount the task count as an int.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setInitialTaskCount(final int initialTaskCount) {
@@ -185,7 +181,6 @@ public class JobInformation implements Serializable {
    * Specify whether the job is in suspended state.
    * @param suspended true if the job is suspended, false otherwise.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setSuspended(final boolean suspended) {
@@ -203,7 +198,6 @@ public class JobInformation implements Serializable {
   /**
    * Get the maximum number of nodes this job can run on.
    * @param maxNodes the number of nodes as an int value.
-   * @exclude
    */
   public void setMaxNodes(final int maxNodes) {
     this.maxNodes = maxNodes;
@@ -222,7 +216,6 @@ public class JobInformation implements Serializable {
    * Set the pending state of the job.
    * @param pending specifies whether the job is waiting to reach its scheduled execution date.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setPending(final boolean pending) {
@@ -241,7 +234,6 @@ public class JobInformation implements Serializable {
    * Set the unique identifier for the job.
    * @param jobUuid the uuid as a string.
    * @deprecated the field is initialized in a constructor, this setter is never used in JPPF code and should not be used in client code.
-   * @exclude
    */
   @Deprecated
   public void setJobUuid(final String jobUuid) {

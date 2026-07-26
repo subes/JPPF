@@ -42,7 +42,6 @@ public class ConnectionContext {
    * @param message some explanation text for the reconnection.
    * @param throwable a {@link Throwable} that triggered the reconnection.
    * @param reason the reason for the connection or reconnection.
-   * @exclude
    */
   public ConnectionContext(final String message, final Throwable throwable, final ConnectionReason reason) {
     this.message = message;

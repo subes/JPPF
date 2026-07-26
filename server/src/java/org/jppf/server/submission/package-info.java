@@ -18,6 +18,5 @@
 
 /**
  * Support submission status handling.
- * @exclude
  */
 package org.jppf.server.submission;

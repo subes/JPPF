@@ -32,7 +32,6 @@ import org.slf4j.*;
  * Abstract implementation of {@link ClassLoaderConnection}.
  * @param <C> the type of communication channel used by this connection.
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractClassLoaderConnection<C> extends AbstractNodeConnection<C> implements ClassLoaderConnection<C> {
   /**

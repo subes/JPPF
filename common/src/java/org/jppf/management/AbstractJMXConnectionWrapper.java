@@ -307,7 +307,6 @@ public abstract class AbstractJMXConnectionWrapper extends ThreadSynchronization
 
   /**
    * @return Whether this connection wrapper reconnects on error.
-   * @exclude
    */
   public synchronized boolean isReconnectOnError() {
     return reconnectOnError;
@@ -316,7 +315,6 @@ public abstract class AbstractJMXConnectionWrapper extends ThreadSynchronization
   /**
    * Specifiy whether this connection wrapper reconnects on error.
    * @param reconnectOnError {@code true} to reconnect, {@code false} otherwise.
-   * @exclude
    */
   public synchronized void setReconnectOnError(final boolean reconnectOnError) {
     this.reconnectOnError = reconnectOnError;
@@ -325,7 +323,6 @@ public abstract class AbstractJMXConnectionWrapper extends ThreadSynchronization
   /**
    * Get the JMX remote protocol used.
    * @return the JMX remote protocol string.
-   * @exclude
    */
   public String getProtocol() {
     return protocol;
@@ -333,7 +330,6 @@ public abstract class AbstractJMXConnectionWrapper extends ThreadSynchronization
 
   /**
    * @return the last exception received when attempting to connect, if any.
-   * @exclude
    */
   public Throwable getLastConnectionException() {
     return lastConnectionException;

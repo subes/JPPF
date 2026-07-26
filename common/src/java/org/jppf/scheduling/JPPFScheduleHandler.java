@@ -29,7 +29,6 @@ import org.slf4j.*;
 /**
  * This class handles a timer.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFScheduleHandler {
   /**

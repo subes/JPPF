@@ -50,7 +50,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   private static boolean debugEnabled = log.isDebugEnabled();
   /**
    * Determines whether this class loader should handle dynamic class updating.
-   * @exclude
    */
   private static final AtomicInteger INSTANCE_COUNT = new AtomicInteger(0);
   /**
@@ -59,32 +58,26 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   private static final boolean FILE_LOOKUP = JPPFConfiguration.get(JPPFProperties.CLASSLOADER_FILE_LOOKUP);
   /**
    * Determines whether this class loader should handle dynamic class updating.
-   * @exclude
    */
   protected boolean dynamic;
   /**
    * The unique identifier for the submitting application.
-   * @exclude
    */
   protected List<String> uuidPath = new ArrayList<>();
   /**
    * The cache handling resources temporarily stored to file.
-   * @exclude
    */
   protected ResourceCache resourceCache = createResourceCache();
   /**
    * The cache handling resources that were not found by this class loader.
-   * @exclude
    */
   protected final JPPFCollectionCache<String> notFoundCache = new JPPFSimpleSetCache<>();
   /**
    * Uniquely identifies this class loader instance.
-   * @exclude
    */
   protected final int instanceNumber = INSTANCE_COUNT.incrementAndGet();
   /**
    * The connection to the driver.
-   * @exclude
    */
   protected ClassLoaderConnection<?> connection;
   /**
@@ -94,12 +87,10 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   /**
    * Determines whether this remote class loading is enabled.
    * @since 4.2
-   * @exclude
    */
   protected final AtomicBoolean remoteClassLoadingDisabled = new AtomicBoolean(false);
   /**
    * To create and invoke hook instances.
-   * @exclude
    */
   protected final HookFactory hookFactory;
 
@@ -109,7 +100,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
    * @param connection the connection to the driver.
    * @param uuidPath unique identifier for the submitting application.
    * @param hookFactory a {@link HookFactory} instance.
-   * @exclude
    */
   protected AbstractJPPFClassLoaderLifeCycle(final ClassLoaderConnection<?> connection, final ClassLoader parent, final List<String> uuidPath, final HookFactory hookFactory) {
     super(StringUtils.ZERO_URL, parent);
@@ -124,7 +114,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
 
   /**
    * Initialize the connection to the driver.
-   * @exclude
    */
   protected void init() {
     if (!isOffline()) {
@@ -142,7 +131,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
 
   /**
    * Reset and reinitialize the connection to the server.
-   * @exclude
    */
   protected abstract void reset();
 
@@ -151,7 +139,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
    * @param map contains the necessary resource request data.
    * @return a <code>JPPFResourceWrapper</code> containing the resource content.
    * @throws ClassNotFoundException if the class could not be loaded from the remote server.
-   * @exclude
    */
   protected JPPFResourceWrapper loadResource(final Map<ResourceIdentifier, Object> map) throws ClassNotFoundException {
     JPPFResourceWrapper resource = null;
@@ -202,7 +189,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
    * @param names the names of te resources to find.
    * @return an array of URLs, one for each looked up resources. Some URLs may be null, however the returned array
    * is never null, and results are in the same order as the specified resource names.
-   * @exclude
    */
   @SuppressWarnings("unchecked")
   protected URL[] findMultipleResources(final String...names) {
@@ -310,7 +296,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   /**
    * Get the connection to the driver.
    * @return a {@link ClassLoaderConnection} instance.
-   * @exclude
    */
   public ClassLoaderConnection<?> getConnection() {
     return connection;
@@ -360,7 +345,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
    * Specify whether remote class loading is disabled.
    * @param disabled <code>true</code> to disable remote class loading, <code>false</code> to enable it.
    * @since 4.2
-   * @exclude
    */
   public void setRemoteClassLoadingDisabled(final boolean disabled) {
     remoteClassLoadingDisabled.set(disabled);
@@ -371,7 +355,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
    * Detrmine whether remote class loading is enabled.
    * @return <code>true</code> if remote class loading is disabled, <code>false</code> if enabled.
    * @since 4.2
-   * @exclude
    */
   public boolean isRemoteClassLoadingDisabled() {
     return remoteClassLoadingDisabled.get() || isOffline();
@@ -380,7 +363,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   /**
    * Get the resource cache handled by this class loader.
    * @return an instance of {@link ResourceCache}.
-   * @exclude
    */
   public ResourceCache getResourceCache() {
     return resourceCache;
@@ -398,7 +380,6 @@ public abstract class AbstractJPPFClassLoaderLifeCycle extends URLClassLoader {
   /**
    * Get the factory that creates and invoke hook instances for this node.
    * @return a {@link HookFactory} instance.
-   * @exclude
    */
   public HookFactory getHookFactory() {
     return hookFactory;

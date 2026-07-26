@@ -23,7 +23,6 @@ import org.jppf.utils.pooling.AbstractObjectPoolQueue;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 class ScriptRunnerPool extends AbstractObjectPoolQueue<ScriptRunner> {
   /**

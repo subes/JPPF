@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the alert thresholds settings dialog.
- * @exclude
  */
 package org.jppf.admin.web.health.thresholds;

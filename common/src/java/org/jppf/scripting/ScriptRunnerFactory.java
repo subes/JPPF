@@ -22,7 +22,6 @@ import java.util.*;
 /**
  * Factory used to instantiate script runners.
  * @author Laurent Cohen
- * @exclude
  */
 public final class ScriptRunnerFactory {
   /**

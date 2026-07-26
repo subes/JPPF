@@ -66,7 +66,6 @@ public class ServerTaskInformation implements Serializable {
    * @param expirationCount number of times a dispatch of this task has expired.
    * @param maxResubmits maximum number of times the task can be resubmitted.
    * @param resubmitCount number of times the task was resubmitted.
-   * @exclude
    */
   public ServerTaskInformation(final int jobPosition, final Throwable throwable, final int expirationCount, final int maxResubmits, final int resubmitCount) {
     this(jobPosition, throwable, expirationCount, maxResubmits, resubmitCount, null);
@@ -80,7 +79,6 @@ public class ServerTaskInformation implements Serializable {
    * @param maxResubmits maximum number of times the task can be resubmitted.
    * @param resubmitCount number of times the task was resubmitted.
    * @param result holds the result of the task.
-   * @exclude
    */
   public ServerTaskInformation(final int jobPosition, final Throwable throwable, final int expirationCount, final int maxResubmits, final int resubmitCount, final DataLocation result) {
     this.jobPosition = jobPosition;

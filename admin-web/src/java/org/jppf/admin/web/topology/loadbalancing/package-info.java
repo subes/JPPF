@@ -18,6 +18,5 @@
 
 /**
  * Support for the driver load balancing settings action.
- * @exclude
  */
 package org.jppf.admin.web.topology.loadbalancing;

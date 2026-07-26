@@ -31,7 +31,6 @@ import org.slf4j.*;
  * their attached nodes, for management and monitoring purposes.
  * @author Laurent Cohen
  * @since 5.0
- * @exclude
  */
 class NodeRefreshHandler extends AbstractRefreshHandler {
   /**
@@ -75,7 +74,6 @@ class NodeRefreshHandler extends AbstractRefreshHandler {
 
   /**
    * Refresh the tree structure.
-   * @exclude
    */
   @Override
   protected synchronized void performRefresh() {

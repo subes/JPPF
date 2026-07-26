@@ -25,7 +25,6 @@ import org.jppf.utils.TypedProperties;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public interface DatasourceInitializer {
   /**

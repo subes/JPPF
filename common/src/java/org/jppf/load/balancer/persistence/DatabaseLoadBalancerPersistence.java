@@ -267,7 +267,6 @@ public class DatabaseLoadBalancerPersistence extends AbstractDatabasePersistence
     return result;
   }
 
-  /** @exclude */
   @Override
   protected boolean lockForUpdate(final Connection connection, final LoadBalancerPersistenceInfo info) throws Exception {
     final String[] args = { info.getChannelID(), info.getAlgorithmID() };
@@ -285,7 +284,6 @@ public class DatabaseLoadBalancerPersistence extends AbstractDatabasePersistence
     }
   }
 
-  /** @exclude */
   @Override
   protected void insertElement(final Connection connection, final LoadBalancerPersistenceInfo info, final byte[] bytes) throws Exception {
     final String sql = getSQL("insert.sql");
@@ -303,7 +301,6 @@ public class DatabaseLoadBalancerPersistence extends AbstractDatabasePersistence
     }
   }
 
-  /** @exclude */
   @Override
   protected void updateElement(final Connection connection, final LoadBalancerPersistenceInfo info, final byte[] bytes) throws Exception {
     final String sql = getSQL("update.sql");

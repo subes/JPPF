@@ -169,7 +169,6 @@ public class JPPFDriver extends AbstractJPPFDriver {
    * If set to false, then the JVM will exit.
    * @param restartDelay delay, starting from shutdown completion, after which the driver is restarted.
    * A value of 0 or less means the driver is restarted immediately after the shutdown is complete.
-   * @exclude
    */
   public void initiateShutdownRestart(final long shutdownDelay, final boolean restart, final long restartDelay) {
     if (shutdownScheduled.compareAndSet(false, true)) {
@@ -194,7 +193,6 @@ public class JPPFDriver extends AbstractJPPFDriver {
   /**
    * Start the JPPF driver.
    * @param args not used.
-   * @exclude
    */
   public static void main(final String...args) {
     try {

@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the data transported between components of the communication model.
- * @exclude
  */
 package org.jppf.server.protocol;

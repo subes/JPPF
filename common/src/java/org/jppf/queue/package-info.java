@@ -18,6 +18,5 @@
 
 /**
  * Common classes providing support for job queuing in the JPPF client and driver.
- * @exclude
  */
 package org.jppf.queue;

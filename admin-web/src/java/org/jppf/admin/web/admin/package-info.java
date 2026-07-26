@@ -18,6 +18,5 @@
 
 /**
  * Support for administration of the conosle.
- * @exclude
  */
 package org.jppf.admin.web.admin;

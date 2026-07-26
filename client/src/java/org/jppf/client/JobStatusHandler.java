@@ -22,7 +22,6 @@ package org.jppf.client;
 /**
  * Interface implemented by classes that wish to handle job statuses.
  * @author Laurent Cohen
- * @exclude
  */
 public interface JobStatusHandler {
   /**

@@ -186,17 +186,11 @@ public abstract class AbstractJPPFProperty<T> implements JPPFProperty<T> {
     return LocalizationUtils.getLocalized(i18nBase, name + "." + param);
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public String resolveName(final String...params) {
     return resolveName(name, params);
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public String resolveName(final String alias, final String...params) {
     if ((paramNames.length <= 0) || (params == null) || (params.length <= 0)) return name;
@@ -224,7 +218,6 @@ public abstract class AbstractJPPFProperty<T> implements JPPFProperty<T> {
 
   /**
    * @return the location of the localization resource bundles.
-   * @exclude
    */
   public String getI18nBase() {
     return i18nBase;
@@ -233,7 +226,6 @@ public abstract class AbstractJPPFProperty<T> implements JPPFProperty<T> {
   /**
    * Set the location of the localization resource bundles.
    * @param i18nBase the location to set.
-   * @exclude
    */
   public void setI18nBase(final String i18nBase) {
     this.i18nBase = i18nBase;
@@ -244,9 +236,6 @@ public abstract class AbstractJPPFProperty<T> implements JPPFProperty<T> {
     return deprecated;
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public JPPFProperty<T> setDeprecated(final boolean deprecated) {
     this.deprecated = deprecated;

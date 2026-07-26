@@ -173,7 +173,6 @@ public class JPPFClient extends AbstractGenericClient {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   protected JobManager createJobManager() {
@@ -407,7 +406,6 @@ public class JPPFClient extends AbstractGenericClient {
   /**
    * Get the factory that creates load-balancer instances.
    * @return an istance of {@link JPPFBundlerFactory}.
-   * @exclude
    */
   public JPPFBundlerFactory getBundlerFactory() {
     return bundlerFactory;
@@ -415,7 +413,6 @@ public class JPPFClient extends AbstractGenericClient {
 
   /**
    * @return the number of idle connections in this client.
-   * @exclude
    */
   public int nbIdleCOnnections() {
     final JobManagerClient manager = (JobManagerClient) getJobManager();

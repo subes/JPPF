@@ -24,7 +24,6 @@ import java.util.*;
  * Instances of this interface are dedicated to reading resource files form the JVM's classpath and converting them into arrays of bytes.
  * @author Laurent Cohen
  * @since 5.0
- * @exclude
  */
 public interface ResourceProvider {
   /**

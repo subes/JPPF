@@ -29,7 +29,6 @@ import org.jppf.utils.collections.SoftReferenceValuesMap;
  * <p>The rationale for this cache is that, based on profiling data, the construction of an
  * {@link ObjectName} is computationally costly and will gain from caching.
  * @author Laurent Cohen
- * @exclude
  * @since 6.0
  */
 public final class ObjectNameCache {

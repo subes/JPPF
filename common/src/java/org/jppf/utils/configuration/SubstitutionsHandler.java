@@ -31,7 +31,6 @@ import org.slf4j.*;
  * some.property.name = ${env.&lt;environment_variable_name&gt;}
  * other.property.name = ${sys.&lt;system_property_name&gt;}</pre>
  * @author Laurent Cohen
- * @exclude
  */
 public class SubstitutionsHandler {
   /**

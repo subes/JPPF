@@ -36,7 +36,6 @@ import org.slf4j.*;
 /**
  * Implementation of the {@link PersistedJobsManagerMBean} interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class PersistedJobsManager implements PersistedJobsManagerMBean {
   /**

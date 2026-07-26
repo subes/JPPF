@@ -229,7 +229,6 @@ public class JPPFJob extends AbstractJPPFJob<JPPFJob> implements Iterable<Task<?
    * @param type the type of the event.
    * @param channel the channel to which a job is dispatched or from which it is returned.
    * @param tasks the tasks that were dispatched or returned.
-   * @exclude
    */
   public void fireJobEvent(final JobEvent.Type type, final ExecutorChannel<ClientTaskBundle> channel, final List<Task<?>> tasks) {
     if (log.isDebugEnabled()) log.debug("firing {} event with {} tasks for {}, connection = {}", type, (tasks == null ? 0 : tasks.size()), this, channel);
@@ -386,7 +385,6 @@ public class JPPFJob extends AbstractJPPFJob<JPPFJob> implements Iterable<Task<?
    * @param tasks the list of tasks whose results have been received from the server.
    * @param throwable the throwable that was raised while receiving the results.
    * @param sendJobEvent whether to emit a {@link org.jppf.client.event.JobEvent JobEvent} notification.
-   * @exclude
    */
   public void resultsReceived(final List<Task<?>> tasks, final Throwable throwable, final boolean sendJobEvent) {
     synchronized(results) {

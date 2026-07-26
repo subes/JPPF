@@ -19,7 +19,6 @@
 /**
  * Implementation of the nio-based communication between client and server ends of the JMX remote connector.
  * <p>Found in: <b>jppf-jmxremote-nio.jar</b> 
- * @exclude
  */
 package org.jppf.jmxremote.nio;
 

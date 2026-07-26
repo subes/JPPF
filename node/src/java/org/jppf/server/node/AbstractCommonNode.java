@@ -58,7 +58,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   private static boolean debugEnabled = log.isDebugEnabled();
   /**
    * Manages the class loaders and how they are used.
-   * @exclude
    */
   protected AbstractClassLoaderManager<?> classLoaderManager;
   /**
@@ -86,9 +85,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
    * Flag indicating whether the node is suspended, i.e. it is still alive but has stopped taking on new jobs.
    */
   final AtomicBoolean reading = new AtomicBoolean(false);
-  /**
-   * @exclude
-   */
   protected JPPFReconnectionNotification reconnectionNotification;
   /**
    * The task execution manager for this node.
@@ -128,7 +124,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Add management parameters to the specified bundle, before sending it back to a server.
    * @param bundle the bundle to add parameters to.
-   * @exclude
    */
   protected void setupBundleParameters(final TaskBundle bundle) {
     try {
@@ -146,7 +141,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Get the main classloader for the node. This method performs a lazy initialization of the classloader.
    * @return a <code>ClassLoader</code> used for loading the classes of the framework.
-   * @exclude
    */
   public AbstractJPPFClassLoader getClassLoader() {
     return classLoaderManager.getClassLoader();
@@ -160,7 +154,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Set the main classloader for the node.
    * @param cl the class loader to set.
-   * @exclude
    */
   public void setClassLoader(final AbstractJPPFClassLoader cl) {
     classLoaderManager.setClassLoader(cl);
@@ -171,7 +164,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
    * @param uuidPath the uuid path containing the key to the container.
    * @return a <code>JPPFContainer</code> instance.
    * @throws Exception if an error occurs while getting the container.
-   * @exclude
    */
   public JPPFContainer getContainer(final List<String> uuidPath) throws Exception {
     return classLoaderManager.getContainer(uuidPath);
@@ -194,7 +186,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
    * Request a reset of the class loaders resource caches.
    * This method merely sets a floag, the actual reset will
    * be performed at the next opportunity, when it is safe to do so.
-   * @exclude
    */
   public void requestResourceCacheReset() {
     cacheResetFlag.compareAndSet(false, true);
@@ -203,7 +194,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Determine whether a node shurdown or restart was requested..
    * @return {@code true} if a shudown or restart was requested, {@code false} otherwise.
-   * @exclude
    */
   public boolean isShutdownRequested() {
     final NodePendingAction action = pendingAction.get();
@@ -213,7 +203,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Determine whether a restart or shutdown was requested.
    * @return {@code true} if a restart was requested, false if a {@code shutdown} was requested.
-   * @exclude
    */
   public boolean isRestart() {
     return pendingAction.get() == NodePendingAction.RESTART;
@@ -222,7 +211,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Determine whether the node is currently processing tasks.
    * @return {@code true} if the node is processing tasks, {@code false} otherwise.
-   * @exclude
    */
   public boolean isExecuting() {
     return executing;
@@ -231,7 +219,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Specifiy whether the node is currently processing tasks.
    * @param executing {@code true} to specify that the node is processing tasks, {@code false} otherwise.
-   * @exclude
    */
   public void setExecuting(final boolean executing) {
     this.executing = executing;
@@ -240,7 +227,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Determine whether the node is suspended, i.e. it is still alive but has stopped taking on new jobs.
    * @return {@code true} if the node is suspended, {@code false} otherwise.
-   * @exclude
    */
   public boolean isSuspended() {
     return suspended.get();
@@ -249,7 +235,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Set the node's suspended state, i.e. whether it should sto taking on new jobs.
    * @param suspended {@code true} to suspend the node, {@code false} otherwise.
-   * @exclude
    */
   public void setSuspended(final boolean suspended) {
     this.suspended.set(suspended);
@@ -259,16 +244,12 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Get the service that manages the class loaders and how they are used.
    * @return an {@link AbstractClassLoaderManager} instance.
-   * @exclude
    */
   @Override
   public AbstractClassLoaderManager<?> getClassLoaderManager() {
     return classLoaderManager;
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public AsyncExecutionManager getExecutionManager() {
     return executionManager;
@@ -314,7 +295,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @return whether this node was sdtarted from {@code NodeRunner.main()} (standalone) or not (embedded).
-   * @exclude
    */
   public boolean isStartedFromMain() {
     return startedFromMain;
@@ -322,15 +302,11 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @param startedFromMain whether this node was sdtarted from {@code NodeRunner.main()} (standalone) or not (embedded).
-   * @exclude
    */
   public void setStartedFromMain(final boolean startedFromMain) {
     this.startedFromMain = startedFromMain;
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public JMXServer getJmxServer() throws Exception {
     return getJmxServer(true);
@@ -378,15 +354,11 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Stop the jmx server.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   public void stopJmxServer() throws Exception {
     if (jmxServer != null) jmxServer.stop();
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public synchronized void stopNode() {
     if (debugEnabled) log.debug("stopping node");
@@ -399,7 +371,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Shutdown and eventually restart the node.
    * @param restart determines whether this node should be restarted by the node launcher.
-   * @exclude
    */
   public void shutdown(final boolean restart) {
     if (!isLocal()) {
@@ -452,7 +423,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Get the administration and monitoring MBean for this node.
    * @return a {@link JPPFNodeAdminMBean} instance.
-   * @exclude
    */
   public synchronized JPPFNodeAdminMBean getNodeAdmin() {
     return nodeAdmin;
@@ -461,7 +431,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Set the administration and monitoring MBean for this node.
    * @param nodeAdmin a <code>JPPFNodeAdminMBean</code>m instance.
-   * @exclude
    */
   public synchronized void setNodeAdmin(final JPPFNodeAdminMBean nodeAdmin) {
     this.nodeAdmin = nodeAdmin;
@@ -469,7 +438,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @return the executor for serialization and deserialization of the tasks.
-   * @exclude
    */
   public ExecutorService getSerializationExecutor() {
     return serializationExecutor;
@@ -477,7 +445,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @return the reconnection notification.
-   * @exclude
    */
   public JPPFReconnectionNotification getReconnectionNotification() {
     return reconnectionNotification;
@@ -485,7 +452,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @param reconnectionNotification the reconnection notification.
-   * @exclude
    */
   public void setReconnectionNotification(final JPPFReconnectionNotification reconnectionNotification) {
     this.reconnectionNotification = reconnectionNotification;
@@ -494,7 +460,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Get the current pending action, if any. 
    * @return the current pending action, or {@code null} if there isn't one.
-   * @exclude
    */
   public NodePendingAction getPendingAction() {
     return pendingAction.get();
@@ -504,7 +469,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
    * Set the current pending action.
    * @param action the pending aciton to set.
    * @return {@code true} if the new pending action was set successfully, {@code false} otherwise (if a pending action was already set).
-   * @exclude
    */
   public boolean setPendingAction(final NodePendingAction action) {
     return pendingAction.compareAndSet(NodePendingAction.NONE, (action == null) ? NodePendingAction.NONE : action);
@@ -513,7 +477,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
   /**
    * Cancel the current pending action, if anty.
    * @return {@code true} if the pending action was successfully cncelled, {@code false} otherwise.
-   * @exclude
    */
   public boolean cancelPendingAction() {
     final boolean b = pendingAction.get() != NodePendingAction.NONE;
@@ -523,7 +486,6 @@ public abstract class AbstractCommonNode extends AbstractNode {
 
   /**
    * @return whether a deferred action was requested.
-   * @exclude
    */
   public boolean hasPendingAction() {
     final NodePendingAction action = pendingAction.get();

@@ -35,7 +35,6 @@ public interface ClientConnectionStatusHandler {
   /**
    * Set the status of this connection.
    * @param status  a <code>JPPFClientConnectionStatus</code> enumerated value.
-   * @exclude
    */
   void setStatus(JPPFClientConnectionStatus status);
 

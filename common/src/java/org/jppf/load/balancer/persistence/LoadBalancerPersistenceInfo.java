@@ -65,7 +65,6 @@ public class LoadBalancerPersistenceInfo {
    * @param channelID the unique identifier for the related node or driver.
    * @param algorithmID the load balancing algorithm name.
    * @param state the state of the load-balancer.
-   * @exclude
    */
   public LoadBalancerPersistenceInfo(final String channelID, final String algorithmID, final Object state) {
     this(channelID, channelID, algorithmID, algorithmID, state);
@@ -78,7 +77,6 @@ public class LoadBalancerPersistenceInfo {
    * @param algorithm the load balancing algorithm name.
    * @param algorithmID a hash of the load balancing algorithm name.
    * @param state the state of the load-balancer.
-   * @exclude
    */
   public LoadBalancerPersistenceInfo(final String channelString, final String channelID, final String algorithm, final String algorithmID, final Object state) {
     this(channelString, channelID, algorithm, algorithmID, state, null);
@@ -92,7 +90,6 @@ public class LoadBalancerPersistenceInfo {
    * @param algorithmID a hash of the load balancing algorithm name.
    * @param state the state of the load-balancer.
    * @param lock lock used to synchronize access to the load-balancer state.
-   * @exclude
    */
   public LoadBalancerPersistenceInfo(final String channelString, final String channelID, final String algorithm, final String algorithmID, final Object state, final Lock lock) {
     this.channelString = channelString;

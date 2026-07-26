@@ -23,7 +23,6 @@ import java.io.Serializable;
 /**
  * An interface to run arbitrary code that does not return any result and may raise an exception.
  * @author Laurent Cohen
- * @exclude
  */
 @FunctionalInterface
 public interface ExceptionThrowingRunnable extends Serializable {

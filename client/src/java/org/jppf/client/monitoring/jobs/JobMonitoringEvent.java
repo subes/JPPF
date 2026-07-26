@@ -47,7 +47,6 @@ public class JobMonitoringEvent extends EventObject {
 
   /**
    * The possible types of events.
-   * @exclude
    */
   enum Type {
     /**

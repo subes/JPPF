@@ -19,6 +19,5 @@
 /**
  * Support for detection of an idle state on the current host.<br/>
  * Here idle means no keyboard or mouse activity was detected for a specified time.
- * @exclude
  */
 package org.jppf.node.idle;

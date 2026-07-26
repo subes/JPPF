@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class NodeSelectionHelper implements NodeSelectionProvider {
   /**
@@ -59,7 +58,6 @@ public class NodeSelectionHelper implements NodeSelectionProvider {
    * @param node the node to check.
    * @param selector the node selector used as a filter.
    * @return a set of {@link BaseNodeContext} instances.
-   * @exclude
    */
   public boolean isNodeAccepted(final BaseNodeContext node, final NodeSelector selector) {
     if (selector == null) throw new IllegalArgumentException("selector cannot be null");

@@ -27,7 +27,6 @@ import org.jppf.JPPFUnsupportedOperationException;
  * Future for handling class loading requests.
  * @param <V> the type of result returned by this future.
  * @author Laurent Cohen
- * @exclude
  */
 public class ResourceFuture<V extends JPPFResourceWrapper> implements Future<V> {
   /**

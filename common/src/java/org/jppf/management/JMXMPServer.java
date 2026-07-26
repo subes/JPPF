@@ -34,7 +34,6 @@ import org.slf4j.*;
 /**
  * Wrapper around the JMXMP remote connector server implementation.
  * @author Laurent Cohen
- * @exclude
  */
 public class JMXMPServer extends AbstractJMXServer {
   /**
@@ -65,7 +64,6 @@ public class JMXMPServer extends AbstractJMXServer {
    * @param ssl specifies whether JMX should be used over an SSL/TLS connection.
    * @param portProperty an ordered set of configuration properties to use for looking up the desired management port.
    * @param mbeanServer the mbean server to use.
-   * @exclude
    */
   public JMXMPServer(final TypedProperties config, final String id, final boolean ssl, final JPPFProperty<Integer> portProperty, final MBeanServer mbeanServer) {
     super(config, mbeanServer);
@@ -81,15 +79,11 @@ public class JMXMPServer extends AbstractJMXServer {
    * @param id the unique id of the driver or node holding this jmx server.
    * @param ssl specifies whether JMX should be used over an SSL/TLS connection.
    * @param portProperty an ordered set of configuration properties to use for looking up the desired management port.
-   * @exclude
    */
   public JMXMPServer(final TypedProperties config, final String id, final boolean ssl, final JPPFProperty<Integer> portProperty) {
     this(config, id, ssl, portProperty, null);
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public void start(final ClassLoader cl) throws Exception {
     if (debugEnabled) log.debug("starting remote connector server");
@@ -120,7 +114,6 @@ public class JMXMPServer extends AbstractJMXServer {
   /**
    * @return a new instance of an implementation of {@code ObjectWrapping}.
    * @throws Exception if any eror occurs.
-   * @exclude
    */
   public static Object newObjectWrapping() throws Exception {
     final ClassLoader cl = JMXMPServer.class.getClassLoader();
@@ -128,13 +121,7 @@ public class JMXMPServer extends AbstractJMXServer {
     return Proxy.newProxyInstance(cl, infs, objectWrappingInvocationHandler);
   }
 
-  /**
-   * @exclude
-   */
   public static class ObjectWrappingInvocationHandler implements InvocationHandler {
-    /**
-     * 
-     */
     private static final BootstrapObjectSerializer SERIALIZER = new BootstrapObjectSerializer();
 
     @Override

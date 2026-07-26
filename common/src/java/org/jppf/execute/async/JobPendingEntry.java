@@ -25,7 +25,6 @@ import org.jppf.node.protocol.TaskBundle;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class JobPendingEntry {
   /**

@@ -36,7 +36,6 @@ import org.slf4j.*;
 /**
  * Utility class handling all aspects of the SSL configuration.
  * @author Laurent Cohen
- * @exclude
  */
 public final class SSLHelper_Old {
   /**

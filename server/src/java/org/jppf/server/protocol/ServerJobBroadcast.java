@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  *
  * @author Martin JANDA
- * @exclude
  */
 public class ServerJobBroadcast extends ServerJob {
   /**

@@ -18,6 +18,5 @@
 
 /**
  * Classes used for the pick list option.
- * @exclude
  */
 package org.jppf.ui.picklist;

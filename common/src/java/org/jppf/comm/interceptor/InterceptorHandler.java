@@ -30,7 +30,6 @@ import org.jppf.utils.*;
  * This class loads, and provides access to, the {@link NetworkConnectionInterceptor}s discovered via SPI.
  * @author Laurent Cohen
  * @since 5.2
- * @exclude
  */
 public class InterceptorHandler {
   /**

@@ -22,7 +22,6 @@ import org.jppf.node.connection.ConnectionReason;
 /**
  * This error is thrown to notify a node that its code is obsolete and it should dynamically reload itself.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFNodeReconnectionNotification extends JPPFReconnectionNotification {
   /**

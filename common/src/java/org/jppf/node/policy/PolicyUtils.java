@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * Utility methods to resolve, parse and manipulate execution policies.
  * @author Laurent Cohen
- * @exclude
  */
 public class PolicyUtils {
   /**

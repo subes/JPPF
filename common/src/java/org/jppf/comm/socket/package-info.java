@@ -18,7 +18,6 @@
 
 /**
  * Support for socket-based communication with remote services.
- * @exclude
 */
 package org.jppf.comm.socket;
 

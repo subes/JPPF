@@ -23,7 +23,6 @@ import org.slf4j.*;
 
 /**
  * Wrapper class for the initialization of a client connection.
- * @exclude
  */
 public class ConnectionInitializer implements Runnable {
   /**

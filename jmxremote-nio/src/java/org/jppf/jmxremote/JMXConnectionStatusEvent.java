@@ -23,7 +23,6 @@ import java.util.EventObject;
 /**
  * Notification of a connection event on the server side.
  * @author Laurent Cohen
- * @exclude
  */
 public class JMXConnectionStatusEvent extends EventObject {
   /**

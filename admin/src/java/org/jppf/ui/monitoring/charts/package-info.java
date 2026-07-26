@@ -18,6 +18,5 @@
 
 /**
  * Classes for creating, configuring, displaying and updating charts.
- * @exclude
  */
 package org.jppf.ui.monitoring.charts;

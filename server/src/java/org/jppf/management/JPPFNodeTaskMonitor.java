@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  * MBean implementation for task-level monitoring on each node.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFNodeTaskMonitor extends NotificationBroadcasterSupport implements JPPFNodeTaskMonitorMBean, TaskExecutionListener {
   /**

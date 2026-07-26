@@ -27,7 +27,6 @@ import org.jppf.utils.configuration.JPPFProperties;
 
 /**
  * Privileged action wrapper for saving a resource definition to a temporary file.
- * @exclude
  */
 public class SaveResourceAction implements PrivilegedAction<Location<?>> {
   /**

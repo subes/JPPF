@@ -18,7 +18,6 @@
 
 /**
  * Support for automatic discovery of JPPF servers.
- * @exclude
 */
 package org.jppf.comm.discovery;
 

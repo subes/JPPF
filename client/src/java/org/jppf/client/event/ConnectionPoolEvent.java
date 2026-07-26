@@ -40,7 +40,6 @@ public class ConnectionPoolEvent extends EventObject {
   /**
    * Initialize this event with the specified source.
    * @param pool the source of this event.
-   * @exclude
    */
   public ConnectionPoolEvent(final JPPFConnectionPool pool) {
     this(pool, null);
@@ -50,7 +49,6 @@ public class ConnectionPoolEvent extends EventObject {
    * Initialize this event with the specified source and client connection.
    * @param pool the source of this event.
    * @param connection the connection that triggered this event.
-   * @exclude
    */
   public ConnectionPoolEvent(final JPPFConnectionPool pool, final JPPFClientConnection connection) {
     super(pool);

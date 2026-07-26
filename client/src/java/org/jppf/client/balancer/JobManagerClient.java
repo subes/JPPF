@@ -41,7 +41,6 @@ import org.slf4j.*;
  * It also provides methods to check the status of a job and retrieve the results.
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class JobManagerClient extends ThreadSynchronization implements JobManager {
   /**

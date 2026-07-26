@@ -33,27 +33,23 @@ public interface NodeInternal extends Node {
   /**
    * Get the connection used by this node.
    * @return a {@link NodeConnection} instance.
-   * @exclude
    */
   NodeConnection<?> getNodeConnection();
 
   /**
    * Stop this node and release the resources it is using.
-   * @exclude
    */
   void stopNode();
 
   /**
    * Get the object that manages the node life cycle events.
    * @return a {@link LifeCycleEventHandler} instance.
-   * @exclude
    */
   LifeCycleEventHandler getLifeCycleEventHandler();
 
   /**
    * Get the task execution manager for this node.
    * @return a {@link ExecutionManager} instance.
-   * @exclude
    */
   AsyncExecutionManager getExecutionManager();
 
@@ -62,7 +58,6 @@ public interface NodeInternal extends Node {
    * <p>The default implementation throws a {@link JPPFUnsupportedOperationException}. It is up to concrete implementations to override it.
    * @return a JMXServer instance.
    * @throws Exception if any error occurs.
-   * @exclude
    */
   default JMXServer getJmxServer() throws Exception {
     throw new JPPFUnsupportedOperationException("getJmxServer() is not supported on this type of node");
@@ -71,27 +66,23 @@ public interface NodeInternal extends Node {
   /**
    * Initialize this node's data channel.
    * @throws Exception if an error is raised during initialization.
-   * @exclude
    */
   void initDataChannel() throws Exception;
 
   /**
    * Initialize this node's data channel.
    * @throws Exception if an error is raised during initialization.
-   * @exclude
    */
   void closeDataChannel() throws Exception;
 
   /**
    * Get the service that manages the class loaders and how they are used.
    * @return an {@link AbstractClassLoaderManager} instance.
-   * @exclude
    */
   AbstractClassLoaderManager<?> getClassLoaderManager();
 
   /**
    * @return the mbean which sends notifications of configuration changes.
-   * @exclude
    */
   NodeConfigNotifier getNodeConfigNotifier();
 }

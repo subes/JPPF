@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the actions and menu items for the popu menu for in the nodes panel.
- * @exclude
  */
 package org.jppf.ui.monitoring.node.actions;

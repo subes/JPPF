@@ -30,7 +30,6 @@ import org.slf4j.*;
  * Utility to replace multiline content in text files.
  * This is the same kind of utility as the Ant "replace" task, except that it works.
  * @author Laurent Cohen
- * @exclude
  */
 public class FileReplacer {
   /**
@@ -180,7 +179,6 @@ public class FileReplacer {
 
   /**
    * File filter based on a set of extensions.
-   * @exclude
    */
   public static class ReplacerFilter implements FileFilter {
     /**

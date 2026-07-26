@@ -26,7 +26,6 @@ import org.jppf.management.doc.*;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 @MBeanExclude
 public interface ForwardingNotficationEmitter {
@@ -36,7 +35,6 @@ public interface ForwardingNotficationEmitter {
    * @param mBeanName the name of the node mbeans to receive notifications from.
    * @return a unique id for the listener.
    * @throws IllegalArgumentException if {@code selector} or {@code mBeanName} is null.
-   * @exclude
    */
   @MBeanExclude
   String registerForwardingNotificationListener(@MBeanParamName("nodeSelector") NodeSelector selector, @MBeanParamName("mbeanName") final String mBeanName) throws IllegalArgumentException;
@@ -45,7 +43,6 @@ public interface ForwardingNotficationEmitter {
    * Unregister the specified listener.
    * @param listenerID the ID of the listener to unregister.
    * @throws ListenerNotFoundException if the listener could not be found.
-   * @exclude
    */
   @MBeanExclude
   void unregisterForwardingNotificationListener(@MBeanParamName("listenerId") String listenerID) throws ListenerNotFoundException;

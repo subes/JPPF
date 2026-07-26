@@ -26,7 +26,6 @@ import org.slf4j.*;
 /**
  * An output stream implementation that minimizes memory usage.
  * @author Laurent Cohen
- * @exclude
  */
 public class MultipleBuffersInputStream extends InputStream {
   /**

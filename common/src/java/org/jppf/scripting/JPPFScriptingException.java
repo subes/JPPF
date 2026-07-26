@@ -22,7 +22,6 @@ import org.jppf.JPPFException;
 /**
  * Exception thrown when an error occurs while executing a script.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFScriptingException extends JPPFException {
   /**

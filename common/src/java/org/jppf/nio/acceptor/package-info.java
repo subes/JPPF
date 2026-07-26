@@ -18,6 +18,5 @@
 
 /**
  * Support for NIO-based communication with the clients.
- * @exclude
  */
 package org.jppf.nio.acceptor;

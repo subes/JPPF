@@ -18,6 +18,5 @@
 
 /**
  * Support for P2P communication between servers.
- * @exclude
  */
 package org.jppf.server.peer;

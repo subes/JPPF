@@ -21,7 +21,6 @@ package org.jppf.classloader;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 interface ResourceRequestRunner extends Runnable {
   /**

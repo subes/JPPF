@@ -32,7 +32,6 @@ import org.jppf.utils.configuration.*;
  * Substitutions in the values of properties</a>
  * @see <a href="http://www.jppf.org/doc/6.0/index.php?title=Includes,_substitutions_and_scripted_values_in_the_configuration#Scripted_property_values">Scripted property values</a>
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractExpression<E> implements Expression<E> {
   /**

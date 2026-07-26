@@ -216,7 +216,6 @@ public class PeerDiscoveryThread extends ThreadSynchronization implements Runnab
   /**
    * Contains the set of retrieved connection information objects.
    * @return the list of discovered connection information.
-   * @exclude 
    */
   public Set<JPPFConnectionInformation> getInfoSet() {
     return infoSet;

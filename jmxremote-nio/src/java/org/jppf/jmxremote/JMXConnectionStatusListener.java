@@ -23,7 +23,6 @@ import java.util.EventListener;
 /**
  * Listener interface for receiving JMX connection events on the server side.
  * @author Laurent Cohen
- * @exclude
  */
 public interface JMXConnectionStatusListener extends EventListener {
   /**

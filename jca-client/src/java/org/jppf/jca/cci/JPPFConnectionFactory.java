@@ -53,7 +53,6 @@ public class JPPFConnectionFactory implements ConnectionFactory {
 
   /**
    * Default constructor.
-   * @exclude
    */
   public JPPFConnectionFactory() {
   }
@@ -62,7 +61,6 @@ public class JPPFConnectionFactory implements ConnectionFactory {
    * Initialize this connection factory with a specified managed connection factory and connection manager..
    * @param factory the managed factory to use.
    * @param manager the connection manager to use.
-   * @exclude
    */
   public JPPFConnectionFactory(final JPPFManagedConnectionFactory factory, final ConnectionManager manager) {
     this.factory = factory;

@@ -18,6 +18,5 @@
 
 /**
  * Unit tests for <code>org.jppf.management.forwarding.generated</code> classes.
- * @exclude
  */
 package test.org.jppf.management.forwarding.generated;

@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the actions and menu items for the toolbar and popup menu in the job data panel.
- * @exclude
  */
 package org.jppf.ui.monitoring.job.actions;

@@ -23,7 +23,6 @@ import java.util.concurrent.Future;
  * Instances of this class are scheduled by a timer to execute one time, check
  * whether the corresponding JPPF task timeout has been reached, and abort the
  * task if necessary.
- * @exclude
  */
 public class TimeoutTimerTask implements Runnable {
   /**

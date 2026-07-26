@@ -32,7 +32,6 @@ import org.slf4j.*;
 /**
  * Implementation of the {@link DiagnosticsMBean} interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class Diagnostics implements DiagnosticsMBean, Closeable {
   /**

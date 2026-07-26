@@ -19,6 +19,5 @@
 /**
  * Support for HTML doc generation, using place holders for templates inserted in the HTML code,
  * for pushing Jenkins build results to the JPPF web site.
- * @exclude
  */
 package org.jppf.doc.jenkins;

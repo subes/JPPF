@@ -24,7 +24,6 @@ import java.util.Map;
 /**
  * Abstract implementation of a {@link ThreadDumpWriter}.
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractThreadDumpWriter implements ThreadDumpWriter {
   /**

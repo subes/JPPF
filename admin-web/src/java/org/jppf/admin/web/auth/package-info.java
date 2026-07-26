@@ -18,6 +18,5 @@
 
 /**
  * Support for authentication.
- * @exclude
  */
 package org.jppf.admin.web.auth;

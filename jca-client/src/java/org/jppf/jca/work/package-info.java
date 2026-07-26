@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the JPPF server connectivity for the JPPF resource adapter.
- * @exclude
  */
 package org.jppf.jca.work;

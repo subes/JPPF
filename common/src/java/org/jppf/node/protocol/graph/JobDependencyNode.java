@@ -79,7 +79,6 @@ public class JobDependencyNode implements Serializable {
    * Create a new node with the specified id.
    * @param id the id of this node.
    * @param jobUuid the job uuid or {@code null} if the uuid is unknown.
-   * @exclude
    */
   public JobDependencyNode(final String id, final String jobUuid) {
     this.id = id;
@@ -269,7 +268,6 @@ public class JobDependencyNode implements Serializable {
   /**
    * Specify whether this node is a job dependency graph root.
    * @param graphRoot {@code true} to specify that this node is a graph root, {@code false} otherwise.
-   * @exclude
    */
   public void setGraphRoot(final boolean graphRoot) {
     this.graphRoot = graphRoot;
@@ -285,7 +283,6 @@ public class JobDependencyNode implements Serializable {
 
   /**
    * @param cancelled {@code true} to cancel the job upon queueing, {@code false} otherwise.
-   * @exclude
    */
   public void setCancelled(final boolean cancelled) {
     this.cancelled = cancelled;

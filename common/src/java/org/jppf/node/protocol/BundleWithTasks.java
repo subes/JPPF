@@ -25,7 +25,6 @@ import org.jppf.utils.Pair;
 /**
  * A convenient class to associate a {@link TaskBundle} and a list of {@link Task}s.
  * @author Laurent Cohen
- * @exclude
  */
 public class BundleWithTasks extends Pair<TaskBundle, List<Task<?>>> {
   /**

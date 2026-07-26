@@ -21,7 +21,6 @@ package org.jppf;
 /**
  * This error is thrown to notify a node that its code is obsolete and it should dynamically reload itself.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFReconnectionNotification extends JPPFError {
   /**

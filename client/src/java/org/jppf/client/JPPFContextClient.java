@@ -25,7 +25,6 @@ import org.jppf.queue.JPPFQueue;
 /**
  * Context associated with a client.
  * @author Martin JANDA
- * @exclude
  */
 public class JPPFContextClient extends JPPFContext {
   /**

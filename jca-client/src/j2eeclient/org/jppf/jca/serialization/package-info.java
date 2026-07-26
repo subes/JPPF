@@ -18,6 +18,5 @@
 
 /**
  * Classes handling the serialization on the J2EE client application side.
- * @exclude
  */
 package org.jppf.jca.serialization;

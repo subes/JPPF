@@ -30,7 +30,6 @@ import org.slf4j.*;
 /**
  * This class provides factory methods to create rmeorte JMX connector servers.
  * @author Laurent Cohen
- * @exclude
  */
 public class JMXServerFactory {
   /**

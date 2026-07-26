@@ -22,7 +22,6 @@ package org.jppf.utils.concurrent;
  * This class implements a goToSleep and a wakeUp method as wrappers to {@link java.lang.Object#wait() Object.wait()} and
  * {@link java.lang.Object#notifyAll() Object.notifyAll()} wrappers.
  * @author Laurent Cohen
- * @exclude
  */
 public class ThreadSynchronization {
   /**

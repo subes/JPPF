@@ -41,7 +41,6 @@ public class JobStatusEvent extends EventObject {
    * Initialize this event with the specified job uuid and status.
    * @param jobUuid the uuid of the job whose status has changed.
    * @param status the new status of the job.
-   * @exclude
    */
   public JobStatusEvent(final String jobUuid, final JobStatus status) {
     super(jobUuid);

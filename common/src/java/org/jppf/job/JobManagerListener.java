@@ -24,7 +24,6 @@ import java.util.EventListener;
 /**
  * Listener interface for job manager events.
  * @author Laurent Cohen
- * @exclude
  */
 public interface JobManagerListener extends EventListener
 {

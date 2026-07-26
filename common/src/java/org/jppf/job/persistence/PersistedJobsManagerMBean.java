@@ -25,7 +25,6 @@ import org.jppf.job.JobSelector;
 /**
  * This MBean manages jobs persisted by the driver.
  * @author Laurent Cohen
- * @exclude
  */
 public interface PersistedJobsManagerMBean {
   /**

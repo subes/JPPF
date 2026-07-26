@@ -75,7 +75,6 @@ public class JPPFSystemInformation implements PropertiesCollection<String> {
    * @param local {@code true} if the JPPF component is local (local node or local client executor), {@code false} otherwise.
    * @param resolveInetAddressesNow if {@code true}, then name resolution for {@code InetAddress}es should occur immediately,
    * otherwise it is different and executed in a separate thread.
-   * @exclude
    */
   public JPPFSystemInformation(final TypedProperties jppfConfig, final String uuid, final boolean local, final boolean resolveInetAddressesNow) {
     this(jppfConfig, uuid, local, resolveInetAddressesNow, null);
@@ -89,7 +88,6 @@ public class JPPFSystemInformation implements PropertiesCollection<String> {
    * @param resolveInetAddressesNow if {@code true}, then name resolution for {@code InetAddress}es should occur immediately,
    * otherwise it is different and executed in a separate thread.
    * @param stats an optional statistics object from which events can be received so the corresponding properties can be kept up to date.
-   * @exclude
    */
   public JPPFSystemInformation(final TypedProperties jppfConfig, final String uuid, final boolean local, final boolean resolveInetAddressesNow, final JPPFStatistics stats) {
     this.local = local;
@@ -304,7 +302,6 @@ public class JPPFSystemInformation implements PropertiesCollection<String> {
    * Parse the list of IP v4 addresses contained in this JPPFSystemInformation instance.<br>
    * This method is provided as a convenience so developers don't have to do the parsing themselves.
    * @return an array of {@code HostIP} instances.
-   * @exclude
    */
   public HostIP[] parseIPV4Addresses() {
     return NetworkUtils.parseAddresses(getNetwork().getString("ipv4.addresses"));
@@ -314,7 +311,6 @@ public class JPPFSystemInformation implements PropertiesCollection<String> {
    * Parse the list of IP v6 addresses contained in this JPPFSystemInformation instance.<br>
    * This method is provided as a convenience so developers don't have to do the parsing themselves.
    * @return an array of {@code HostIP} instances.
-   * @exclude
    */
   public HostIP[] parseIPV6Addresses() {
     return NetworkUtils.parseAddresses(getNetwork().getString("ipv6.addresses"));

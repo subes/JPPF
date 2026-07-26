@@ -24,7 +24,6 @@ import org.jppf.management.NodeSelector;
  * Instances of this class represent an association between a notification listener id
  * and the corresponding node selector and MBean name.
  * @author Laurent Cohen
- * @exclude
  */
 class NotificationListenerWrapper {
   /**

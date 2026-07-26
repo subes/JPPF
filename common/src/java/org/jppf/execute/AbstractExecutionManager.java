@@ -35,7 +35,6 @@ import org.slf4j.*;
  * @author Laurent Cohen
  * @author Martin JANDA
  * @author Paul Woodward
- * @exclude
  */
 public abstract class AbstractExecutionManager implements ExecutionManager {
   /**
@@ -204,7 +203,6 @@ public abstract class AbstractExecutionManager implements ExecutionManager {
   /**
    * Notification sent by a node task wrapper when a task is complete.
    * @param taskWrapper the task that just ended.
-   * @exclude
    */
   protected void taskEnded(final NodeTaskWrapper taskWrapper) {
     final long elapsedTime = taskWrapper.getElapsedTime();

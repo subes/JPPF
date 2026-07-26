@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the service provider interface for the JPPF resource adapter.
- * @exclude
  */
 package org.jppf.jca.spi;

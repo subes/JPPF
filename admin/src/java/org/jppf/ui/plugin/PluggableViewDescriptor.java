@@ -23,7 +23,6 @@ import org.jppf.ui.options.OptionElement;
 /**
  *
  * @author Laurent Cohen
- * @exclude
  */
 public class PluggableViewDescriptor {
   /**

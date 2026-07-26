@@ -18,6 +18,5 @@
 
 /**
  * Unit tests for <code>org.jppf.server.jpb.management</code> classes.
- * @exclude
  */
 package test.org.jppf.server.job.management;

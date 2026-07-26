@@ -31,7 +31,6 @@ import org.slf4j.*;
 /**
  * This class manages the batching of class loading requests at regular intervals.
  * @author Laurent Cohen
- * @exclude
  */
 public class ClassLoaderRequestHandler {
   /**

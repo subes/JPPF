@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the update job priority dialog.
- * @exclude
  */
 package org.jppf.admin.web.jobs.priority;

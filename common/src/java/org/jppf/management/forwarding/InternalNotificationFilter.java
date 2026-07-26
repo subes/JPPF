@@ -25,7 +25,6 @@ import javax.management.*;
  * notifications should be sent to the JMX client based, on the associated node
  * selector and MBean name, in addition to the wrapped filter's logic.
  * @author Laurent Cohen
- * @exclude
  */
 public class InternalNotificationFilter implements NotificationFilter {
   /**

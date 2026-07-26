@@ -30,7 +30,6 @@ import org.jppf.utils.TraversalList;
  * for sending class definition requests as well as receiving the class definitions.
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class JPPFResourceWrapper implements Serializable {
   /**
@@ -52,7 +51,6 @@ public class JPPFResourceWrapper implements Serializable {
 
   /**
    * Enumeration of the possible states for this resource wrapper.
-   * @exclude
    */
   public enum State {
     /**

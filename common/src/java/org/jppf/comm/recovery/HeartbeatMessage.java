@@ -25,7 +25,6 @@ import org.jppf.utils.TypedProperties;
 /**
  * Instances of this class represent heartbeat data exchanged between a driver and a node, client or peer driver.
  * @author Laurent Cohen
- * @exclude
  */
 public class HeartbeatMessage implements Serializable {
   /**

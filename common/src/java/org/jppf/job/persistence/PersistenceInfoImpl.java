@@ -26,7 +26,6 @@ import org.jppf.node.protocol.JPPFDistributedJob;
 /**
  * Implementation of the {@link PersistenceInfo} interface.
  * @author Laurent Cohen
- * @exclude
  */
 public class PersistenceInfoImpl implements PersistenceInfo {
   /**

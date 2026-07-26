@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  * @since 4.0
  */
 public class TaskExecutionDispatcher {

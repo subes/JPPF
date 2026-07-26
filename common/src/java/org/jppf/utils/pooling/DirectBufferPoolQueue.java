@@ -25,7 +25,6 @@ import org.jppf.io.IO;
 /**
  * A ByteBuffer pool backed by a {@link java.util.concurrent.ConcurrentLinkedQueue ConcurrentLinkedQueue}.
  * @author Laurent Cohen
- * @exclude
  */
 public class DirectBufferPoolQueue extends AbstractObjectPoolQueue<ByteBuffer> {
   @Override

@@ -291,7 +291,6 @@ public class TopologyManager extends ConnectionPoolListenerAdapter implements Au
 
   /**
    * {@inheritDoc}}
-   * @exclude
    */
   @Override
   public void connectionAdded(final ConnectionPoolEvent event) {
@@ -308,7 +307,6 @@ public class TopologyManager extends ConnectionPoolListenerAdapter implements Au
 
   /**
    * {@inheritDoc}}
-   * @exclude
    */
   @Override
   public void connectionRemoved(final ConnectionPoolEvent event) {

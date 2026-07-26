@@ -21,7 +21,6 @@ package org.jppf.node.policy;
 /**
  * An expression that represents a boolean value as either a literal or an expression that returns a boolean.
  * @author Laurent Cohen
- * @exclude
  */
 public class BooleanExpression extends AbstractExpression<Boolean> {
   /**

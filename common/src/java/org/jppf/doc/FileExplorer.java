@@ -126,7 +126,6 @@ public abstract class FileExplorer {
 
   /**
    * File filter based on a set of extensions.
-   * @exclude
    */
   public class ExploreFilter implements FileFilter {
     @Override

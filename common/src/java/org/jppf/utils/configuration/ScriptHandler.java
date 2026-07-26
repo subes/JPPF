@@ -71,7 +71,6 @@ import org.slf4j.*;
  * <p>The scripts are evaluated after all includes and variable substitutions have been resolved.
  * This will allow the scripts to use a variable binding for the Properties (or {@link TypedProperties} object) being loaded.
  * @author Laurent Cohen
- * @exclude
  */
 public class ScriptHandler {
   /**

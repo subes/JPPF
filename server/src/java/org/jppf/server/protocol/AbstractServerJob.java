@@ -137,7 +137,6 @@ public abstract class AbstractServerJob implements JPPFDistributedJob {
   /**
    * Get the universal unique id for this job.
    * @return the uuid as a string.
-   * @exclude
    */
   @Override
   public String getUuid() {

@@ -39,7 +39,6 @@ import org.slf4j.*;
  * Server-side representation of a job.
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class ServerJob extends AbstractServerJobBase {
   /**

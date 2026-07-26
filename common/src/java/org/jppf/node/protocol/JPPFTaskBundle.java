@@ -28,7 +28,6 @@ import org.jppf.utils.collections.MetadataImpl;
  * The goal is to provide a performance enhancement through an adaptive bundling of tasks originating from the same client.
  * The bundle size is computed dynamically, depending on the number of nodes connected to the server, and other factors.
  * @author Laurent Cohen
- * @exclude
  */
 public class JPPFTaskBundle extends MetadataImpl implements Comparable<JPPFTaskBundle>, TaskBundle {
   /**

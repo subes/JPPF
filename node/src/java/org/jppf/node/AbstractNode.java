@@ -45,17 +45,14 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   private static final Logger log = LoggerFactory.getLogger(AbstractNode.class);
   /**
    * Utility for deserialization and serialization.
-   * @exclude
    */
   protected SerializationHelper helper;
   /**
    * Utility for deserialization and serialization.
-   * @exclude
    */
   protected ObjectSerializer serializer;
   /**
    * Total number of tasks executed.
-   * @exclude
    */
   private int taskCount;
   /**
@@ -64,17 +61,14 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   private final Object taskCountLock = new Object();
   /**
    * This node's universal identifier.
-   * @exclude
    */
   protected final String uuid;
   /**
    * This node's system information.
-   * @exclude
    */
   protected JPPFSystemInformation systemInformation;
   /**
    * Get the connection used by this node.
-   * @exclude
    */
   protected NodeConnection<?> nodeConnection;
   /**
@@ -87,32 +81,26 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   private AbstractJPPFClassLoader jppfClassLoader;
   /**
    * The object responsible for this node's I/O.
-   * @exclude
    */
   protected NodeIO nodeIO;
   /**
    * The configuration of this node.
-   * @exclude
    */
   protected final TypedProperties configuration;
   /**
    * Determines whether JMX management and monitoring is enabled for this node.
-   * @exclude
    */
   protected boolean jmxEnabled;
   /**
    * Handles the firing of node life cycle events and the listeners that subscribe to these events.
-   * @exclude
    */
   protected LifeCycleEventHandler lifeCycleEventHandler;
   /**
    * The jmx server that handles administration and monitoring functions for this node.
-   * @exclude
    */
   protected JMXServer jmxServer;
   /**
    * To create and invoke hook instances.
-   * @exclude
    */
   protected final HookFactory hookFactory;
 
@@ -131,7 +119,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public NodeConnection<?> getNodeConnection() {
@@ -148,7 +135,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * Set the total number of tasks executed.
    * @param taskCount the number of tasks as an int.
-   * @exclude
    */
   public void setExecutedTaskCount(final int taskCount) {
     synchronized (taskCountLock) {
@@ -159,7 +145,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * Get the utility for deserialization and serialization.
    * @return a <code>SerializationHelper</code> instance.
-   * @exclude
    */
   public SerializationHelper getHelper() {
     return helper;
@@ -168,7 +153,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * {@inheritDoc}
    * <p>This implementation throws a <code>JPPFUnsupportedOperationException</code>. It is up to subclasses to implement it.
-   * @exclude
    */
   @Override
   public JMXServer getJmxServer() throws Exception {
@@ -182,7 +166,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
 
   /**
    * Update the current system information.
-   * @exclude
    */
   protected void updateSystemInformation() {
     this.systemInformation = new JPPFSystemInformation(getConfiguration(), uuid, isLocal(), true);
@@ -206,7 +189,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * Determine whether this node is currently shutting down.
    * @return an {@link AtomicBoolean} instance whose value is {@code true</code> if the node is shutting down, <code>false} otherwise.
-   * @exclude
    */
   public AtomicBoolean getShuttingDown() {
     return shuttingDown;
@@ -214,7 +196,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
 
   /**
    * @return the main node class loader.
-   * @exclude
    */
   public AbstractJPPFClassLoader getJPPFClassLoader() {
     return jppfClassLoader;
@@ -223,7 +204,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * 
    * @param jppfClassLoader the main node class loader.
-   * @exclude
    */
   public void setJPPFClassLoader(final AbstractJPPFClassLoader jppfClassLoader) {
     this.jppfClassLoader = jppfClassLoader;
@@ -254,15 +234,11 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * Determines whether JMX management and monitoring is enabled for this node.
    * @return true if JMX is enabled, false otherwise.
-   * @exclude
    */
   protected boolean isJmxEnabled() {
     return jmxEnabled && !isOffline();
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public LifeCycleEventHandler getLifeCycleEventHandler() {
     return lifeCycleEventHandler;
@@ -286,7 +262,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
 
   /**
    * @return the object responsible for this node's I/O.
-   * @exclude
    */
   public NodeIO getNodeIO() {
     return nodeIO;
@@ -295,7 +270,6 @@ public abstract class AbstractNode extends ThreadSynchronization implements Node
   /**
    * Get the factory that creates and invoke hook instances for this node.
    * @return a {@link HookFactory} instance.
-   * @exclude
    */
   public HookFactory getHookFactory() {
     return hookFactory;

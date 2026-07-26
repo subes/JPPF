@@ -23,7 +23,6 @@ import org.slf4j.*;
 /**
  * An asynchronous logger that delegates to an underlying SLF4J logger asychronously. This is to be used for debugging purposes,
  * essentially when activating fine-grained logging prevents from reproducing an issue (happens a lot in case of race conditions).
- * @exclude
  */
 public class AsyncLogger implements Logger {
   /**

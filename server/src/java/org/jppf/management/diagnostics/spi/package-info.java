@@ -18,6 +18,5 @@
 
 /**
  * Support for the SPI of the JVM health monitoring and diagnostics.
- * @exclude
  */
 package org.jppf.management.diagnostics.spi;

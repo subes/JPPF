@@ -21,7 +21,6 @@ package org.jppf.client.concurrent;
 /**
  * Concrete implementation of the {@link ExecutorServiceConfiguration} interface.
  * @author Laurent Cohen
- * @exclude
  */
 class ExecutorServiceConfigurationImpl implements ExecutorServiceConfiguration {
   /**

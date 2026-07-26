@@ -385,7 +385,6 @@ public class JPPFExecutorService extends JobListenerAdapter implements ExecutorS
   /**
    * Called when all results from a job have been received.
    * @param event the event object.
-   * @exclude
    */
   @Override
   public void jobReturned(final JobEvent event) {

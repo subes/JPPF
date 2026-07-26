@@ -36,7 +36,6 @@ public class JobEvent extends EventObject {
   private static final long serialVersionUID = 1L;
   /**
    * The type of event.
-   * @exclude
    */
   public enum Type {
     /**
@@ -69,7 +68,6 @@ public class JobEvent extends EventObject {
   /**
    * Initialize this event with the specified job as its source.
    * @param source the source of this event.
-   * @exclude
    */
   public JobEvent(final JPPFJob source) {
     this(source, null, null);
@@ -80,7 +78,6 @@ public class JobEvent extends EventObject {
    * @param source the source of this event.
    * @param channel the channel to which a job is dispatched or from which it returns.
    * @param tasks the tasks that were dispatched or returned.
-   * @exclude
    */
   public JobEvent(final JPPFJob source, final ExecutorChannel<?> channel, final List<Task<?>> tasks) {
     super(source);

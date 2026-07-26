@@ -50,7 +50,6 @@ public abstract class AbstractJPPFClient implements ClientConnectionStatusListen
   static String SERIALIZATION_HELPER_IMPL = "org.jppf.utils.SerializationHelperImpl";
   /**
    * Name of the SerializationHelper implementation class for the JCA connector.
-   * @exclude
    */
   protected static String JCA_SERIALIZATION_HELPER = "org.jppf.jca.serialization.JcaSerializationHelperImpl";
   /**
@@ -144,7 +143,6 @@ public abstract class AbstractJPPFClient implements ClientConnectionStatusListen
   /**
    * Invoked when the status of a client connection has changed.
    * @param event the event to notify of.
-   * @exclude
    */
   @Override
   public void statusChanged(final ClientConnectionStatusEvent event) {
@@ -245,7 +243,6 @@ public abstract class AbstractJPPFClient implements ClientConnectionStatusListen
   /**
    * Notify all listeners that a new connection was created.
    * @param c the connection that was created.
-   * @exclude
    */
   void newConnection(final JPPFClientConnectionImpl c) {
     fireConnectionAdded(c);
@@ -270,7 +267,6 @@ public abstract class AbstractJPPFClient implements ClientConnectionStatusListen
   /**
    * Get the name of the serialization helper implementation class name to use.
    * @return the fully qualified class name of a {@code SerializationHelper} implementation.
-   * @exclude
    */
   protected String getSerializationHelperClassName() {
     if (serializationHelperClassName == null)
@@ -435,7 +431,6 @@ public abstract class AbstractJPPFClient implements ClientConnectionStatusListen
   /**
    * Determine whether this client is resetting. 
    * @return {@code true} if this client is resetting, {@code false} otherwise.
-   * @exclude
    */
   public boolean isResetting() {
     return resetting.get();

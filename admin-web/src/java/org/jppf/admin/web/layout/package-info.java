@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the selection of visible columms.
- * @exclude
  */
 package org.jppf.admin.web.layout;

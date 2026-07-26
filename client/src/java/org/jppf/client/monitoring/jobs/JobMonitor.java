@@ -186,7 +186,6 @@ public class JobMonitor extends TopologyListenerAdapter implements JobMonitoring
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public void driverAdded(final TopologyEvent event) {
@@ -208,7 +207,6 @@ public class JobMonitor extends TopologyListenerAdapter implements JobMonitoring
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public void driverRemoved(final TopologyEvent event) {

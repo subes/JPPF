@@ -34,7 +34,6 @@ import org.slf4j.*;
  * This class wraps a single slave node process and provides an API to start, stop and monitor it.
  * @author Laurent Cohen
  * @since 5.0
- * @exclude
  */
 public abstract class AbstractProcessLauncher extends ThreadSynchronization implements Runnable {
   /**
@@ -262,7 +261,6 @@ public abstract class AbstractProcessLauncher extends ThreadSynchronization impl
    * <p>The protocol is very simple: a single int command with no parameter is sent to the child process, which interprets it as it wishes.
    * No acknowledgement or response is expected.
    * @since 5.0
-   * @exclude
    */
   protected class SlaveSocketWrapper implements Runnable, AutoCloseable {
     /**

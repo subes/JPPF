@@ -20,6 +20,5 @@
  * Support for persistent settings in the the web administration console.
  * <p>Settings include the values of fields in the popup dialogs and potentially other things such as
  * visible columns in tree views, dialog dimensions, etc...
- * @exclude
  */
 package org.jppf.admin.web.settings;

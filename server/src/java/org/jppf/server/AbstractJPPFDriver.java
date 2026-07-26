@@ -50,7 +50,6 @@ import org.slf4j.*;
  * to handle requests to and from remote class loaders.
  * @author Laurent Cohen
  * @author Lane Schwartz (dynamically allocated server port)
- * @exclude
  */
 abstract class AbstractJPPFDriver {
   // this static block must be the first thing executed when this class is loaded
@@ -174,7 +173,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the queue that handles the tasks to execute.
    * @return a JPPFQueue instance.
-   * @exclude
    */
   public JPPFPriorityQueue getQueue() {
     return taskQueue;
@@ -183,7 +181,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the JPPF client server.
    * @return a {@link AsyncClientNioServer} instance.
-   * @exclude
    */
   public AsyncClientNioServer getAsyncClientNioServer() {
     return asyncClientNioServer;
@@ -192,7 +189,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the JPPF class server.
    * @return a <code>ClassNioServer</code> instance.
-   * @exclude
    */
   public AsyncClientClassNioServer getAsyncClientClassServer() {
     return asyncClientClassServer;
@@ -201,7 +197,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the JPPF class server.
    * @return a <code>ClassNioServer</code> instance.
-   * @exclude
    */
   public AsyncNodeClassNioServer getAsyncNodeClassServer() {
     return asyncNodeClassServer;
@@ -210,7 +205,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the JPPF nodes server.
    * @return a <code>NodeNioServer</code> instance.
-   * @exclude
    */
   public AsyncNodeNioServer getAsyncNodeNioServer() {
     return asyncNodeNioServer;
@@ -219,7 +213,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the server which handles the initial handshake and peer channel identification.
    * @return a {@link AcceptorNioServer} instance.
-   * @exclude
    */
   public AcceptorNioServer getAcceptorServer() {
     return acceptorServer;
@@ -228,7 +221,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the object that manages and monitors the jobs throughout their processing within this driver.
    * @return an instance of <code>JPPFJobManager</code>.
-   * @exclude
    */
   public JPPFJobManager getJobManager() {
     return jobManager;
@@ -237,7 +229,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get this driver's initializer.
    * @return a <code>DriverInitializer</code> instance.
-   * @exclude
    */
   public DriverInitializer getInitializer() {
     return initializer;
@@ -249,7 +240,6 @@ abstract class AbstractJPPFDriver {
    * @param identifier the nio identifier of the server.
    * @param creator a function that creates the server.
    * @return the started nioServer.
-   * @exclude
    */
   @SuppressWarnings("unchecked")
   <T extends NioServer> T getOrCreateServer(final int identifier, final NioServerCreator<T> creator) {
@@ -263,7 +253,6 @@ abstract class AbstractJPPFDriver {
    * @param start whether to start a newly created server.
    * @param creator a function that creates the server.
    * @return the started nioServer.
-   * @exclude
    */
   @SuppressWarnings("unchecked")
   <T extends NioServer> T getOrCreateServer(final int identifier, final boolean start, final NioServerCreator<T> creator) {
@@ -362,7 +351,6 @@ abstract class AbstractJPPFDriver {
 
   /**
    * @return an object Used for serialization / deserialization.
-   * @exclude
    */
   public ObjectSerializer getSerializer() {
     return serializer;
@@ -370,7 +358,6 @@ abstract class AbstractJPPFDriver {
 
   /**
    * @return the MBean handling changes in number of nodes/processing threads.
-   * @exclude
    */
   public PeerDriver getPeerDriver() {
     return peerDriver;
@@ -379,7 +366,6 @@ abstract class AbstractJPPFDriver {
   /**
    * 
    * @param peerDriver the MBean handling changes in number of nodes/processing threads.
-   * @exclude
    */
   public void setPeerDriver(final PeerDriver peerDriver) {
     this.peerDriver = peerDriver;
@@ -395,7 +381,6 @@ abstract class AbstractJPPFDriver {
   /**
    * Get the factory that creates and invoke hook instances for this node.
    * @return a {@link HookFactory} instance.
-   * @exclude
    */
   public HookFactory getHookFactory() {
     return hookFactory;

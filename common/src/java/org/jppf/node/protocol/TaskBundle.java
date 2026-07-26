@@ -24,7 +24,6 @@ import org.jppf.utils.collections.Metadata;
 /**
  * Interface for job headers sent ver the network.
  * @author Laurent Cohen
- * @exclude
  */
 public interface TaskBundle extends JPPFDistributedJob, Metadata {
   /**

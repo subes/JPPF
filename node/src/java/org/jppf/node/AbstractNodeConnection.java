@@ -25,7 +25,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * Abstract impelementation of {@link org.jppf.classloader.ClassLoaderConnection}.
  * @param <C> the type of communication channel used by this connection.
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractNodeConnection<C> implements NodeConnection<C> {
   /**

@@ -18,6 +18,5 @@
 
 /**
  * Unit tests for <code>org.jppf.utils.stats</code> package.
- * @exclude
  */
 package test.org.jppf.utils.stats;

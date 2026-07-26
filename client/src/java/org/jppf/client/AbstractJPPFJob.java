@@ -268,7 +268,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Get the service level agreement between the job and the server.
    * @param jobSLA an instance of <code>JobSLA</code>.
-   * @exclude
    */
   public void setSLA(final JobSLA jobSLA) {
     this.jobSLA = jobSLA;
@@ -277,7 +276,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Get the service level agreement between the job and the server.
    * @param jobClientSLA an instance of <code>JobSLA</code>.
-   * @exclude
    */
   public void setClientSLA(final JobClientSLA jobClientSLA) {
     this.jobClientSLA = jobClientSLA;
@@ -286,7 +284,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Set this job's metadata.
    * @param jobMetadata a {@link JobMetadata} instance.
-   * @exclude
    */
   public void setMetadata(final JobMetadata jobMetadata) {
     this.jobMetadata = jobMetadata;
@@ -295,7 +292,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Resolve this instance after deserialization.
    * @return an instance of {@link Object}.
-   * @exclude
    */
   protected Object readResolve() {
     listeners = new LinkedList<>();
@@ -319,7 +315,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Get the flag that determines whether this job has been cancelled.
    * @return an {@code AtomicBoolean} instance.
-   * @exclude
    */
   public AtomicBoolean getCancelledFlag() {
     return cancelled;
@@ -343,7 +338,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Add a listener to the list of status listeners.
    * @param listener the listener to add.
-   * @exclude
    */
   public void addJobStatusListener(final JobStatusListener listener) {
     synchronized(statusListeners) {
@@ -355,7 +349,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Remove a listener from the list of status listeners.
    * @param listener the listener to remove.
-   * @exclude
    */
   public void removeJobStatusListener(final JobStatusListener listener) {
     synchronized(statusListeners) {
@@ -367,7 +360,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Notify all listeners of a change of status for this job.
    * @param newStatus the status for job event.
-   * @exclude
    */
   protected void fireStatusChangeEvent(final JobStatus newStatus) {
     synchronized(statusListeners) {
@@ -383,7 +375,6 @@ public abstract class AbstractJPPFJob<J extends AbstractJPPFJob<J>> implements S
   /**
    * Get the flag that determines whether this job is being cancelled.
    * @return an {@code AtomicBoolean} instance.
-   * @exclude
    */
   public AtomicBoolean getCancellingFlag() {
     return cancelling;

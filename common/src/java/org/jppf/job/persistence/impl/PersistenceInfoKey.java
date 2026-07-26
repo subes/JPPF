@@ -22,7 +22,6 @@ import org.jppf.job.persistence.*;
 
 /**
  * Instances of this class represent a key in the cache.
- * @exclude
  */
 public class PersistenceInfoKey {
   /**

@@ -451,7 +451,6 @@ public class JMXDriverConnectionWrapper extends JMXConnectionWrapper implements 
    * It is equivalent to calling the more cumbersome {@code getProxy(PersistedJobsManagerMBean.MBEAN_NAME, PersistedJobsManagerMBean.class)}.
    * @return an instance of {@link PersistedJobsManagerMBean}.
    * @throws Exception if a proxy could not be created for any reason.
-   * @exclude
    */
   public PersistedJobsManagerMBean getPersistedJobsManager() throws Exception {
     return getProxy(PersistedJobsManagerMBean.MBEAN_NAME, PersistedJobsManagerMBean.class);

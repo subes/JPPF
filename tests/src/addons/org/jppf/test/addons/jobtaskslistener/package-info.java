@@ -18,6 +18,5 @@
 
 /**
  * Support for testing the {@code JobTaskListener} facility..
- * @exclude
  */
 package org.jppf.test.addons.jobtaskslistener;

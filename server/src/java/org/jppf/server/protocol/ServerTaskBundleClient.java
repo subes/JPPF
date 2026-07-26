@@ -31,7 +31,6 @@ import org.slf4j.*;
  * Instances of this class group tasks from the same client channel together.
  * @author Laurent Cohen
  * @author Martin JANDA
- * @exclude
  */
 public class ServerTaskBundleClient {
   /**
@@ -476,7 +475,6 @@ public class ServerTaskBundleClient {
   /**
    * Listener providing a callback to invoke when a task's execution has completed.
    * @author Martin JANDA
-   * @exclude
    */
   public interface CompletionListener {
     /**

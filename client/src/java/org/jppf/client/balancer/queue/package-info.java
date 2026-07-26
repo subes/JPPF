@@ -18,6 +18,5 @@
 
 /**
  * Support for job queuing in the JPPF client.
- * @exclude
  */
 package org.jppf.client.balancer.queue;

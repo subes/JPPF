@@ -23,7 +23,6 @@ import java.io.Closeable;
 /**
  * Interface for printing a {@link ThreadDump}.
  * @author Laurent Cohen
- * @exclude
  */
 public interface ThreadDumpWriter extends Closeable {
   /**

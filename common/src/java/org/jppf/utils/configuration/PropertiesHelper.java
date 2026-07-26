@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class PropertiesHelper {
   /**

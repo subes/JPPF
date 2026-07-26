@@ -100,7 +100,6 @@ public abstract class AbstractComponent<E extends AbstractComponent> implements 
   /**
    * Add a child to this component.
    * @param child the child component to add.
-   * @exclude
    */
   @SuppressWarnings("unchecked")
   public synchronized void add(final E child) {
@@ -111,7 +110,6 @@ public abstract class AbstractComponent<E extends AbstractComponent> implements 
   /**
    * Remove a child from this component.
    * @param child the child component to remove.
-   * @exclude
    */
   @SuppressWarnings("unchecked")
   public synchronized void remove(final E child) {

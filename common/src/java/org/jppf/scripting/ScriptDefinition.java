@@ -112,7 +112,6 @@ public class ScriptDefinition implements Serializable {
    * @param script the script content as text.
    * @param id an identifier which allows reusing the compiled script.
    * @param bindings optional variable bindings made available to the script at execution time.
-   * @exclude
    */
   public ScriptDefinition(final String language, final String script, final String id, final Map<String, Object> bindings) {
     if (language == null) throw new IllegalArgumentException("the script language cannot be null");
@@ -139,7 +138,6 @@ public class ScriptDefinition implements Serializable {
 
   /**
    * @return the identifier which allows reusing the compiled script.
-   * @exclude
    */
   public String getId() {
     return id;

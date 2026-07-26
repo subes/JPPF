@@ -33,7 +33,6 @@ import org.slf4j.*;
  * This class performs the I/O operations requested by the JPPFNode, for reading the task bundles and sending the results back.
  * @param <N> the type of node.
  * @author Laurent Cohen
- * @exclude
  */
 public abstract class AbstractNodeIO<N extends AbstractCommonNode> implements NodeIO {
   /**

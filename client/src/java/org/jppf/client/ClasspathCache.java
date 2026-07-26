@@ -27,7 +27,6 @@ import org.slf4j.*;
 /**
  * A cache of claspath resources on the client side.
  * @author Laurent Cohen
- * @exclude
  */
 public final class ClasspathCache {
   /**

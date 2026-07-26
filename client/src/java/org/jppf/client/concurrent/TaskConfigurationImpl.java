@@ -24,7 +24,6 @@ import org.jppf.scheduling.JPPFSchedule;
 /**
  * Configuration for tasks submitted by a <code>JPPFExecutorService</code> which do not extend <code>JPPFTask</code>.
  * @author Laurent Cohen
- * @exclude
  */
 class TaskConfigurationImpl implements TaskConfiguration {
   /**

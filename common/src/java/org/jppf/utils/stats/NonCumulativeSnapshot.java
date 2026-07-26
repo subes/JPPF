@@ -31,7 +31,6 @@ public class NonCumulativeSnapshot extends AbstractJPPFSnapshot {
   /**
    * Initialize this snapshot with a specified title.
    * @param label the title for this snapshot.
-   * @exclude
    */
   public NonCumulativeSnapshot(final String label) {
     super(label);
@@ -39,7 +38,6 @@ public class NonCumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void addValues(final double accumulatedValues, final long count) {
@@ -56,7 +54,6 @@ public class NonCumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public synchronized void assignLatestToMax() {
@@ -70,7 +67,6 @@ public class NonCumulativeSnapshot extends AbstractJPPFSnapshot {
 
   /**
    * {@inheritDoc}
-   * @exclude
    */
   @Override
   public JPPFSnapshot copy() {

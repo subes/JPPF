@@ -28,7 +28,6 @@ import org.slf4j.*;
 /**
  * This class handles the interactions between the server queue and jobs and the job dependency graph.
  * @author Laurent Cohen
- * @exclude
  */
 public class JobDependenciesHandler {
   /**

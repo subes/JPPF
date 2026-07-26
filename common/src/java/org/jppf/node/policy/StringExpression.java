@@ -21,7 +21,6 @@ package org.jppf.node.policy;
 /**
  * An expression that represents a string as either a literal or an expression that returns a string.
  * @author Laurent Cohen
- * @exclude
  */
 public class StringExpression extends AbstractExpression<String> {
   /**

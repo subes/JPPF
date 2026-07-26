@@ -105,7 +105,6 @@ public class JobSLA extends JobCommonSLA<JobSLA> {
 
   /**
    * Default constructor.
-   * @exclude
    */
   public JobSLA() {
     maxChannels = Integer.MAX_VALUE;
@@ -227,7 +226,6 @@ public class JobSLA extends JobCommonSLA<JobSLA> {
   /**
    * Get the strategy used to return the results back to the client.
    * @return the name of the strategy to use.
-   * @exclude
    */
   public String getResultsStrategy() {
     return resultsStrategy;
@@ -237,7 +235,6 @@ public class JobSLA extends JobCommonSLA<JobSLA> {
    * Set the strategy used to return the results back to the client.
    * @param name the name of the strategy to use.
    * @return this SLA, for method call chaining.
-   * @exclude
    */
   public JobSLA setResultsStrategy(final String name) {
     this.resultsStrategy = name;
@@ -422,7 +419,6 @@ public class JobSLA extends JobCommonSLA<JobSLA> {
   /**
    * Create a copy of this job SLA.
    * @return a {@link JobSLA} instance.
-   * @exclude
    */
   public JobSLA copy() {
     final JobSLA sla = new JobSLA();

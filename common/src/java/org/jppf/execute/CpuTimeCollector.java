@@ -23,7 +23,6 @@ import org.jppf.utils.ManagementUtils;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public class CpuTimeCollector {
   /**

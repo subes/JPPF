@@ -30,7 +30,6 @@ import org.jppf.node.protocol.JPPFRunnable;
 /**
  * Wrapper class for a task not implementing {@link org.jppf.node.protocol.Task Task<T>}.
  * @author Laurent Cohen
- * @exclude
  */
 class AnnotatedTaskWrapper extends AbstractTaskObjectWrapper {
   /**

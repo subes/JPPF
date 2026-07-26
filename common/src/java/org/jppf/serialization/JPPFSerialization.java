@@ -163,7 +163,6 @@ public interface JPPFSerialization {
 
     /**
      * Reset the configured serialization.
-     * @exclude
      */
     public static void reset() {
       serializationClass = null;

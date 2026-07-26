@@ -26,7 +26,6 @@ import org.jppf.load.balancer.LoadBalancingInformation;
 /**
  * Interface for an asynchronous job submission manager.
  * @author Laurent Cohen
- * @exclude
  */
 public interface JobManager {
   /**

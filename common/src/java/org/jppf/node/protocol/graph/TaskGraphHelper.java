@@ -25,7 +25,6 @@ import org.jppf.node.protocol.Task;
 /**
  * Utility and factory methods to build and manipulate graphs of tasks.
  * @author Laurent Cohen
- * @exclude
  */
 public class TaskGraphHelper {
   /**

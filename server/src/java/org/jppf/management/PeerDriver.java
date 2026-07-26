@@ -27,7 +27,6 @@ import org.jppf.utils.TypedProperties;
 /**
  * 
  * @author Laurent Cohen
- * @exclude
  */
 public final class PeerDriver extends NotificationBroadcasterSupport implements PeerDriverMBean {
   /**

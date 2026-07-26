@@ -27,7 +27,6 @@ import org.slf4j.*;
 
 /**
  * The goal of this class is to serialize an object before sending it back to the server, and catch an eventual exception.
- * @exclude
  */
 public class ObjectSerializationTask implements Callable<DataLocation> {
   /**

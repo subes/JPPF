@@ -111,7 +111,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
 
   /**
    * Main processing loop of this node.
-   * @exclude
    */
   @Override
   public void run() {
@@ -292,7 +291,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
   /**
    * Initialize this node's resources.
    * @throws Exception if an error is raised during initialization.
-   * @exclude
    */
   protected synchronized void init() throws Exception {
     checkStopped();
@@ -337,7 +335,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
   /**
    * Get the main classloader for the node. This method performs a lazy initialization of the classloader.
    * @throws Exception if an error occurs while instantiating the class loader.
-   * @exclude
    */
   public void initHelper() throws Exception {
     final AbstractJPPFClassLoader cl = getClassLoader();
@@ -353,7 +350,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
 
   /**
    * Trigger the configuration changed flag.
-   * @exclude
    */
   public void triggerConfigChanged() {
     updateSystemInformation();
@@ -376,7 +372,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
   
   /**
    * @return the slave node manager.
-   * @exclude
    */
   public SlaveNodeManager getSlaveManager() {
     return slaveManager;
@@ -402,9 +397,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
     }
   }
 
-  /**
-   * @exclude
-   */
   @Override
   public synchronized void stopNode() {
     if (debugEnabled) log.debug("stopping node");
@@ -417,7 +409,6 @@ public abstract class JPPFNode extends AbstractCommonNode implements ClassLoader
 
   /**
    * @return the object which asynchronously sends job results and notification bundles.
-   * @exclude
    */
   public QueueHandler<BundleWithTasks> getJobWriter() {
     return jobWriter;

@@ -18,6 +18,5 @@
 
 /**
  * Classes supporting the update job max nodes dialog.
- * @exclude
  */
 package org.jppf.admin.web.jobs.maxnodes;
