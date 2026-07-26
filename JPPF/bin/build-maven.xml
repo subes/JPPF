@@ -43,12 +43,11 @@
     <mkdir dir="${maven.dist}"/>
     <loadfile property="jppf.maven.header" srcFile="${bin}/maven/pom-header.xml"/>
     <loadfile property="jppf.maven.common" srcFile="${bin}/maven/pom-common.xml"/>
-    <property file="${user.home}/gpg-passphrase.txt"/>
     <!-- defined maven snapshots and staging repository id and url -->
-    <property name="maven-snapshots-repository-id" value="sonatype-nexus-snapshots" />
-    <property name="maven-snapshots-repository-url" value="https://oss.sonatype.org/content/repositories/snapshots" />
-    <property name="maven-staging-repository-id" value="sonatype-nexus-staging" />
-    <property name="maven-staging-repository-url" value="https://oss.sonatype.org/service/local/staging/deploy/maven2/" />
+    <property name="maven-snapshots-repository-id" value="invesdwin-oss" />
+    <property name="maven-snapshots-repository-url" value="https://invesdwin.de/repo/invesdwin-oss" />
+    <property name="maven-staging-repository-id" value="invesdwin-oss" />
+    <property name="maven-staging-repository-url" value="https://invesdwin.de/repo/invesdwin-oss" />
     <property name="pom.file" value="${maven.dist}/pom.xml"/>
   </target>
 
@@ -149,41 +148,54 @@
   </macrodef>
 
   <target name="publish.maven.snapshot" depends="">
-    <!--<echo message="deploying ${maven-jar} to SNAPSHOT repository !!!"/>
-    <artifact:mvn failonerror="true" unless:true="${maven.nopublish}">
-      <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.3:sign-and-deploy-file" />
+    <echo message="deploying ${maven-jar} to SNAPSHOT repository !!!"/>
+    
+    <!-- For Linux/Mac -->
+    <exec executable="mvn" osfamily="unix" failonerror="true" unless:true="${maven.nopublish}">
+      <arg value="org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy-file" />
       <arg value="-Durl=${maven-snapshots-repository-url}" />
       <arg value="-DrepositoryId=${maven-snapshots-repository-id}" />
       <arg value="-DpomFile=${pom.file}"/>
       <arg value="-Dfile=${maven-jar}.jar"/>
       <arg value="-Dsources=${maven-jar}-sources.jar"/>
       <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
-      <arg value="-Pgpg" />
-    </artifact:mvn>-->
+    </exec>
+
+    <!-- For Windows -->
+    <exec executable="mvn.cmd" osfamily="windows" failonerror="true" unless:true="${maven.nopublish}">
+      <arg value="org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy-file" />
+      <arg value="-Durl=${maven-snapshots-repository-url}" />
+      <arg value="-DrepositoryId=${maven-snapshots-repository-id}" />
+      <arg value="-DpomFile=${pom.file}"/>
+      <arg value="-Dfile=${maven-jar}.jar"/>
+      <arg value="-Dsources=${maven-jar}-sources.jar"/>
+      <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
+    </exec>
   </target>
 
   <target name="publish.maven.staging" depends="">
-    <!--<echo message="deploying ${maven-jar} to STAGING repository !!!"/>
-    <artifact:mvn failonerror="true" unless:true="${maven.nopublish}">
-      <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.3:sign-and-deploy-file" />
+    <echo message="deploying ${maven-jar} to STAGING repository !!!"/>
+    
+    <!-- For Linux/Mac -->
+    <exec executable="mvn" osfamily="unix" failonerror="true" unless:true="${maven.nopublish}">
+      <arg value="org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy-file" />
       <arg value="-Durl=${maven-staging-repository-url}" />
       <arg value="-DrepositoryId=${maven-staging-repository-id}" />
       <arg value="-DpomFile=${pom.file}"/>
       <arg value="-Dfile=${maven-jar}.jar"/>
       <arg value="-Dsources=${maven-jar}-sources.jar"/>
       <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
-      <arg value="-Pgpg" />
-    </artifact:mvn>-->
-  </target>
+    </exec>
 
-  <target name="gpg.sign" depends="">
-    <exec executable="gpg">
-      <arg value="--yes"/>
-      <arg value="--passphrase"/>
-      <arg value="${gpg.pass}"/>
-      <arg value="--armor"/>
-      <arg value="--detach-sign"/>
-      <arg value="${file.sign}"/>
+    <!-- For Windows -->
+    <exec executable="mvn.cmd" osfamily="windows" failonerror="true" unless:true="${maven.nopublish}">
+      <arg value="org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy-file" />
+      <arg value="-Durl=${maven-staging-repository-url}" />
+      <arg value="-DrepositoryId=${maven-staging-repository-id}" />
+      <arg value="-DpomFile=${pom.file}"/>
+      <arg value="-Dfile=${maven-jar}.jar"/>
+      <arg value="-Dsources=${maven-jar}-sources.jar"/>
+      <arg value="-Djavadoc=${maven-jar}-javadoc.jar"/>
     </exec>
   </target>
 
