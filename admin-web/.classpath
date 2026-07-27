@@ -18,6 +18,7 @@
 	<classpathentry kind="lib" path="lib/asm-util-9.6.jar"/>
 	<classpathentry kind="lib" path="lib/cglib-nodep-3.3.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload2-jakarta-servlet6-2.0.0-M5.jar"/>
 	<classpathentry kind="lib" path="lib/commons-io-2.15.1.jar"/>
 	<classpathentry kind="lib" path="lib/error_prone_annotations-2.50.0.jar"/>
 	<classpathentry kind="lib" path="lib/guava-33.0.0-jre.jar"/>
@@ -25,17 +26,17 @@
 	<classpathentry kind="lib" path="lib/jackson-core-2.16.1.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.16.1.jar"/>
 	<classpathentry kind="lib" path="lib/jakarta.annotation-api-2.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/jakarta.el-api-5.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta.el-api-6.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/jakarta.enterprise.cdi-api-4.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/jakarta.inject-api-2.0.1.jar"/>
-	<classpathentry kind="lib" path="lib/jakarta.servlet-api-5.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta.servlet-api-6.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/jakarta.validation-api-3.0.2.jar"/>
 	<classpathentry kind="lib" path="lib/jakarta.websocket-api-2.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/joda-time-2.12.6.jar"/>
 	<classpathentry kind="lib" path="lib/jsr305-3.0.2.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-api-2.22.1.jar"/>
 	<classpathentry kind="lib" path="lib/lz4-java-1.8.0.jar"/>
 	<classpathentry kind="lib" path="lib/openjson-1.0.12.jar"/>
+	<classpathentry kind="lib" path="lib/reload4j-1.2.26.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-2.0.18.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-auth-roles-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-bean-validation-10.7.0.jar"/>
@@ -51,10 +52,11 @@
 	<classpathentry kind="lib" path="lib/wicket-jquery-ui-theme-start-9.23.1.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-mount-core-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-native-websocket-core-10.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/wicket-native-websocket-javax-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-objectsizeof-agent-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-request-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicketstuff-servlet3-auth-10.7.0.jar"/>
-	<classpathentry kind="lib" path="lib/wicket-util-10.7.0.jar" sourcepath="/home/subes/.m2/repository/org/apache/wicket/wicket-util/10.7.0/wicket-util-10.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/wicket-util-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-velocity-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-webjars-3.0.4.jar"/>
 	<classpathentry kind="output" path="classes"/>

@@ -184,7 +184,7 @@
     <!-- Migrated to Jakarta WebSocket implementation -->
     <dependency>
       <groupId>org.apache.wicket</groupId>
-      <artifactId>wicket-native-websocket-jakarta</artifactId>
+      <artifactId>wicket-native-websocket-javax</artifactId>
       <version>${wicket.version}</version>
     </dependency>
 
@@ -230,7 +230,7 @@
     <dependency>
       <groupId>jakarta.el</groupId>
       <artifactId>jakarta.el-api</artifactId>
-      <version>5.0.0</version>
+      <version>6.0.1</version>
     </dependency>
     <dependency>
       <groupId>jakarta.enterprise</groupId>
@@ -240,7 +240,7 @@
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version>
+      <version>6.1.0</version>
     </dependency>
     <dependency>
       <groupId>jakarta.validation</groupId>

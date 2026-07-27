@@ -52,7 +52,7 @@
         <zipfileset dir="${build}" prefix="${@{module}.prefix}/lib" includes="jppf-jmxremote-nio-${version.number}.jar"/>
         <zipfileset dir="${build}" prefix="${@{module}.prefix}/lib-src" includes="jppf-jmxremote-nio-src-${version.number}.jar"/>
         <zipfileset dir="${lib}/ApacheCommons" prefix="${@{module}.prefix}/lib" includes="${ApacheCommons.inc}"/>
-        <zipfileset dir="${lib}/log4j" prefix="${@{module}.prefix}/lib" includes="${log4j.inc}"/>
+        <zipfileset dir="${lib}/reload4j" prefix="${@{module}.prefix}/lib" includes="${reload4j.inc}"/>
         <zipfileset dir="${lib}/slf4j" prefix="${@{module}.prefix}/lib" includes="${slf4j.inc}"/>
         <zipfileset dir="${lib}/LZ4" prefix="${@{module}.prefix}/lib" includes="${LZ4.inc}"/>
         <module-elements/>

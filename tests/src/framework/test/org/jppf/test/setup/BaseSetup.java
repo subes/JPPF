@@ -48,7 +48,7 @@ public class BaseSetup {
   /**
    * Current version of SLF4J.
    */
-  public static final String SLF4J_VERSION = "1.7.25";
+  public static final String SLF4J_VERSION = "2.0.18";
   /**
    * Default timeout when checking that the grid is up.
    */

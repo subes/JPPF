@@ -50,7 +50,7 @@
         <include name="jppf-client-${version.number}.jar"/>
         <include name="jppf-admin-${version.number}.jar"/>
       </fileset>
-      <fileset dir="${lib}/log4j" includes="${log4j.inc}"/>
+      <fileset dir="${lib}/reload4j" includes="${reload4j.inc}"/>
       <fileset dir="${lib}/LZ4" includes="${LZ4.inc}"/>
       <fileset dir="${lib}/slf4j" includes="${slf4j.inc}"/>
     </copy>

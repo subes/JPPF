@@ -40,11 +40,11 @@
   <property name="oshi.inc"             value="*.jar"/>
   <property name="Jung.inc"             value="*.jar"/>
   <property name="JUnit.inc"            value="*.jar"/>
-  <property name="log4j.inc"            value="*.jar"/>
+  <property name="reload4j.inc"            value="*.jar"/>
   <property name="LZ4.inc"              value="*.jar"/>
   <property name="MigLayout.inc"        value="*.jar"/>
   <property name="RSyntaxTextArea.inc"  value="*.jar"/>
-  <property name="slf4j.inc"            value="slf4j-api-*.jar,slf4j-log4j12-*.jar"/>
+  <property name="slf4j.inc"            value="slf4j-api-*.jar,slf4j-reload4j-*.jar"/>
 
   <!-- ========================================================================= -->
   <!-- Download JPPF dependencies                                                -->
@@ -78,14 +78,14 @@
     <get.maven.lib g="net.sf.jung"          a="jung-visualization" v="${jung.version}"      dest="${lib}/Jung"/>
     <get.maven.lib g="junit"                a="junit"              v="4.13.2"               dest="${lib}/JUnit"/>
     <get.maven.lib g="org.hamcrest"         a="hamcrest-core"      v="1.3"                  dest="${lib}/JUnit"/>
-    <get.maven.lib g="log4j"                a="log4j"              v="${log4j.version}"     dest="${lib}/log4j"/>
+    <get.maven.lib g="ch.qos.reload4j"      a="reload4j"           v="${reload4j.version}"     dest="${lib}/reload4j"/>
     <get.maven.lib g="org.lz4"              a="lz4-java"           v="1.6.0"                dest="${lib}/LZ4"/>
     <get.maven.lib g="org.apache.maven"     a="maven-ant-tasks"    v="2.1.3"                dest="${lib}/maven"/>
     <get.maven.lib g="com.miglayout"        a="miglayout-core"     v="${miglayout.version}" dest="${lib}/MigLayout"/>
     <get.maven.lib g="com.miglayout"        a="miglayout-swing"    v="${miglayout.version}" dest="${lib}/MigLayout"/>
     <get.maven.lib g="com.github.oshi"      a="oshi-core"          v="${oshi.version}"      dest="${lib}/oshi"/>
     <get.maven.lib g="org.slf4j"            a="slf4j-api"          v="${slf4j.version}"     dest="${lib}/slf4j"/>
-    <get.maven.lib g="org.slf4j"            a="slf4j-log4j12"      v="${slf4j.version}"     dest="${lib}/slf4j"/>
+    <get.maven.lib g="org.slf4j"            a="slf4j-reload4j"      v="${slf4j.version}"     dest="${lib}/slf4j"/>
     <get.maven.lib g="com.fifesoft"         a="rsyntaxtextarea"    v="${rsta.version}"      dest="${lib}/RSyntaxTextArea"/>
   </target>
 

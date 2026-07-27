@@ -265,14 +265,14 @@
 
   <target name="rar.all" depends="compile, build.util.jar" description="generate the ear files">
     <echo message="creating the RAR files..." />
-    <rar appserver="${jboss}" logging="log4j12"/>
+    <rar appserver="${jboss}" logging="reload4j"/>
     <rar appserver="${jboss7}">
       <manifest-additions>
         <attribute name="Dependencies" value="org.slf4j,org.slf4j.impl"/>
       </manifest-additions>
       <jppflibs-patterns>
         <exclude name="slf4j*.jar" />
-        <exclude name="log4j*.jar" />
+        <exclude name="reload4j*.jar" />
       </jppflibs-patterns>
     </rar>
     <rar appserver="${wildfly8}">
@@ -281,15 +281,15 @@
       </manifest-additions>
       <jppflibs-patterns>
         <exclude name="slf4j*.jar" />
-        <exclude name="log4j*.jar" />
+        <exclude name="reload4j*.jar" />
       </jppflibs-patterns>
     </rar>
     <rar appserver="${sunas}"/>
     <rar appserver="${was}"/>
     <rar appserver="${weblogic}"/>
-    <rar appserver="${openliberty}" logging="log4j12">
+    <rar appserver="${openliberty}" logging="reload4j">
       <jppflibs-patterns>
-        <include name="log4j*.jar" />
+        <include name="reload4j*.jar" />
       </jppflibs-patterns>
     </rar>
     <!-- ***** add RAR generation for other application servers here  ***** -->
@@ -301,7 +301,7 @@
     Build a JPPF JCA rar file.
     Attributes:
     - appserver: application server name property
-    - logging: type of slf4j binding, either "log4j12" or "jdk14", defaults to "jdk14"
+    - logging: type of slf4j binding, either "reload4j" or "jdk14", defaults to "jdk14"
   -->
   <macrodef name="rar">
     <attribute name="appserver"/>

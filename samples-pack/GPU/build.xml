@@ -41,9 +41,9 @@
     <pathelement location="${shared.lib}/jppf-client*.jar"/>
     <pathelement location="${shared.lib}/jppf-common*.jar"/>
     <pathelement location="${shared.lib}/jppf-node*.jar"/>
-    <pathelement location="${shared.lib}/log4j-1.2.15.jar"/>
-    <pathelement location="${shared.lib}/slf4j-api-1.7.25-.jar"/>
-    <pathelement location="${shared.lib}/slf4j-log4j12-1.7.25.jar"/>
+    <pathelement location="${shared.lib}/reload4j-1.2.26.jar"/>
+    <pathelement location="${shared.lib}/slf4j-api-2.0.18.jar"/>
+    <pathelement location="${shared.lib}/slf4j-reload4j-2.0.18.jar"/>
 	</path>
 
   <path id="javadoc.classpath">

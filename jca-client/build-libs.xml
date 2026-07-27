@@ -40,9 +40,9 @@
     <!-- MIGRATED FROM javax JCA/Servlet TO jakarta APIs                           -->
     <!-- ========================================================================= -->
     <get.maven.lib g="jakarta.resource"     a="jakarta.resource-api" v="2.1.0"              dest="${lib.dir}"/>
-    <get.maven.lib g="jakarta.servlet"      a="jakarta.servlet-api"  v="5.0.0"              dest="${lib.dir}"/>
+    <get.maven.lib g="jakarta.servlet"      a="jakarta.servlet-api"  v="6.1.0"              dest="${lib.dir}"/>
 
-    <get.maven.lib g="org.apache.logging.log4j" a="log4j-api"        v="2.22.1"               dest="${lib.dir}"/>
+    <get.maven.lib g="ch.qos.reload4j"      a="reload4j"           v="1.2.26"               dest="${lib.dir}"/>
     <get.maven.lib g="org.lz4"              a="lz4-java"           v="1.8.0"                dest="${lib.dir}"/>
     <get.maven.lib g="org.slf4j"            a="slf4j-api"          v="${slf4j.version}"     dest="${lib.dir}"/>
     <get.maven.lib g="org.slf4j"            a="slf4j-reload4j"      v="${slf4j.version}"     dest="${lib.dir}"/>

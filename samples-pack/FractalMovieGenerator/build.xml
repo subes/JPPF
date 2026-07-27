@@ -127,9 +127,9 @@
         <include name="jppf-node*.jar"/>
         <include name="jppf-common*.jar"/>
         <include name="jppf-server*.jar"/>
-        <include name="log4j-1.2.15.jar"/>
-        <include name="slf4j-api-1.7.25.jar"/>
-        <include name="slf4j-log4j12-1.7.25.jar"/>
+        <include name="reload4j-1.2.26.jar"/>
+        <include name="slf4j-api-2.0.18.jar"/>
+        <include name="slf4j-reload4j-2.0.18.jar"/>
     	</zipfileset>
       <zipfileset dir="${basedir}" includes="MandelbrotMovieGenerator.jar" prefix="${prefix}/lib"/>
       <zipfileset dir="${idle.sample}/lib" includes="*.jar" prefix="${prefix}/lib"/>
@@ -150,9 +150,9 @@
         <include name="jppf-node*.jar"/>
         <include name="jppf-common*.jar"/>
         <include name="jppf-server*.jar"/>
-        <include name="log4j-1.2.15.jar"/>
-        <include name="slf4j-api-1.7.25.jar"/>
-        <include name="slf4j-log4j12-1.7.25.jar"/>
+        <include name="reload4j-1.2.26.jar"/>
+        <include name="slf4j-api-2.0.18.jar"/>
+        <include name="slf4j-reload4j-2.0.18.jar"/>
       </tarfileset>
       <tarfileset dir="${basedir}" includes="MandelbrotMovieGenerator.jar" prefix="${prefix}/lib"/>
       <tarfileset dir="${idle.sample}/lib" includes="*.jar" prefix="${prefix}/lib"/>

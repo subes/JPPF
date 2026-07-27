@@ -23,7 +23,7 @@
   <!-- ========================================================================= -->
   
   <property name="slf4j.version"     value="2.0.18"/>
-  <property name="log4j.version"     value="2.22.1"/>
+  <property name="reload4j.version"     value="1.2.26"/>
   <property name="jung.version"      value="2.1.1"/>
   <property name="miglayout.version" value="11.3"/>
   <property name="jna.version"       value="5.14.0"/>

@@ -7,8 +7,11 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/client"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/node"/>
-	<classpathentry kind="lib" path="/JPPF/lib/log4j/log4j-1.2.15.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/h2.jar"/>
 	<classpathentry kind="lib" path="/JPPF/lib/HikariCP/HikariCP-java7-2.4.11.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jmxremote-nio"/>
@@ -17,5 +20,6 @@
 	<classpathentry kind="lib" path="/samples-pack/KryoSerializer/classes"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/server"/>
 	<classpathentry kind="lib" path="/JPPF/lib/JUnit/junit-4.13.2.jar"/>
+	<classpathentry kind="lib" path="/JPPF/lib/reload4j/reload4j-1.2.26.jar"/>
 	<classpathentry kind="output" path="classes/tests"/>
 </classpath>
