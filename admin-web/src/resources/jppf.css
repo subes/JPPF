@@ -38,7 +38,7 @@ textarea:disabled, input:disabled {
 
 a { text-decoration: none; font-weight: normal; }
 a:hover { text-decoration: none; color: red; }
-div { margin: 0px; padding; 0px; }
+div { margin: 0px; padding: 0px; }
 
 /*.gwrapper { width: 900px; max-width: 900px; background: white; }*/
 .gwrapper { width: 100%; background: white; }

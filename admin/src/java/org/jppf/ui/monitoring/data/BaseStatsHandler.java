@@ -184,6 +184,9 @@ public class BaseStatsHandler {
    */
   public String formatLatestValue(final Locale locale, final TopologyDriver driver, final Fields field) {
     final Map<Fields, Double> map = getLatestDoubleValues(driver);
+    if(map == null) {
+    	return null;
+    }
     final StatsFormatter formatter = getFormatter(locale);
     synchronized(formatter) {
       return formatter.formatValue(field, map.get(field));

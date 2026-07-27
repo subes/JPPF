@@ -45,8 +45,9 @@ public class HeaderPanel extends Panel {
    */
   public HeaderPanel() {
     super("jppf.header");
-    final String user = JPPFWebSession.getSignedInUser();
-    final Locale locale = Session.get().getLocale();
+    final JPPFWebSession session = JPPFWebSession.get();
+	final String user = session.getSignedInUser();
+    final Locale locale = session.getLocale();
     final String s = (user != null)
       ? LocalizationUtils.getLocalized(getClass().getName(), "jppf.header.user.label", locale) + " " + user
       : LocalizationUtils.getLocalized(getClass().getName(), "jppf.header.not.signed_in.label", locale);
@@ -63,11 +64,11 @@ public class HeaderPanel extends Panel {
     };
 
     form.add(link);
-    showIPCheckBox = new AjaxCheckBox("jppf.header.show.ip", Model.of(JPPFWebSession.get().isShowIP())) {
+    showIPCheckBox = new AjaxCheckBox("jppf.header.show.ip", Model.of(session.isShowIP())) {
       @Override
       protected void onUpdate(final AjaxRequestTarget target) {
         final Boolean newSelection = this.getModelObject();
-        JPPFWebSession.get().setShowIP((newSelection != null) && newSelection);
+        session.setShowIP((newSelection != null) && newSelection);
       }
     };
     form.add(showIPCheckBox);

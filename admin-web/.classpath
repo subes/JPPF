@@ -41,7 +41,7 @@
 	<classpathentry kind="lib" path="lib/wicket-auth-roles-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-bean-validation-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-cdi-10.7.0.jar"/>
-	<classpathentry kind="lib" path="lib/wicket-core-10.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/wicket-core-10.7.0.jar" sourcepath="/home/subes/.m2/repository/org/apache/wicket/wicket-core/10.7.0/wicket-core-10.7.0-sources.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-datetime-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-devutils-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-extensions-10.7.0.jar"/>
@@ -55,7 +55,7 @@
 	<classpathentry kind="lib" path="lib/wicket-native-websocket-javax-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-objectsizeof-agent-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-request-10.7.0.jar"/>
-	<classpathentry kind="lib" path="lib/wicketstuff-servlet3-auth-10.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/wicketstuff-servlet3-auth-10.7.0.jar" sourcepath="/home/subes/.m2/repository/org/wicketstuff/wicketstuff-servlet3-auth/10.7.0/wicketstuff-servlet3-auth-10.7.0-sources.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-util-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-velocity-10.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/wicket-webjars-3.0.4.jar"/>

@@ -34,6 +34,8 @@ import org.jppf.admin.web.admin.ConfigType;
 import org.jppf.admin.web.admin.ConfigurationHandler;
 import org.jppf.admin.web.admin.SSLConfigSource;
 import org.jppf.admin.web.auth.LoginPage;
+import org.jppf.admin.web.security.JPPFServletContainerAuthenticatedWebApplication;
+import org.jppf.admin.web.security.JPPFServletContainerAuthenticatedWebSession;
 import org.jppf.admin.web.settings.JPPFAsyncFilePersistence;
 import org.jppf.admin.web.settings.Persistence;
 import org.jppf.admin.web.settings.PersistenceFactory;
@@ -50,14 +52,12 @@ import org.jppf.utils.TypedProperties;
 import org.jppf.utils.configuration.JPPFProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebApplication;
-import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebSession;
 
 /**
  * This is the Wicket {@link Application} class for the JPPF web console.
  * @author Laurent Cohen
  */
-public class JPPFWebConsoleApplication extends ServletContainerAuthenticatedWebApplication {
+public class JPPFWebConsoleApplication extends JPPFServletContainerAuthenticatedWebApplication {
   /**
    * Logger for this class.
    */
@@ -168,7 +168,7 @@ public class JPPFWebConsoleApplication extends ServletContainerAuthenticatedWebA
 
 
   @Override
-  protected Class<? extends ServletContainerAuthenticatedWebSession> getContainerManagedWebSessionClass() {
+  protected Class<? extends JPPFServletContainerAuthenticatedWebSession> getContainerManagedWebSessionClass() {
     return JPPFWebSession.class;
   }
 

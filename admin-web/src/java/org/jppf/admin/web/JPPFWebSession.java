@@ -23,8 +23,6 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 import org.apache.wicket.Session;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.cycle.RequestCycle;
@@ -33,6 +31,7 @@ import org.jppf.admin.web.auth.JPPFRoles;
 import org.jppf.admin.web.filter.TopologyFilter;
 import org.jppf.admin.web.health.HealthTreeData;
 import org.jppf.admin.web.jobs.JobsTreeData;
+import org.jppf.admin.web.security.JPPFServletContainerAuthenticatedWebSession;
 import org.jppf.admin.web.settings.UserSettings;
 import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.topology.TopologyTreeData;
@@ -40,14 +39,15 @@ import org.jppf.client.monitoring.topology.TopologyDriver;
 import org.jppf.ui.treetable.TreeViewType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebSession;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * The WebSession class. It handles container-based authentication and holds the data used to
  * render the views in the web console.
  * @author Laurent Cohen
  */
-public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
+public class JPPFWebSession extends JPPFServletContainerAuthenticatedWebSession {
   /**
    * Logger for this class.
    */
@@ -162,7 +162,7 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
 
   @Override
   public boolean authenticate(final String user, final String pwd) {
-    final boolean ret = super.authenticate(user, pwd);
+    final boolean ret = superAuthenticate(user, pwd);
     if (ret) {
       final List<String> roles = getUserRoles();
       if (debugEnabled) log.debug("successful authentication for user {}, roles = {}", user, roles);
@@ -177,6 +177,10 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
       getHealthData().initThresholds(userSettings.getProperties());
     } else if (debugEnabled) log.debug("failed authentication for user {}", user);
     return ret;
+  }
+
+  protected boolean superAuthenticate(final String user, final String pwd) {
+	return super.authenticate(user, pwd);
   }
 
   /**
@@ -205,7 +209,7 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   /**
    * @return the name of the authenticated user, or {@code null} if the user is not authenticated.
    */
-  public static String getSignedInUser() {
+  public String getSignedInUser() {
     final HttpServletRequest req = (HttpServletRequest) RequestCycle.get().getRequest().getContainerRequest();
     final Principal p = req.getUserPrincipal();
     return p == null ? null : p.getName();
@@ -214,7 +218,7 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   /**
    * @return the roles of the current signed-in user, if any.
    */
-  private static List<String> getUserRoles() {
+  protected List<String> getUserRoles() {
     final List<String> result = new ArrayList<>();
     final HttpServletRequest req = (HttpServletRequest) RequestCycle.get().getRequest().getContainerRequest();
     for (final JPPFRole r: JPPFRole.values()) {
