@@ -18,9 +18,10 @@
 
 package org.jppf.admin.web.layout;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.extensions.markup.html.form.palette.Palette;
 import org.apache.wicket.extensions.markup.html.form.palette.theme.DefaultTheme;
 import org.apache.wicket.model.Model;
@@ -28,14 +29,13 @@ import org.jppf.admin.web.utils.AbstractModalForm;
 import org.jppf.ui.monitoring.LocalizedListItem;
 import org.jppf.utils.TypedProperties;
 
-
 /**
  *
  * @author Laurent Cohen
  */
 public class SelectableLayoutForm extends AbstractModalForm {
   /**
-   * Text field for the number of threads.
+   * Palette field for visible items selection.
    */
   private Palette<LocalizedListItem> paletteField;
   /**
@@ -45,10 +45,10 @@ public class SelectableLayoutForm extends AbstractModalForm {
 
   /**
    * @param layout the selectable layout page to get the items from.
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public SelectableLayoutForm(final SelectableLayout layout, final ModalWindow modal, final Runnable okAction) {
+  public SelectableLayoutForm(final SelectableLayout layout, final ModalDialog modal, final Runnable okAction) {
     super("selectable.layout", modal, okAction, layout);
     this.layout = layout;
   }

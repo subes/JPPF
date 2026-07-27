@@ -18,22 +18,33 @@
 
 package org.jppf.admin.web.topology.provisioning;
 
-import java.io.*;
-import java.util.*;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
-import org.jppf.admin.web.tabletree.*;
+import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.topology.TopologyConstants;
 import org.jppf.admin.web.utils.AbstractModalLink;
-import org.jppf.client.monitoring.topology.*;
-import org.jppf.management.*;
-import org.jppf.utils.*;
-import org.jppf.utils.collections.*;
-import org.slf4j.*;
+import org.jppf.client.monitoring.topology.AbstractTopologyComponent;
+import org.jppf.client.monitoring.topology.TopologyDriver;
+import org.jppf.management.JPPFManagementInfo;
+import org.jppf.management.NodeSelector;
+import org.jppf.management.UuidSelector;
+import org.jppf.utils.ExceptionUtils;
+import org.jppf.utils.InvocationResult;
+import org.jppf.utils.ResultsMap;
+import org.jppf.utils.TypedProperties;
+import org.jppf.utils.collections.ArrayListHashMap;
+import org.jppf.utils.collections.CollectionMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -43,19 +54,17 @@ public class ProvisioningLink extends AbstractModalLink<ProvisioningForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(ProvisioningLink.class);
+  private static final Logger log = LoggerFactory.getLogger(ProvisioningLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
 
   /**
    * @param form .
    */
   public ProvisioningLink(final Form<String> form) {
-    super(TopologyConstants.PROVISIONING_ACTION, Model.of("Provisioning"), "provisioning.png", ProvisioningPage.class, form);
-    modal.setInitialWidth(600);
-    modal.setInitialHeight(340);
+    super(TopologyConstants.PROVISIONING_ACTION, Model.of("Provisioning"), "provisioning.png", ProvisioningPanel.class, form);
   }
 
   @Override

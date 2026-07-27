@@ -16,23 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.topology.systeminfo;
+package org.jppf.admin.web.topology.serverstop;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class SystemInfoPage extends WebPage {
+public class DriverStopRestartPanel extends Panel {
   /**
-   *
-   * @param info .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the form to display inside the panel.
    */
-  public SystemInfoPage(final String info) {
-    final Label label = new Label("system.info", info);
-    label.setEscapeModelStrings(false);
-    add(label);
+  public DriverStopRestartPanel(final String id, final DriverStopRestartForm form) {
+    super(id);
+    add(form);
   }
 }

@@ -18,8 +18,9 @@
 
 package org.jppf.admin.web.topology.nodeconfig;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
-import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalForm;
 import org.jppf.utils.TypedProperties;
@@ -41,13 +42,12 @@ public class NodeConfigForm extends AbstractModalForm {
    * Text area for the slaves' configuration overrides.
    */
   private TextArea<String> configField;
-  //private TextArea<String> configField;
 
   /**
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public NodeConfigForm(final ModalWindow modal, final Runnable okAction) {
+  public NodeConfigForm(final ModalDialog modal, final Runnable okAction) {
     super("node_config", modal, okAction);
   }
 
@@ -74,7 +74,7 @@ public class NodeConfigForm extends AbstractModalForm {
   }
 
   /**
-   * @return whether hether to force the nodes to restart.
+   * @return whether to force the nodes to restart.
    */
   public boolean isForceRestart() {
     return forceRestartField.getModelObject();
@@ -113,8 +113,8 @@ public class NodeConfigForm extends AbstractModalForm {
   @Override
   protected boolean saveSettings(final TypedProperties props) {
     props.setBoolean(interruptField.getId(), isInterrupt())
-    .setBoolean(forceRestartField.getId(), isForceRestart())
-    .setString(configField.getId(), getConfig());
+         .setBoolean(forceRestartField.getId(), isForceRestart())
+         .setString(configField.getId(), getConfig());
     return true;
   }
 }

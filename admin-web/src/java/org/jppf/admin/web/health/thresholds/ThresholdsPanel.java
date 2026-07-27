@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.jobs.maxnodes;
+package org.jppf.admin.web.health.thresholds;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class MaxNodesPage extends WebPage {
-  /**
-   *
-   * @param form .
-   */
-  public MaxNodesPage(final MaxNodesForm form) {
-    add(form);
-  }
+public class ThresholdsPanel extends Panel {
+	/**
+	 * @param id   component id (typically ModalDialog.CONTENT_ID).
+	 * @param form the thresholds form instance.
+	 */
+	public ThresholdsPanel(final String id, final ThresholdsForm form) {
+		super(id);
+		add(form);
+	}
 }

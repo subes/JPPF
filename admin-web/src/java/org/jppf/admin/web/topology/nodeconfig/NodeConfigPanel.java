@@ -18,18 +18,19 @@
 
 package org.jppf.admin.web.topology.nodeconfig;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class NodeConfigPage extends WebPage {
+public class NodeConfigPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the form to display inside the panel.
    */
-  public NodeConfigPage(final NodeConfigForm form) {
+  public NodeConfigPanel(final String id, final NodeConfigForm form) {
+    super(id);
     add(form);
   }
 }

@@ -18,21 +18,31 @@
 
 package org.jppf.admin.web.stats;
 
-import java.util.*;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.wicket.ajax.*;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.AjaxSelfUpdatingTimerBehavior;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.form.*;
-import org.apache.wicket.markup.html.list.*;
+import org.apache.wicket.markup.html.form.DropDownChoice;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.util.time.Duration;
-import org.jppf.admin.web.*;
-import org.jppf.admin.web.layout.*;
+import org.jppf.admin.web.AbstractJPPFPage;
+import org.jppf.admin.web.JPPFWebConsoleApplication;
+import org.jppf.admin.web.JPPFWebSession;
+import org.jppf.admin.web.TemplatePage;
+import org.jppf.admin.web.layout.SelectableLayout;
+import org.jppf.admin.web.layout.SelectableLayoutImpl;
+import org.jppf.admin.web.layout.SelectableLayoutLink;
 import org.jppf.admin.web.utils.RefreshTimerHolder;
 import org.jppf.client.monitoring.topology.TopologyDriver;
 import org.jppf.ui.monitoring.LocalizedListItem;
-import org.jppf.ui.monitoring.data.*;
+import org.jppf.ui.monitoring.data.Fields;
+import org.jppf.ui.monitoring.data.StatsConstants;
 import org.wicketstuff.wicket.mount.core.annotation.MountPath;
 
 import com.googlecode.wicket.jquery.ui.form.dropdown.AjaxDropDownChoice;
@@ -45,7 +55,7 @@ import com.googlecode.wicket.jquery.ui.form.dropdown.AjaxDropDownChoice;
 @AuthorizeInstantiation({"jppf-manager", "jppf-monitor"})
 public class StatisticsPage extends TemplatePage implements RefreshTimerHolder {
   /**
-   * Container for all the visible statitics tables.
+   * Container for all the visible statistics tables.
    */
   private WebMarkupContainer tablesContainer;
   /**
@@ -87,9 +97,11 @@ public class StatisticsPage extends TemplatePage implements RefreshTimerHolder {
       }
     });
     tablesContainer = new WebMarkupContainer("stats.tables.container");
+    tablesContainer.setOutputMarkupId(true);
     final List<StatsTableData> tables = new ArrayList<>();
-    for (final LocalizedListItem item: selectableLayout.getVisibleItems()) tables.add(new StatsTableData(item.getName(), StatsConstants.ALL_TABLES_MAP.get(item.getName())));
-    //for (Map.Entry<String, Fields[]> entry: StatsConstants.ALL_TABLES_MAP.entrySet()) tables.add(new StatsTableData(entry.getKey(), entry.getValue()));
+    for (final LocalizedListItem item: selectableLayout.getVisibleItems()) {
+      tables.add(new StatsTableData(item.getName(), StatsConstants.ALL_TABLES_MAP.get(item.getName())));
+    }
     final ListView<StatsTableData> listView = new ListView<StatsTableData>("stats.visible.tables", tables) {
       @Override
       protected void populateItem(final ListItem<StatsTableData> item) {
@@ -97,13 +109,13 @@ public class StatisticsPage extends TemplatePage implements RefreshTimerHolder {
       }
     };
     final int interval = JPPFWebConsoleApplication.get().getRefreshInterval();
-    tablesContainer.add(statsRefreshTimer = new AjaxSelfUpdatingTimerBehavior(Duration.seconds(interval)));
+    tablesContainer.add(statsRefreshTimer = new AjaxSelfUpdatingTimerBehavior(Duration.ofSeconds(interval)));
     tablesContainer.add(listView);
     add(tablesContainer);
   }
 
   /**
-   * @return the container for all the visible statitics tables.
+   * @return the container for all the visible statistics tables.
    */
   public WebMarkupContainer getTablesContainer() {
     return tablesContainer;
@@ -115,7 +127,7 @@ public class StatisticsPage extends TemplatePage implements RefreshTimerHolder {
   }
 
   /**
-   * Holds the needed information for each statitstics table.
+   * Holds the needed information for each statistics table.
    */
   private static class StatsTableData {
     /**

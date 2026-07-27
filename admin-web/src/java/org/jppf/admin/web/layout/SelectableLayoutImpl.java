@@ -18,7 +18,8 @@
 
 package org.jppf.admin.web.layout;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.settings.UserSettings;

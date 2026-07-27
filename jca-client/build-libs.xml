@@ -22,27 +22,33 @@
   <!-- Download JPPF dependencies                                                -->
   <!-- ========================================================================= -->
 
-  <property name="slf4j.version" value="1.7.25"/>
+  <property name="slf4j.version" value="2.0.18"/>
 
   <target name="dependencies" description="download libs">
-    <get.maven.lib g="com.puppycrawl.tools" a="checkstyle"         v="6.19"                 dest="${lib.dir}/Checkstyle"/>
+    <get.maven.lib g="com.puppycrawl.tools" a="checkstyle"         v="10.13.0"              dest="${lib.dir}/Checkstyle"/>
     <get.maven.lib g="antlr"                a="antlr"              v="2.7.7"                dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="org.antlr"            a="antlr4-runtime"     v="4.5.3"                dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="commons-beanutils"    a="commons-beanutils"  v="1.9.2"                dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="commons-logging"      a="commons-logging"    v="1.1.1"                dest="${lib.dir}/Checkstyle"/>
+    <get.maven.lib g="org.antlr"            a="antlr4-runtime"     v="4.13.1"               dest="${lib.dir}/Checkstyle"/>
+    <get.maven.lib g="commons-beanutils"    a="commons-beanutils"  v="1.9.4"                dest="${lib.dir}/Checkstyle"/>
+    <get.maven.lib g="commons-logging"      a="commons-logging"    v="1.3.0"                dest="${lib.dir}/Checkstyle"/>
     <get.maven.lib g="commons-collections"  a="commons-collections" v="3.2.2"               dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="commons-cli"          a="commons-cli"        v="1.3.1"                dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="com.google.guava"     a="guava"              v="19.0"                 dest="${lib.dir}/Checkstyle"/>
-    <get.maven.lib g="org.codehaus.groovy"  a="groovy-all"         v="1.6.5"                dest="${lib.dir}"/>
-    <get.maven.lib g="org.apache.geronimo.specs" a="geronimo-j2ee-connector_1.5_spec" v="2.0.0" dest="${lib.dir}"/>
-    <get.maven.lib g="org.apache.geronimo.specs" a="geronimo-servlet_2.5_spec" v="1.2"      dest="${lib.dir}"/>
-    <get.maven.lib g="log4j"                a="log4j"              v="1.2.15"               dest="${lib.dir}"/>
-    <get.maven.lib g="org.lz4"              a="lz4-java"           v="1.6.0"                dest="${lib.dir}"/>
+    <get.maven.lib g="commons-cli"          a="commons-cli"        v="1.6.0"                dest="${lib.dir}/Checkstyle"/>
+    <get.maven.lib g="com.google.guava"     a="guava"              v="33.0.0-jre"           dest="${lib.dir}/Checkstyle"/>
+    
+    <get.maven.lib g="org.codehaus.groovy"  a="groovy"             v="3.0.20"               dest="${lib.dir}"/>
+
+    <!-- ========================================================================= -->
+    <!-- MIGRATED FROM javax JCA/Servlet TO jakarta APIs                           -->
+    <!-- ========================================================================= -->
+    <get.maven.lib g="jakarta.resource"     a="jakarta.resource-api" v="2.1.0"              dest="${lib.dir}"/>
+    <get.maven.lib g="jakarta.servlet"      a="jakarta.servlet-api"  v="5.0.0"              dest="${lib.dir}"/>
+
+    <get.maven.lib g="org.apache.logging.log4j" a="log4j-api"        v="2.22.1"               dest="${lib.dir}"/>
+    <get.maven.lib g="org.lz4"              a="lz4-java"           v="1.8.0"                dest="${lib.dir}"/>
     <get.maven.lib g="org.slf4j"            a="slf4j-api"          v="${slf4j.version}"     dest="${lib.dir}"/>
-    <get.maven.lib g="org.slf4j"            a="slf4j-log4j12"      v="${slf4j.version}"     dest="${lib.dir}"/>
+    <get.maven.lib g="org.slf4j"            a="slf4j-reload4j"      v="${slf4j.version}"     dest="${lib.dir}"/>
     <get.maven.lib g="junit"                a="junit"              v="4.13.2"               dest="${lib.dir}"/>
-    <get.maven.lib g="org.hamcrest"         a="hamcrest-core"      v="1.3"                  dest="${lib.dir}"/>
-    <get.maven.lib g="commons-logging"      a="commons-logging"    v="1.1.1"                dest="${lib.dir}"/>
+    <get.maven.lib g="org.hamcrest"         a="hamcrest"           v="2.2"                  dest="${lib.dir}"/>
+    <get.maven.lib g="commons-logging"      a="commons-logging"    v="1.3.0"                dest="${lib.dir}"/>
   </target>
   
   <!-- =============================================================================

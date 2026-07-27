@@ -18,7 +18,7 @@
 
 package org.jppf.admin.web.health.thresholds;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalForm;
@@ -47,10 +47,10 @@ public class ThresholdsForm extends AbstractModalForm {
   private TextField<Double> memoryCriticalField;
 
   /**
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public ThresholdsForm(final ModalWindow modal, final Runnable okAction) {
+  public ThresholdsForm(final ModalDialog modal, final Runnable okAction) {
     super("thresholds", modal, okAction);
   }
 

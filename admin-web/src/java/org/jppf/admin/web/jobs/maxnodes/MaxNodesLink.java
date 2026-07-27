@@ -18,21 +18,29 @@
 
 package org.jppf.admin.web.jobs.maxnodes;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
-import org.jppf.admin.web.*;
+import org.jppf.admin.web.JPPFWebConsoleApplication;
+import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.jobs.JobsConstants;
 import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.utils.AbstractModalLink;
-import org.jppf.client.monitoring.jobs.*;
+import org.jppf.client.monitoring.jobs.AbstractJobComponent;
+import org.jppf.client.monitoring.jobs.Job;
+import org.jppf.client.monitoring.jobs.JobDriver;
 import org.jppf.client.monitoring.topology.TopologyDriver;
-import org.jppf.job.*;
-import org.jppf.utils.collections.*;
-import org.slf4j.*;
+import org.jppf.job.JobSelector;
+import org.jppf.job.JobUuidSelector;
+import org.jppf.utils.collections.ArrayListHashMap;
+import org.jppf.utils.collections.CollectionMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -42,19 +50,17 @@ public class MaxNodesLink extends AbstractModalLink<MaxNodesForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(MaxNodesLink.class);
+  private static final Logger log = LoggerFactory.getLogger(MaxNodesLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
 
   /**
    * @param form .
    */
   public MaxNodesLink(final Form<String> form) {
-    super(JobsConstants.UPDATE_MAX_NODES_ACTION, Model.of("Max nodes"), "select_nodes.gif", MaxNodesPage.class, form);
-    modal.setInitialWidth(350);
-    modal.setInitialHeight(150);
+    super(JobsConstants.UPDATE_MAX_NODES_ACTION, Model.of("Max nodes"), "select_nodes.gif", MaxNodesPanel.class, form);
   }
 
   @Override

@@ -16,20 +16,24 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.jobs.priority;
+package org.jppf.admin.web.topology.systeminfo;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class PriorityPage extends WebPage {
+public class SystemInfoPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param info system info HTML string.
    */
-  public PriorityPage(final PriorityForm form) {
-    add(form);
+  public SystemInfoPanel(final String id, final String info) {
+    super(id);
+    final Label label = new Label("system.info", info);
+    label.setEscapeModelStrings(false);
+    add(label);
   }
 }

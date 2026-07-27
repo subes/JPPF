@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.topology.nodethreads;
+package org.jppf.admin.web.jobs.maxnodes;
 
-import org.jppf.admin.web.AbstractJPPFPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
+ * @author Matej Knopp
  *
- * @author Laurent Cohen
  */
-public class NodeThreadsPage extends AbstractJPPFPage {
+public class MaxNodesPanel extends Panel {
   /**
-   * 
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the max nodes form.
    */
-  public NodeThreadsPage(final NodeThreadsForm form) {
+  public MaxNodesPanel(final String id, final MaxNodesForm form) {
+    super(id);
     add(form);
   }
 }

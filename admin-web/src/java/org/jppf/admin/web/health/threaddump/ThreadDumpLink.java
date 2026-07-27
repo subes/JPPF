@@ -18,24 +18,29 @@
 
 package org.jppf.admin.web.health.threaddump;
 
-import java.util.*;
+import java.util.List;
+import java.util.Locale;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-import org.apache.wicket.*;
+import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.extensions.ajax.markup.html.modal.theme.DefaultTheme;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.health.HealthConstants;
-import org.jppf.admin.web.tabletree.*;
+import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.utils.AbstractActionLink;
 import org.jppf.client.monitoring.topology.AbstractTopologyComponent;
-import org.jppf.management.diagnostics.*;
+import org.jppf.management.diagnostics.HTMLThreadDumpWriter;
+import org.jppf.management.diagnostics.ThreadDump;
 import org.jppf.ui.utils.HealthUtils;
-import org.jppf.utils.*;
-import org.slf4j.*;
+import org.jppf.utils.ExceptionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -45,15 +50,15 @@ public class ThreadDumpLink extends AbstractActionLink {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(ThreadDumpLink.class);
+  private static final Logger log = LoggerFactory.getLogger(ThreadDumpLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
-   *
+   * Upgraded modal dialog instance.
    */
-  private transient ModalWindow modal;
+  private transient ModalDialog modal;
 
   /**
    * @param form .
@@ -62,7 +67,20 @@ public class ThreadDumpLink extends AbstractActionLink {
     super(HealthConstants.THREAD_DUMP_ACTION, Model.of("Thread dump"));
     imageName = "thread_dump.gif";
     setEnabled(false);
-    modal = new ModalWindow("health.threaddump.dialog");
+    
+    modal = new ModalDialog("health.threaddump.dialog") {
+      @Override
+      public ModalDialog close(final AjaxRequestTarget target) {
+        final ModalDialog result = super.close(target);
+        if (target != null) {
+          restartRefreshTimer(target);
+        }
+        return result;
+      }
+    };
+    modal.add(new DefaultTheme());
+    modal.closeOnEscape();
+    modal.closeOnClick();
     form.add(modal);
   }
 
@@ -85,35 +103,12 @@ public class ThreadDumpLink extends AbstractActionLink {
       } catch(final Exception e) {
         html.append(ExceptionUtils.getStackTrace(e).replace("\n", "<br>"));
       }
-      //if (debugEnabled) log.debug("html = {}", html);
-      modal.setPageCreator(new PageCreator(html.toString()));
+
+      final ThreadDumpPanel content = new ThreadDumpPanel(ModalDialog.CONTENT_ID, html.toString());
+
       stopRefreshTimer(target);
       addTableTreeToTarget(target);
-      modal.setWindowClosedCallback(new ModalWindow.WindowClosedCallback() {
-        @Override
-        public void onClose(final AjaxRequestTarget target) {
-          restartRefreshTimer(target);
-        }
-      });
-      modal.show(target);
-    }
-  }
-
-  /** */
-  private static class PageCreator implements ModalWindow.PageCreator {
-    /** */
-    private transient final String html;
-
-    /**
-     * @param html .
-     */
-    public PageCreator(final String html) {
-      this.html = html;
-    }
-
-    @Override
-    public Page createPage() {
-      return new ThreadDumpPage(html);
+      modal.open(content, target);
     }
   }
 }

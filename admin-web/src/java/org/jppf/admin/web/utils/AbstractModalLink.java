@@ -18,52 +18,67 @@
 
 package org.jppf.admin.web.utils;
 
-import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.extensions.ajax.markup.html.modal.theme.DefaultTheme;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @param <F> the type of form displayed in the modal window.
+ * @param <F> the type of form displayed in the modal dialog.
  * @author Laurent Cohen
  */
 public abstract class AbstractModalLink<F extends AbstractModalForm> extends AbstractActionLink {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(AbstractModalLink.class);
+  private static final Logger log = LoggerFactory.getLogger(AbstractModalLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
-   * The modal window opened upon click on the buttom.
+   * The modal dialog opened upon click on the button.
    */
-  protected transient ModalWindow modal;
+  protected transient ModalDialog modal;
   /**
-   * The form displayed inside the modal window.
+   * The form displayed inside the modal dialog.
    */
   protected F modalForm;
   /**
-   * The class of the page display inside the modal window.
+   * The class of the panel displayed inside the modal dialog.
    */
-  protected Class<? extends Page> pageClass;
+  protected Class<? extends Panel> panelClass;
 
   /**
    * 
    * @param id id of this component.
    * @param model model of this component.
    * @param imageName name of the associated icon, if any.
-   * @param pageClass class of the associated modal page.
-   * @param form the form to which the modal window is added.
+   * @param panelClass class of the associated modal panel.
+   * @param form the form to which the modal dialog is added.
    */
-  public AbstractModalLink(final String id, final IModel<String> model, final String imageName, final Class<? extends Page> pageClass, final Form<String> form) {
+  public AbstractModalLink(final String id, final IModel<String> model, final String imageName, final Class<? extends Panel> panelClass, final Form<String> form) {
     super(id, model);
     this.imageName = imageName;
-    this.pageClass = pageClass;
-    modal = new ModalWindow(id + ".dialog");
+    this.panelClass = panelClass;
+    
+    modal = new ModalDialog(id + ".dialog") {
+      @Override
+      public ModalDialog close(final AjaxRequestTarget target) {
+        final ModalDialog result = super.close(target);
+        if (target != null) {
+          restartRefreshTimer(target);
+        }
+        return result;
+      }
+    };
+    modal.add(new DefaultTheme());
+    modal.closeOnEscape();
+    modal.closeOnClick();
     form.add(modal);
   }
 
@@ -71,20 +86,21 @@ public abstract class AbstractModalLink<F extends AbstractModalForm> extends Abs
   protected void onInitialize() {
     super.onInitialize();
     modalForm = createForm();
-    modal.setPageCreator(new ModalPageCreator<>(modalForm, pageClass));
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public void onClick(final AjaxRequestTarget target) {
     if (debugEnabled) log.debug("clicked on {}, target page = {}, target = {}", getDefaultModelObject(), target.getPage(), target.getComponents());
     addTableTreeToTarget(target);
     stopRefreshTimer(target);
-    modal.setWindowClosedCallback(tg -> restartRefreshTimer(tg));
-    modal.show(target);
+    
+    final ModalPanelCreator<F, Panel> creator = new ModalPanelCreator<>(modalForm, (Class<Panel>) panelClass);
+    modal.open(creator.createPanel(ModalDialog.CONTENT_ID), target);
   }
 
   /**
-   * Create a new form add to the page in the modal window.
+   * Create a new form added to the panel in the modal dialog.
    * @return a new form.
    */
   protected abstract F createForm();

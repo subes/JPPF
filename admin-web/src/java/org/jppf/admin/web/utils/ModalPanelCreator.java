@@ -20,42 +20,47 @@ package org.jppf.admin.web.utils;
 
 import java.lang.reflect.Constructor;
 
-import org.apache.wicket.Page;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow.PageCreator;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
+ * Helper class to dynamically instantiate modal panels.
+ * 
  * @param <F> the type of the form to use.
- * @param <P> the type of modal page.
+ * @param <P> the type of modal panel.
  * @author Laurent Cohen
  */
-public class ModalPageCreator<F extends Form<String>, P extends Page> implements PageCreator {
+public class ModalPanelCreator<F extends Form<String>, P extends Panel> {
   /**
-   * The form to add to the page.
+   * The form to add to the panel.
    */
   private final F form;
   /**
-   * The class of th epage to instantiate.
+   * The class of the panel to instantiate.
    */
-  private final Class<P> pageClass;
+  private final Class<P> panelClass;
 
   /**
    * 
-   * @param form the form to add to the page.
-   * @param pageClass the class of th epage to instantiate.
+   * @param form the form to add to the panel.
+   * @param panelClass the class of the panel to instantiate.
    */
-  public ModalPageCreator(final F form, final Class<P> pageClass) {
+  public ModalPanelCreator(final F form, final Class<P> panelClass) {
     if (form == null) throw new IllegalArgumentException("the form cannot be null");
-    if (pageClass == null) throw new IllegalArgumentException("the page class cannot be null");
+    if (panelClass == null) throw new IllegalArgumentException("the panel class cannot be null");
     this.form = form;
-    this.pageClass = pageClass;
+    this.panelClass = panelClass;
   }
   
-  @Override
-  public Page createPage() {
+  /**
+   * Instantiates the panel class using a (String id, Form form) constructor.
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @return the created panel instance.
+   */
+  public P createPanel(final String id) {
     try {
-      final Constructor<P> c = pageClass.getConstructor(form.getClass());
-      return c.newInstance(form);
+      final Constructor<P> c = panelClass.getConstructor(String.class, form.getClass());
+      return c.newInstance(id, form);
     } catch (final Exception e) {
       throw (e instanceof RuntimeException) ? (RuntimeException) e : new RuntimeException(e);
     }

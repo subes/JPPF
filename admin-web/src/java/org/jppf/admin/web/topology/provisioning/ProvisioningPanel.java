@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.health.thresholds;
+package org.jppf.admin.web.topology.provisioning;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class ThresholdsPage extends WebPage {
+public class ProvisioningPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the form to display inside the panel.
    */
-  public ThresholdsPage(final ThresholdsForm form) {
+  public ProvisioningPanel(final String id, final ProvisioningForm form) {
+    super(id);
     add(form);
   }
 }

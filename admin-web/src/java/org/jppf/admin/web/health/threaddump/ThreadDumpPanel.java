@@ -18,21 +18,18 @@
 
 package org.jppf.admin.web.health.threaddump;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class ThreadDumpPage extends WebPage {
-  /**
-   *
-   * @param info .
-   */
-  public ThreadDumpPage(final String info) {
-    final Label label = new Label("threaddump.info", info);
-    label.setEscapeModelStrings(false);
-    add(label);
-  }
-}
+public class ThreadDumpPanel extends Panel {
+	  public ThreadDumpPanel(final String id, final String info) {
+		    super(id);
+		    final Label label = new Label("threaddump.info", info);
+		    label.setEscapeModelStrings(false);
+		    add(label);
+		  }
+		}

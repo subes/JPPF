@@ -18,7 +18,7 @@
 
 package org.jppf.admin.web.topology.nodethreads;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalForm;
@@ -32,28 +32,28 @@ public class NodeThreadsForm extends AbstractModalForm {
   /**
    * Base name for localization.
    */
-  private static final String I18N_BASE = NodeThreadsPage.class.getName();
+  private static final String I18N_BASE = NodeThreadsPanel.class.getName();
   /**
    * Text field for the number of threads.
    */
   private TextField<Integer> nbThreadsField;
   /**
-   * Text field for the number of threads.
+   * Text field for the priority of threads.
    */
   private TextField<Integer> priorityField;
 
   /**
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public NodeThreadsForm(final ModalWindow modal, final Runnable okAction) {
+  public NodeThreadsForm(final ModalDialog modal, final Runnable okAction) {
     super("node_threads", modal, okAction);
   }
 
   @Override
   protected void createFields() {
     add(nbThreadsField = setTooltip(createIntField(prefix + ".nb_threads.field", 1, 1, 1024, 1), I18N_BASE));
-    add(priorityField =  setTooltip(createIntField(prefix + ".priority.field", Thread.NORM_PRIORITY, Thread.MIN_PRIORITY, Thread.MAX_PRIORITY, 1), I18N_BASE));
+    add(priorityField = setTooltip(createIntField(prefix + ".priority.field", Thread.NORM_PRIORITY, Thread.MIN_PRIORITY, Thread.MAX_PRIORITY, 1), I18N_BASE));
   }
 
   /**
@@ -64,7 +64,7 @@ public class NodeThreadsForm extends AbstractModalForm {
   }
 
   /**
-   * Set the number of slaves.
+   * Set the number of threads.
    * @param nbThreads the number of threads to set.
    */
   public void setNbThreads(final int nbThreads) {
@@ -94,7 +94,8 @@ public class NodeThreadsForm extends AbstractModalForm {
 
   @Override
   protected boolean saveSettings(final TypedProperties props) {
-    props.setInt(nbThreadsField.getId(), getNbThreads()).setInt(priorityField.getId(), getPriority());
+    props.setInt(nbThreadsField.getId(), getNbThreads())
+         .setInt(priorityField.getId(), getPriority());
     return true;
   }
 }

@@ -18,40 +18,41 @@
 
 package org.jppf.admin.web.topology.serverstop;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
-import org.jppf.admin.web.topology.*;
-import org.jppf.admin.web.topology.systeminfo.SystemInfoLink;
+import org.jppf.admin.web.topology.TopologyConstants;
+import org.jppf.admin.web.topology.TopologyTreeData;
 import org.jppf.admin.web.utils.AbstractModalLink;
 import org.jppf.client.monitoring.topology.TopologyDriver;
 import org.jppf.management.JMXDriverConnectionWrapper;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author Laurent Cohen
  */
-//@AuthorizeActions(actions = { @AuthorizeAction(action="RENDER", roles=JPPFRoles.MANAGER) })
 public class DriverStopRestartLink extends AbstractModalLink<DriverStopRestartForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(SystemInfoLink.class);
+  private static final Logger log = LoggerFactory.getLogger(DriverStopRestartLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
 
   /**
    * @param form .
    */
   public DriverStopRestartLink(final Form<String> form) {
-    super(TopologyConstants.SERVER_STOP_RESTART_ACTION, Model.of("Server stop/restart"), "server_restart.gif", DriverStopRestartPage.class, form);
-    modal.setInitialWidth(350);
-    modal.setInitialHeight(180);
+    super(TopologyConstants.SERVER_STOP_RESTART_ACTION, Model.of("Server stop/restart"), "server_restart.gif", DriverStopRestartPanel.class, form);
   }
 
   @Override

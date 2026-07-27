@@ -16,14 +16,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<html xmlns:wicket="http://wicket.apache.org">
-	<head>
-    <title><wicket:message key="threaddump.title"></wicket:message></title>
-    <wicket:head>
-      <link rel="stylesheet" href="jppf.css" type="text/css" />
-    </wicket:head>
-	</head>	
-	<body style="color: black; font-size: 12pt;">
-		<div wicket:id="threaddump.info" style="padding: 2px;">[driver or node system info]</div>
-	</body>
-</html>
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <form wicket:id="priority.form" class="modal_form" style="padding: 10px;">
+    <wicket:message key="priority.priority.label"></wicket:message>&nbsp;
+    <input type="text" wicket:id="priority.priority.field" value="0" class="default_focus"/><br/>
+
+    <p style="margin-top: 15px;">
+      <a wicket:id="priority.ok" class="button_link button_ok"><wicket:message key="priority.ok.label"></wicket:message></a>&nbsp;
+      <a wicket:id="priority.cancel" class="button_link"><wicket:message key="priority.cancel.label"></wicket:message></a>
+    </p>
+  </form>
+</wicket:panel>

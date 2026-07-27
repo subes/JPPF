@@ -20,16 +20,20 @@ package org.jppf.admin.web.utils;
 
 import java.util.Locale;
 
-import org.apache.wicket.*;
+import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
-import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.settings.UserSettings;
-import org.jppf.utils.*;
-import org.slf4j.*;
+import org.jppf.utils.LocalizationUtils;
+import org.jppf.utils.TypedProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.googlecode.wicket.jquery.ui.form.spinner.Spinner;
 
@@ -41,11 +45,11 @@ public abstract class AbstractModalForm extends Form<String> {
   /**
    * Logger for this class.
    */
-  private static Logger log = LoggerFactory.getLogger(AbstractModalForm.class);
+  private static final Logger log = LoggerFactory.getLogger(AbstractModalForm.class);
   /**
    * Determines whether the debug level is enabled in the log configuration, without the cost of a method call.
    */
-  private static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
    * The prefix for the ids of all components.
    */
@@ -58,33 +62,33 @@ public abstract class AbstractModalForm extends Form<String> {
   /**
    *
    * @param prefix the prefix for the ids of all components.
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    * @param args optional arguments.
    */
-  public AbstractModalForm(final String prefix, final ModalWindow modal, final Runnable okAction, final Object...args) {
+  public AbstractModalForm(final String prefix, final ModalDialog modal, final Runnable okAction, final Object...args) {
     this(prefix, modal, okAction, true, args);
   }
 
   /**
    *
    * @param prefix the prefix for the ids of all components.
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param args optional arguments.
    */
-  public AbstractModalForm(final String prefix, final ModalWindow modal, final Object...args) {
+  public AbstractModalForm(final String prefix, final ModalDialog modal, final Object...args) {
     this(prefix, modal, null, false, args);
   }
 
   /**
    *
    * @param prefix the prefix for the ids of all components.
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    * @param addDefaultButtons whether to add default ok and cancel buttons.
    * @param args optional arguments.
    */
-  public AbstractModalForm(final String prefix, final ModalWindow modal, final Runnable okAction, final boolean addDefaultButtons, final Object...args) {
+  public AbstractModalForm(final String prefix, final ModalDialog modal, final Runnable okAction, final boolean addDefaultButtons, final Object...args) {
     super(prefix + ".form");
     this.prefix = prefix;
     this.locale = JPPFWebSession.get().getLocale();

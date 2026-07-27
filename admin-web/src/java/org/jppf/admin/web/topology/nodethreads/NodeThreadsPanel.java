@@ -16,20 +16,22 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.layout;
+package org.jppf.admin.web.topology.nodethreads;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
- * @author Matej Knopp
  *
+ * @author Laurent Cohen
  */
-public class SelectableLayoutPage extends WebPage {
+public class NodeThreadsPanel extends Panel {
   /**
-   *
-   * @param form .
+   * 
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the form to display inside the panel.
    */
-  public SelectableLayoutPage(final SelectableLayoutForm form) {
+  public NodeThreadsPanel(final String id, final NodeThreadsForm form) {
+    super(id);
     add(form);
   }
 }

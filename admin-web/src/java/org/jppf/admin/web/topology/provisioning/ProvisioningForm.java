@@ -18,8 +18,10 @@
 
 package org.jppf.admin.web.topology.provisioning;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
-import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.form.TextArea;
+import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalForm;
 import org.jppf.utils.TypedProperties;
@@ -47,10 +49,10 @@ public class ProvisioningForm extends AbstractModalForm {
   private TextArea<String> overridesField;
 
   /**
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public ProvisioningForm(final ModalWindow modal, final Runnable okAction) {
+  public ProvisioningForm(final ModalDialog modal, final Runnable okAction) {
     super("provisioning", modal, okAction);
   }
 

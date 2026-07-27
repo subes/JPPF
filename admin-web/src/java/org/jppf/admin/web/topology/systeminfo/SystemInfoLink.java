@@ -18,24 +18,26 @@
 
 package org.jppf.admin.web.topology.systeminfo;
 
-import java.util.*;
+import java.util.List;
+import java.util.Locale;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-import org.apache.wicket.*;
+import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
-import org.jppf.admin.web.tabletree.*;
+import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.topology.TopologyConstants;
 import org.jppf.admin.web.utils.AbstractActionLink;
 import org.jppf.client.monitoring.topology.AbstractTopologyComponent;
 import org.jppf.management.JPPFSystemInformation;
 import org.jppf.ui.utils.TopologyUtils;
-import org.jppf.utils.*;
-import org.slf4j.*;
+import org.jppf.utils.HTMLPropertiesTableFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -45,15 +47,15 @@ public class SystemInfoLink extends AbstractActionLink {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(SystemInfoLink.class);
+  private static final Logger log = LoggerFactory.getLogger(SystemInfoLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
-   *
+   * Modal dialog for system info.
    */
-  private transient ModalWindow modal;
+  private ModalDialog modal;
 
   /**
    * @param form .
@@ -62,7 +64,7 @@ public class SystemInfoLink extends AbstractActionLink {
     super(TopologyConstants.SYSTEM_INFO_ACTION, Model.of("System info"));
     imageName = "info.gif";
     setEnabled(false);
-    modal = new ModalWindow("topology.info.dialog");
+    modal = new ModalDialog("topology.info.dialog");
     form.add(modal);
   }
 
@@ -81,34 +83,10 @@ public class SystemInfoLink extends AbstractActionLink {
       final StringBuilder html = new StringBuilder();
       html.append(TopologyUtils.formatProperties(info, new HTMLPropertiesTableFormat(title, false), locale));
       if (debugEnabled) log.debug("html = {}", html);
-      modal.setPageCreator(new PageCreator(html.toString()));
+      
       stopRefreshTimer(target);
       addTableTreeToTarget(target);
-      modal.setWindowClosedCallback(new ModalWindow.WindowClosedCallback() {
-        @Override
-        public void onClose(final AjaxRequestTarget target) {
-          restartRefreshTimer(target);
-        }
-      });
-      modal.show(target);
-    }
-  }
-
-  /** */
-  private static class PageCreator implements ModalWindow.PageCreator {
-    /** */
-    private transient final String html;
-
-    /**
-     * @param html .
-     */
-    public PageCreator(final String html) {
-      this.html = html;
-    }
-
-    @Override
-    public Page createPage() {
-      return new SystemInfoPage(html);
+      modal.open(new SystemInfoPanel(ModalDialog.CONTENT_ID, html.toString()), target);
     }
   }
 }

@@ -21,7 +21,8 @@ package org.jppf.admin.web.layout;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalLink;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -31,11 +32,11 @@ public class SelectableLayoutLink extends AbstractModalLink<SelectableLayoutForm
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(SelectableLayoutLink.class);
+  private static final Logger log = LoggerFactory.getLogger(SelectableLayoutLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
    * The selectable layout page to get the items from.
    */
@@ -46,10 +47,8 @@ public class SelectableLayoutLink extends AbstractModalLink<SelectableLayoutForm
    * @param form .
    */
   public SelectableLayoutLink(final SelectableLayout layout, final Form<String> form) {
-    super("visible.items", Model.of("Visible items"), "table-column-hide.png", SelectableLayoutPage.class, form);
+    super("visible.items", Model.of("Visible items"), "table-column-hide.png", SelectableLayoutPanel.class, form);
     this.layout = layout;
-    modal.setInitialWidth(500);
-    modal.setInitialHeight(300);
   }
 
   @Override

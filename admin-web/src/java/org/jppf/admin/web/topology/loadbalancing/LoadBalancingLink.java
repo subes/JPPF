@@ -26,12 +26,15 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
-import org.jppf.admin.web.topology.*;
-import org.jppf.admin.web.utils.*;
+import org.jppf.admin.web.topology.TopologyConstants;
+import org.jppf.admin.web.topology.TopologyTreeData;
+import org.jppf.admin.web.utils.AbstractManagerRoleAction;
+import org.jppf.admin.web.utils.AbstractModalLink;
 import org.jppf.client.monitoring.topology.TopologyDriver;
 import org.jppf.load.balancer.LoadBalancingInformation;
 import org.jppf.utils.TypedProperties;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implementation of the load-balancing.
@@ -41,15 +44,13 @@ public class LoadBalancingLink extends AbstractModalLink<LoadBalancingForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(LoadBalancingLink.class);
+  private static final Logger log = LoggerFactory.getLogger(LoadBalancingLink.class);
 
   /**
    * @param form .
    */
   public LoadBalancingLink(final Form<String> form) {
-    super(TopologyConstants.SERVER_LOAD_BALANCING_ACTION, Model.of("Load balancing"), "balance.png", LoadBalancingPage.class, form);
-    modal.setInitialWidth(565);
-    modal.setInitialHeight(500);
+    super(TopologyConstants.SERVER_LOAD_BALANCING_ACTION, Model.of("Load balancing"), "balance.png", LoadBalancingPanel.class, form);
   }
 
   @Override

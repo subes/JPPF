@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.topology.loadbalancing;
+package org.jppf.admin.web.layout;
 
-import org.jppf.admin.web.AbstractJPPFPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class LoadBalancingPage extends AbstractJPPFPage {
+public class SelectableLayoutPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the selectable layout form.
    */
-  public LoadBalancingPage(final LoadBalancingForm form) {
+  public SelectableLayoutPanel(final String id, final SelectableLayoutForm form) {
+    super(id);
     add(form);
   }
 }

@@ -19,14 +19,17 @@
 package org.jppf.admin.web;
 
 import java.security.Principal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.apache.wicket.Session;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.cycle.RequestCycle;
-import org.jppf.admin.web.auth.*;
+import org.jppf.admin.web.auth.JPPFRole;
+import org.jppf.admin.web.auth.JPPFRoles;
 import org.jppf.admin.web.filter.TopologyFilter;
 import org.jppf.admin.web.health.HealthTreeData;
 import org.jppf.admin.web.jobs.JobsTreeData;
@@ -35,11 +38,12 @@ import org.jppf.admin.web.tabletree.TableTreeData;
 import org.jppf.admin.web.topology.TopologyTreeData;
 import org.jppf.client.monitoring.topology.TopologyDriver;
 import org.jppf.ui.treetable.TreeViewType;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebSession;
 
 /**
- * The Wession class. It handles container-based authentication and holds the data used to
+ * The WebSession class. It handles container-based authentication and holds the data used to
  * render the views in the web console.
  * @author Laurent Cohen
  */
@@ -47,11 +51,11 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   /**
    * Logger for this class.
    */
-  private static Logger log = LoggerFactory.getLogger(JPPFWebSession.class);
+  private static final Logger log = LoggerFactory.getLogger(JPPFWebSession.class);
   /**
    * Determines whether the debug level is enabled in the log configuration, without the cost of a method call.
    */
-  private static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
    * Name of the settings property for the node filter's active state.
    */
@@ -120,8 +124,10 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
           data = new JobsTreeData();
           break;
       }
+      if (data != null) {
+        dataMap.put(type, data);
+      }
     }
-    dataMap.put(type, data);
     return data;
   }
 
@@ -147,7 +153,7 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   }
 
   /**
-   * Get the associated JPPF session obect.
+   * Get the associated JPPF session object.
    * @return a {@link JPPFWebSession} instance.
    */
   public static JPPFWebSession get() {
@@ -196,7 +202,6 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
     this.currentDriver = currentDriver;
   }
 
-
   /**
    * @return the name of the authenticated user, or {@code null} if the user is not authenticated.
    */
@@ -207,7 +212,6 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   }
 
   /**
-   *
    * @return the roles of the current signed-in user, if any.
    */
   private static List<String> getUserRoles() {
@@ -235,7 +239,6 @@ public class JPPFWebSession extends ServletContainerAuthenticatedWebSession {
   }
 
   /**
-   *
    * @param showIP {@code true} to show IP addresses, {@code false} to show host names.
    */
   public void setShowIP(final boolean showIP) {

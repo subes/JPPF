@@ -18,30 +18,40 @@
 
 package org.jppf.admin.web;
 
-import java.io.Serializable;
-import java.util.*;
+import java.util.EnumMap;
+import java.util.Map;
 
-import org.apache.wicket.*;
+import org.apache.wicket.Application;
+import org.apache.wicket.DefaultPageManagerProvider;
+import org.apache.wicket.Page;
+import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.page.*;
-import org.apache.wicket.pageStore.*;
-import org.apache.wicket.pageStore.memory.*;
+import org.apache.wicket.pageStore.IPageStore;
+import org.apache.wicket.pageStore.NoopPageStore;
 import org.apache.wicket.request.cycle.RequestCycle;
-import org.apache.wicket.request.resource.*;
-import org.jppf.admin.web.admin.*;
+import org.apache.wicket.request.resource.ResourceReference;
+import org.jppf.admin.web.admin.ConfigType;
+import org.jppf.admin.web.admin.ConfigurationHandler;
+import org.jppf.admin.web.admin.SSLConfigSource;
 import org.jppf.admin.web.auth.LoginPage;
-import org.jppf.admin.web.settings.*;
+import org.jppf.admin.web.settings.JPPFAsyncFilePersistence;
+import org.jppf.admin.web.settings.Persistence;
+import org.jppf.admin.web.settings.PersistenceFactory;
 import org.jppf.admin.web.stats.StatsUpdater;
 import org.jppf.admin.web.topology.TopologyPage;
 import org.jppf.admin.web.utils.ClasspathResource;
 import org.jppf.client.JPPFClient;
-import org.jppf.client.monitoring.jobs.*;
+import org.jppf.client.monitoring.jobs.JobMonitor;
+import org.jppf.client.monitoring.jobs.JobMonitorUpdateMode;
 import org.jppf.client.monitoring.topology.TopologyManager;
 import org.jppf.management.diagnostics.MonitoringDataProviderHandler;
-import org.jppf.utils.*;
+import org.jppf.utils.JPPFConfiguration;
+import org.jppf.utils.TypedProperties;
 import org.jppf.utils.configuration.JPPFProperties;
-import org.slf4j.*;
-import org.wicketstuff.wicket.servlet3.auth.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebApplication;
+import org.wicketstuff.wicket.servlet3.auth.ServletContainerAuthenticatedWebSession;
 
 /**
  * This is the Wicket {@link Application} class for the JPPF web console.
@@ -223,35 +233,28 @@ public class JPPFWebConsoleApplication extends ServletContainerAuthenticatedWebA
   }
 
   /**
-   * Does not save to persistent store.
+   * Custom page manager provider that keeps pages in session memory without 
+   * page serialization or persistent disk storage.
    */
   private static final class MyPageManagerProvider extends DefaultPageManagerProvider {
     /**
      * @param application the wicket application.
      */
-    private MyPageManagerProvider(final Application application) { super(application); }
-
-    @Override protected IDataStore newDataStore() {
-      // keep everything in memory
-      return new HttpSessionDataStore(new DefaultPageManagerContext(), pageTable -> {});
+    private MyPageManagerProvider(final Application application) {
+      super(application);
     }
 
-    @Override protected IPageStore newPageStore(final IDataStore dataStore) { return new NullPageStore(); }
-  }
+    @Override
+    protected IPageStore newPersistentStore() {
+      // Replaces DiskPageStore with NoopPageStore to prevent writing pages to disk
+      return new NoopPageStore();
+    }
 
-  /**
-   * Disables serialization.
-   */
-  private static class NullPageStore implements IPageStore {
-    @Override public void destroy() { }
-    @Override public IManageablePage getPage(final String sessionId, final int pageId) { return null; }
-    @Override public void removePage(final String sessionId, final int pageId) { }
-    @Override public void storePage(final String sessionId, final IManageablePage page) { }
-    @Override public void unbind(final String sessionId) { }
-    @Override public Serializable prepareForSerialization(final String sessionId, final Serializable page) { return null; }
-    @Override public Object restoreAfterSerialization(final Serializable serializable) { return null; }
-    @Override public IManageablePage convertToPage(final Object page) { return null; }
-    @Override public boolean canBeAsynchronous() { return false; }
+    @Override
+    protected IPageStore newSerializingStore(final IPageStore pageStore) {
+      // Bypasses page serialization completely
+      return pageStore;
+    }
   }
 
   /**

@@ -18,12 +18,16 @@
 
 package org.jppf.admin.web.utils;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.time.Instant;
 
 import org.apache.wicket.request.resource.ResourceStreamResource;
 import org.apache.wicket.request.resource.caching.IResourceCachingStrategy;
-import org.apache.wicket.util.resource.*;
-import org.apache.wicket.util.time.Time;
+import org.apache.wicket.util.resource.AbstractResourceStream;
+import org.apache.wicket.util.resource.IResourceStream;
+import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
 
 /**
  * A resource loaded from the classpath.
@@ -64,7 +68,7 @@ public class ClasspathResource extends ResourceStreamResource {
     /**
      * Last modified date, equal to the creation date.
      */
-    private final Time lastModified = Time.millis(System.currentTimeMillis());
+    private final Instant lastModified = Instant.now();
 
     /**
      * @param path the path to the resource in the classpath.
@@ -85,7 +89,7 @@ public class ClasspathResource extends ResourceStreamResource {
     }
 
     @Override
-    public Time lastModifiedTime() {
+    public Instant lastModifiedTime() {
       return lastModified;
     }
   }

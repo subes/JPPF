@@ -18,15 +18,18 @@
 
 package org.jppf.admin.web.topology.loadbalancing;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.markup.html.form.DropDownChoice;
+import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.utils.AbstractModalForm;
-import org.jppf.utils.*;
+import org.jppf.utils.LocalizationUtils;
+import org.jppf.utils.TypedProperties;
 
 /**
  *
@@ -50,7 +53,7 @@ public class LoadBalancingForm extends AbstractModalForm {
    * @param modal the modal window.
    * @param okAction the ok action.
    */
-  public LoadBalancingForm(final ModalWindow modal, final Runnable okAction) {
+  public LoadBalancingForm(final ModalDialog modal, final Runnable okAction) {
     super("load_balancing", modal, okAction);
   }
 
@@ -66,7 +69,7 @@ public class LoadBalancingForm extends AbstractModalForm {
    */
   public void setDriverName(final String driverName) {
     final String key = driverNameLabel.getId() + ".label";
-    final String caption = LocalizationUtils.getLocalized(LoadBalancingPage.class.getName(), key, key, JPPFWebSession.get().getLocale(), driverName);
+    final String caption = LocalizationUtils.getLocalized(LoadBalancingPanel.class.getName(), key, key, JPPFWebSession.get().getLocale(), driverName);
     driverNameLabel.setDefaultModel(Model.of(caption));
   }
 

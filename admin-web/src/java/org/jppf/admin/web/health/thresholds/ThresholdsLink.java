@@ -23,7 +23,8 @@ import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
 import org.jppf.admin.web.health.HealthConstants;
 import org.jppf.admin.web.utils.AbstractModalLink;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -33,19 +34,17 @@ public class ThresholdsLink extends AbstractModalLink<ThresholdsForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(ThresholdsLink.class);
+  private static final Logger log = LoggerFactory.getLogger(ThresholdsLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
 
   /**
    * @param form .
    */
   public ThresholdsLink(final Form<String> form) {
-    super(HealthConstants.THRESHOLDS_ACTION, Model.of("Thresholds"), "thresholds.gif", ThresholdsPage.class, form);
-    modal.setInitialWidth(330);
-    modal.setInitialHeight(255);
+    super(HealthConstants.THRESHOLDS_ACTION, Model.of("Thresholds"), "thresholds.gif", ThresholdsPanel.class, form);
   }
 
   @Override

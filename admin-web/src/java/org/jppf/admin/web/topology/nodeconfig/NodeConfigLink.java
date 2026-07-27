@@ -18,19 +18,23 @@
 
 package org.jppf.admin.web.topology.nodeconfig;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.JPPFWebSession;
-import org.jppf.admin.web.topology.*;
+import org.jppf.admin.web.topology.TopologyConstants;
+import org.jppf.admin.web.topology.TopologyTreeData;
 import org.jppf.admin.web.topology.systeminfo.SystemInfoLink;
 import org.jppf.admin.web.utils.AbstractModalLink;
-import org.jppf.client.monitoring.topology.*;
+import org.jppf.client.monitoring.topology.TopologyDriver;
+import org.jppf.client.monitoring.topology.TopologyNode;
 import org.jppf.management.UuidSelector;
 import org.jppf.ui.monitoring.node.actions.NodeConfigurationAction;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -40,19 +44,17 @@ public class NodeConfigLink extends AbstractModalLink<NodeConfigForm> {
   /**
    * Logger for this class.
    */
-  static Logger log = LoggerFactory.getLogger(SystemInfoLink.class);
+  private static final Logger log = LoggerFactory.getLogger(SystemInfoLink.class);
   /**
    * Determines whether debug log statements are enabled.
    */
-  static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
 
   /**
    * @param form .
    */
   public NodeConfigLink(final Form<String> form) {
-    super(TopologyConstants.NODE_CONFIG_ACTION, Model.of("Node configuration"), "update.gif", NodeConfigPage.class, form);
-    modal.setInitialWidth(565);
-    modal.setInitialHeight(500);
+    super(TopologyConstants.NODE_CONFIG_ACTION, Model.of("Node configuration"), "update.gif", NodeConfigPanel.class, form);
   }
 
   @Override
@@ -85,8 +87,10 @@ public class NodeConfigLink extends AbstractModalLink<NodeConfigForm> {
     final JPPFWebSession session = (JPPFWebSession) getPage().getSession();
     final TopologyTreeData data = session.getTopologyData();
     final List<TopologyNode> selectedNodes = TopologyTreeData.getSelectedNodes(data.getSelectedTreeNodes());
-    final String config = NodeConfigurationAction.getPropertiesAsString(selectedNodes.get(0));
-    modalForm.setConfig(config);
+    if (!selectedNodes.isEmpty()) {
+      final String config = NodeConfigurationAction.getPropertiesAsString(selectedNodes.get(0));
+      modalForm.setConfig(config);
+    }
     super.onClick(target);
   }
 }

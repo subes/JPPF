@@ -138,6 +138,9 @@
         <exclude name="*spring*.jar"/>
         <exclude name="*atmosphere*.jar"/>
         <exclude name="*guice*.jar"/>
+        <!-- Updated exclusions for Jakarta container provided dependencies -->
+        <exclude name="jakarta.servlet*.jar"/>
+        <exclude name="jakarta.websocket*.jar"/>
         <exclude name="javax.servlet*.jar"/>
         <exclude name="*javadoc*.jar"/>
         <exclude name="maven*.jar"/>

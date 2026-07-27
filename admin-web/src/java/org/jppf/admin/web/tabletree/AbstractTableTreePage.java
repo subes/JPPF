@@ -18,20 +18,30 @@
 
 package org.jppf.admin.web.tabletree;
 
-import java.util.*;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.apache.wicket.ajax.AjaxSelfUpdatingTimerBehavior;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.HeadersToolbar;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.tree.theme.WindowsTheme;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.util.time.Duration;
-import org.jppf.admin.web.*;
-import org.jppf.admin.web.layout.*;
+import org.jppf.admin.web.JPPFWebConsoleApplication;
+import org.jppf.admin.web.JPPFWebSession;
+import org.jppf.admin.web.TemplatePage;
+import org.jppf.admin.web.layout.SelectableLayout;
+import org.jppf.admin.web.layout.SelectableLayoutImpl;
+import org.jppf.admin.web.layout.SelectableLayoutLink;
 import org.jppf.ui.monitoring.LocalizedListItem;
-import org.jppf.ui.treetable.*;
-import org.slf4j.*;
+import org.jppf.ui.treetable.AbstractJPPFTreeTableModel;
+import org.jppf.ui.treetable.TreeViewType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract super class for pages holding a toolbar and a table tree view.
@@ -41,11 +51,11 @@ public abstract class AbstractTableTreePage extends TemplatePage implements Tabl
   /**
    * Logger for this class.
    */
-  private static Logger log = LoggerFactory.getLogger(AbstractTableTreePage.class);
+  private static final Logger log = LoggerFactory.getLogger(AbstractTableTreePage.class);
   /**
    * Determines whether the debug level is enabled in the log configuration, without the cost of a method call.
    */
-  private static boolean debugEnabled = log.isDebugEnabled();
+  private static final boolean debugEnabled = log.isDebugEnabled();
   /**
    * The tree table component.
    */
@@ -94,7 +104,7 @@ public abstract class AbstractTableTreePage extends TemplatePage implements Tabl
     tableTree = createTableTree("jppf." + namePrefix + ".visible.columns");
     tableTree.add(new WindowsTheme()); // adds windows-style handles on nodes with children
     final int interval = JPPFWebConsoleApplication.get().getRefreshInterval();
-    refreshTimer = new AjaxSelfUpdatingTimerBehavior(Duration.seconds(interval));
+    refreshTimer = new AjaxSelfUpdatingTimerBehavior(Duration.ofSeconds(interval));
     tableTree.add(refreshTimer);
     tableTree.addUpdateTarget(toolbar);
     data.selectionChanged(selectionHandler);
@@ -110,7 +120,7 @@ public abstract class AbstractTableTreePage extends TemplatePage implements Tabl
     actionHandler.addActionLink(toolbar, new SelectableLayoutLink(selectableLayout, toolbar));
   }
 
- @Override
+  @Override
   public JPPFTableTree getTableTree() {
     return tableTree;
   }
@@ -132,7 +142,6 @@ public abstract class AbstractTableTreePage extends TemplatePage implements Tabl
    */
   protected JPPFTableTree createTableTree(final String layoutProperty) {
     if (debugEnabled) log.debug("getting tree model for {}", viewType);
-    //createTreeTableModel();
     final TableTreeData data = JPPFWebSession.get().getTableTreeData(viewType);
     createSelectableLayout(layoutProperty);
     final JPPFTableTree tree = new JPPFTableTree(
@@ -150,7 +159,7 @@ public abstract class AbstractTableTreePage extends TemplatePage implements Tabl
   }
 
   /**
-   * Get the tolbar and create it if necessary.
+   * Get the toolbar and create it if necessary.
    * @return the toolbar.
    */
   private Form<String> getOrCreateToolbar() {

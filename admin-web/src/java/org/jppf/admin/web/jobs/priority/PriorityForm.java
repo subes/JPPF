@@ -18,7 +18,7 @@
 
 package org.jppf.admin.web.jobs.priority;
 
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.jppf.admin.web.utils.AbstractModalForm;
@@ -35,10 +35,10 @@ public class PriorityForm extends AbstractModalForm {
   private TextField<Integer> priorityField;
 
   /**
-   * @param modal the modal window.
+   * @param modal the modal dialog.
    * @param okAction the ok action.
    */
-  public PriorityForm(final ModalWindow modal, final Runnable okAction) {
+  public PriorityForm(final ModalDialog modal, final Runnable okAction) {
     super("priority", modal, okAction);
   }
 

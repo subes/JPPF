@@ -16,14 +16,6 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<html xmlns:wicket="http://wicket.apache.org">
-	<head>
-    <title><wicket:message key="system.title"></wicket:message></title>
-    <wicket:head>
-      <link rel="stylesheet" href="jppf.css" type="text/css" />
-    </wicket:head>
-	</head>	
-	<body>
-		<div wicket:id="system.info" style="padding: 2px;">[driver or node system info]</div>
-	</body>
-</html>
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <div wicket:id="system.info" style="padding: 10px;">[driver or node system info]</div>
+</wicket:panel>

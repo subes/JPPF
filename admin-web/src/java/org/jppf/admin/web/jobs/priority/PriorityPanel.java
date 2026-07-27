@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.topology.serverstop;
+package org.jppf.admin.web.jobs.priority;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class DriverStopRestartPage extends WebPage {
+public class PriorityPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the priority form.
    */
-  public DriverStopRestartPage(final DriverStopRestartForm form) {
+  public PriorityPanel(final String id, final PriorityForm form) {
+    super(id);
     add(form);
   }
 }

@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-package org.jppf.admin.web.topology.provisioning;
+package org.jppf.admin.web.topology.loadbalancing;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.Panel;
 
 /**
  * @author Matej Knopp
  *
  */
-public class ProvisioningPage extends WebPage {
+public class LoadBalancingPanel extends Panel {
   /**
-   *
-   * @param form .
+   * @param id component id (typically ModalDialog.CONTENT_ID).
+   * @param form the load balancing form instance.
    */
-  public ProvisioningPage(final ProvisioningForm form) {
+  public LoadBalancingPanel(final String id, final LoadBalancingForm form) {
+    super(id);
     add(form);
   }
 }
