@@ -492,14 +492,27 @@ td.default_cursor div {
   overflow: auto;
 }
 
-.button_link {
-  margin: 0px;
-  padding: 4px;
+/* 1. Shared Layout Properties for ALL button states */
+.button_link, 
+.button_link_disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Ensures content stays centered even with fixed sizes */
+  white-space: nowrap;
+  margin: 0;
+  padding: 4px 8px;
   font-weight: bold;
   text-decoration: none;
-  vertical-align: middle;
-  border: 1px solid #6D78B6;
   border-radius: 2px;
+  vertical-align: middle;
+  /* Enforce a minimum vertical size */
+  min-height: 28px; 
+  box-sizing: border-box;
+}
+
+/* 2. Visuals for ENABLED state */
+.button_link {
+  border: 1px solid #6D78B6;
   box-shadow: -1px -1px 2px #6D78B6 inset;
   background-color: #C5D0F0;
   cursor: pointer;
@@ -516,14 +529,13 @@ a.button_link:hover {
   color: #6D78B6;
 }
 
+/* 3. Visuals for DISABLED state */
 .button_link_disabled {
-  margin: 0px;
-  padding: 4px;
-  vertical-align: middle;
   border: 1px solid #999;
-  border-radius: 2px;
   box-shadow: -1px -1px 2px #999 inset;
   background-color: #CCC;
+  cursor: not-allowed;
+  color: #666;
 }
 
 img {
@@ -534,9 +546,16 @@ img {
 }
 
 .jppf_toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
   margin: 0;
   padding: 10px;
-  vertical-align: middle;
+}
+
+.jppf_toolbar > div:not(.separator) {
+  display: inline;
 }
 
 .modal_form {
