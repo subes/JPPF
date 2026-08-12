@@ -107,8 +107,8 @@ public class JPPFDriver extends AbstractJPPFDriver {
     final boolean useSSL = (sslPorts != null) && (sslPorts.length > 0);
     if (debugEnabled) log.debug("starting nio servers");
     if (configuration.get(JPPFProperties.RECOVERY_ENABLED)) {
-      nodeHeartbeatServer = getOrCreateServer(JPPFIdentifiers.CLIENT_CLASSLOADER_CHANNEL, () -> new HeartbeatNioServer(this, JPPFIdentifiers.NODE_HEARTBEAT_CHANNEL, useSSL));
-      clientHeartbeatServer = getOrCreateServer(JPPFIdentifiers.CLIENT_CLASSLOADER_CHANNEL, () -> new HeartbeatNioServer(this, JPPFIdentifiers.CLIENT_HEARTBEAT_CHANNEL, useSSL));
+      nodeHeartbeatServer = getOrCreateServer(JPPFIdentifiers.NODE_HEARTBEAT_CHANNEL, () -> new HeartbeatNioServer(this, JPPFIdentifiers.NODE_HEARTBEAT_CHANNEL, useSSL));
+      clientHeartbeatServer = getOrCreateServer(JPPFIdentifiers.CLIENT_HEARTBEAT_CHANNEL, () -> new HeartbeatNioServer(this, JPPFIdentifiers.CLIENT_HEARTBEAT_CHANNEL, useSSL));
     }
     asyncClientClassServer = getOrCreateServer(JPPFIdentifiers.CLIENT_CLASSLOADER_CHANNEL, () -> new AsyncClientClassNioServer(this, JPPFIdentifiers.CLIENT_CLASSLOADER_CHANNEL, useSSL));
     asyncNodeClassServer = getOrCreateServer(JPPFIdentifiers.NODE_CLASSLOADER_CHANNEL, () -> new AsyncNodeClassNioServer(this, JPPFIdentifiers.NODE_CLASSLOADER_CHANNEL, useSSL));
